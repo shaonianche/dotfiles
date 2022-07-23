@@ -1,0 +1,9 @@
+{
+  "lastupdate": "2022-07-20T20:50:31.0718867+08:00",
+  "msiextract_use_lessmsi": true,
+  "SCOOP_REPO": "https://github.com/scoopinstaller/scoop",
+  "SCOOP_BRANCH": "develop",
+  "shim": "kiennq",
+  "show_update_log": false,
+  "aria2-enabled": false
+}
