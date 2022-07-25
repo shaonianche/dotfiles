@@ -384,6 +384,13 @@ Set-Alias -Name "here" -Value Open-Here -Option AllScope
 function Get-AllEnv { Get-ChildItem env: }
 Set-Alias -Name "export" -Value Get-AllEnv -Option AllScope
 
+# Set python3 as default python
+Set-Alias -Name "python" -Value "python3" -Option AllScope
+
+# Set pip3 as default pip
+function Get-PIP { python3 -m pip }
+Set-Alias -Name "pip" -Value Get-PIP -Option AllScope
+
 
 #-------------------------------#
 #   Platform-specific Settings  #

@@ -111,7 +111,7 @@ alias atm='tmux attach -t'
 alias stm="tmux switch -t"
 
 # https://snarky.ca/why-you-should-use-python-m-pip/
-alias pip='python3 -m pip'
+alias pip='python3 -m pip3'
 alias pipx='python3 -m pipx'
 alias trees="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 alias neo="neofetch"
