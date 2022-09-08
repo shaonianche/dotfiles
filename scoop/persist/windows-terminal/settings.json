@@ -43,7 +43,7 @@
         {
             "antialiasingMode": "cleartype",
             "background": "#101216",
-            "backgroundImage": "https://raw.githubusercontent.com/shaonianche/gallery/master/img/windows_shell_dark.png",
+            "backgroundImage": null,
             "backgroundImageOpacity": 0.80000000000000004,
             "backgroundImageStretchMode": "uniformToFill",
             "bellStyle": "window",
@@ -53,13 +53,13 @@
             "cursorShape": "bar",
             "font": 
             {
-                "face": "mononoki Nerd Font Mono",
-                "size": 13,
-                "weight": "bold"
+                "face": "RobotoMono Nerd Font",
+                "size": 12,
+                "weight": "normal"
             },
             "icon": "https://img.icons8.com/external-flaticons-flat-flat-icons/344/external-terminal-computer-programming-flaticons-flat-flat-icons.png",
             "intenseTextStyle": "bold",
-            "opacity": 70,
+            "opacity": 100,
             "padding": "3",
             "scrollbarState": "hidden",
             "startingDirectory": "%USERPROFILE%",
@@ -138,6 +138,17 @@
                 "hidden": false,
                 "name": "PowerShell",
                 "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "backgroundImageOpacity": 1.0,
+                "commandline": "mingw64.cmd -shell bash",
+                "guid": "{698db546-33f4-49e2-bd8f-83a781755f14}",
+                "hidden": false,
+                "name": "MSYS2",
+                "opacity": 80,
+                "padding": "3",
+                "startingDirectory": "~",
+                "tabTitle": "MSYS2"
             }
         ]
     },

@@ -1,9 +1,9 @@
 {
-  "lastupdate": "2022-08-21T09:54:28.3779965+08:00",
-  "msiextract_use_lessmsi": true,
-  "SCOOP_REPO": "https://github.com/scoopinstaller/scoop",
-  "SCOOP_BRANCH": "develop",
   "shim": "kiennq",
   "show_update_log": false,
-  "aria2-enabled": false
+  "aria2-enabled": false,
+  "last_update": "2022-09-08T19:57:11.9532193+08:00",
+  "use_lessmsi": true,
+  "scoop_branch": "develop",
+  "scoop_repo": "https://github.com/scoopinstaller/scoop"
 }
