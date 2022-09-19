@@ -32,7 +32,7 @@
     "alwaysShowNotificationIcon": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{f5836e0e-57bd-4378-9a7c-76d72b7932bd}",
+    "defaultProfile": "{aab79973-318f-43b6-a9bc-b4096493753f}",
     "focusFollowMouse": true,
     "initialCols": 150,
     "initialRows": 50,
@@ -116,6 +116,7 @@
                 "guid": "{aab79973-318f-43b6-a9bc-b4096493753f}",
                 "hidden": false,
                 "icon": "https://www.nushell.sh/icon.png",
+                "intenseTextStyle": "none",
                 "name": "Nushell",
                 "source": "nu",
                 "startingDirectory": "D:\\workspace\\github",
@@ -147,7 +148,7 @@
                 "name": "MSYS2",
                 "opacity": 80,
                 "padding": "3",
-                "startingDirectory": "~",
+                "startingDirectory": "E:\\Scoop\\apps\\msys2\\current\\home\\duanfei",
                 "tabTitle": "MSYS2"
             }
         ]

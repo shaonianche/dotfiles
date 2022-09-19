@@ -70,6 +70,7 @@ conflictstyle = diff3
 
 [diff]
 colorMoved = default
+	external = difft
 
 [tag]
 forcesignannotated = true
