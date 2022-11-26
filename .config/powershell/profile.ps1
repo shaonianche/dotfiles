@@ -448,7 +448,7 @@ if (Test-IsNotWindows) {
 } else {
     $env:COMPUTERNAME = $env:COMPUTERNAME.Substring(0, 1).ToUpper() + $env:COMPUTERNAME.Substring(1).ToLower()
     # Define Scoop home
-    $SCOOP_HOME = "$Script:UNI_HOME\scoop"
+    $SCOOP_HOME = "$Env:SCOOP"
 
     # Replace Windows PowerShell `ls` command with GNU `ls` command,
     # it's bundled with git-for-windows, installed via Scoop
@@ -483,7 +483,7 @@ if (Test-IsNotWindows) {
     #---------------------------------------------#
     #    External Applications Tab-Completions    #
     #---------------------------------------------#
-    # Anaconda/Miniconda - https://docs.conda.io/en/latest
+    # Anaconda/Miniconda - https://docs.conda.io/en/lates
     #  NOTES: This must be loaded before `pshazz`, since it also changes prompt
     if (Test-Command 'conda') {
         (& conda 'shell.powershell' 'hook') | Out-String | Invoke-Expression
