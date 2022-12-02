@@ -331,7 +331,7 @@ if ((Get-Module -Name 'PSReadline').Version.Major -eq 2) {
 $env:LANG = 'en_US.UTF-8'
 $env:TZ = 'UTC-8'
 # default editor
-$env:EDITOR = 'nano'
+$env:EDITOR = 'vim'
 # Rustup mirror
 $env:RUSTUP_DIST_SERVER = 'https://mirrors.ustc.edu.cn/rust-static'
 # Node.js COLOR
@@ -468,7 +468,7 @@ if (Test-IsNotWindows) {
         ) | Where-Object { Test-Path $_ } | Select-Object -First 1
 
         # Call ls command
-        & $lsExe -F --group-directories-first --color --ignore="{$lsIgnore}" $args
+        & $lsExe -F --group-directories-first --color --ignore="{$lsIgnore}" $args[0]
     }
     function Get-ChildItemWithLl { Get-ChildItemWithLs -lh $args }
     function Get-ChildItemWithLa { Get-ChildItemWithLs -lAh $args }

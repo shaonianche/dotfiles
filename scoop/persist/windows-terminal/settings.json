@@ -53,7 +53,7 @@
             "cursorShape": "bar",
             "font": 
             {
-                "face": "RobotoMono Nerd Font",
+                "face": "JetBrainsMono Nerd Font Mono",
                 "size": 12,
                 "weight": "normal"
             },
@@ -133,12 +133,6 @@
                 "hidden": false,
                 "name": "Command Prompt",
                 "startingDirectory": "D:\\workspace\\github"
-            },
-            {
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-                "hidden": false,
-                "name": "PowerShell",
-                "source": "Windows.Terminal.PowershellCore"
             },
             {
                 "backgroundImageOpacity": 1.0,
