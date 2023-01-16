@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 
 PROJECT_NAME="dotfiles"
-GIT_REPO = "https://github.com/shaonianche/dotfiles.git"
 SRC_INSTALL_HOME="$HOME/.$PROJECT_NAME"
 _SCRIPT_="$0"
 
 if test -d "$SRC_INSTALL_HOME"; then
   rm -rf "$SRC_INSTALL_HOME"
-  git clone --depth 1 "$GIT_REPO" "$SRC_INSTALL_HOME"
+  git clone --depth 1 https://github.com/shaonianche/dotfiles.git ~/.dotfiles
   rm -rf "$SRC_INSTALL_HOME/README.md"
   rm -rf "$SRC_INSTALL_HOME/license"
 else
-  git clone --depth 1 "$GIT_REPO" "$SRC_INSTALL_HOME"
+  git clone --depth 1 https://github.com/shaonianche/dotfiles.git ~/.dotfiles
+  rm -rf "$SRC_INSTALL_HOME/README.md"
+  rm -rf "$SRC_INSTALL_HOME/license"
 fi
 
 detect_os() {
@@ -45,16 +46,18 @@ list_config() {
   done
 }
 
-detect_os
 list_dot_files "$SRC_INSTALL_HOME"
 list_config "$SRC_INSTALL_HOME/.config"
 
+detect_os
 if [ $? -eq 0 ]; then
   echo "Current system is macOS"
   create_soft_link "$SRC_INSTALL_HOME/.config/zsh/.zshrc" "$HOME/.zshrc"
   rm -rf "$SRC_INSTALL_HOME/windows"
   rm -rf "$SRC_INSTALL_HOME/linux"
   rm -rf "$SRC_INSTALL_HOME/.git"
+  echo "source ~/.dotfiles/macos/.export" >>~/.bashrc
+  echo "source ~/.dotfiles/macos/.export" >>~/.zshrc
 elif
   [ $? -eq 1 ]
 then

@@ -82,7 +82,7 @@ fi
     . /usr/share/bash-completion/bash_completion
 
 # shellcheck source=/dev/null
-source "$HOME/.shell_env"
+source "$HOME/.export"
 
 if [ -d ~/.bash_completion.d ]; then
     for file in ~/.bash_completion.d/*; do
