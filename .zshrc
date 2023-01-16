@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 ZSH=$HOME/.oh-my-zsh
 # git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 # ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
@@ -9,8 +10,10 @@ ZSH_THEME="spaceship"
 plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-interactive-cd
   zsh-z
   git
+  fzf
 )
 
 # Disable warning about insecure completion-dependent directories
@@ -19,3 +22,5 @@ ZSH_DISABLE_COMPFIX=true
 source "$HOME/.shell_env"
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

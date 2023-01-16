@@ -185,4 +185,4 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; pc brew update; pc brew upgrade; brew cleanup; pc npm install npm -g; pc npm update -g; pc sudo gem update --system; pc sudo gem update; sudo gem cleanup'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'

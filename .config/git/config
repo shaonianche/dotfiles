@@ -6,7 +6,6 @@ workon = "!f(){ git fetch && git checkout -b \"$1\" $(git symbolic-ref refs/remo
 lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
 gb="for-each-ref --sort=-committerdate refs/heads/ --format=' %(color:green)%(committerdate:relative)%(color:reset)%09%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:magenta)%(authorname)%(color:reset) • %(contents:subject)'"
 
-
 [user]
 email = github@duanfei.org
 name = shaoanianche
@@ -70,7 +69,7 @@ conflictstyle = diff3
 
 [diff]
 colorMoved = default
-	external = difft
+external = difft
 
 [tag]
 forcesignannotated = true
@@ -81,6 +80,7 @@ insteadOf = git://github.com/
 insteadOf = git@github.com:
 insteadOf = github:
 insteadOf = gh:
+proxy = socks5h://192.168.1.189:7890
 
 [url "https://gist.github.com/"]
 insteadOf = git://gist.github.com/
@@ -90,3 +90,8 @@ insteadOf = gist:
 # Local/private config goes in the include
 [include]
 path = config.local
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
