@@ -163,26 +163,3 @@ alias l="ls"
 alias la="ls -A"
 alias ll="ls -lh"
 alias lla="ls -lhA"
-
-# -------------------------------- #
-# Only MacOS
-# -------------------------------- #
-
-# (macOS-only) Prevent Homebrew from reporting - https://github.com/Homebrew/brew/blob/master/docs/Analytics.md
-export HOMEBREW_NO_ANALYTICS=1
-
-# https://github.com/pyenv/pyenv/#set-up-your-shell-environment-for-pyenv
-# alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
-alias ryabai="launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai""
-alias brewun="brew uninstall --cask --force --zap"
-alias pc="proxychains4"
-
-# Empty the Trash on all mounted volumes and the main HDD.
-# Also, clear Apple’s System Logs to improve shell startup speed.
-# Finally, clear download history from quarantine. https://mths.be/bum
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
-# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'

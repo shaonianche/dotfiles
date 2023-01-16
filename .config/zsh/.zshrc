@@ -19,8 +19,7 @@ plugins=(
 # Disable warning about insecure completion-dependent directories
 ZSH_DISABLE_COMPFIX=true
 
-source "$HOME/.shell_env"
+source "$HOME/.export"
 # Actually load Oh-My-Zsh
 source "${ZSH}/oh-my-zsh.sh"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
