@@ -53,15 +53,16 @@ detect_os
 if [ $? -eq 0 ]; then
   echo "Current system is macOS"
   create_soft_link "$SRC_INSTALL_HOME/.config/zsh/.zshrc" "$HOME/.zshrc"
-  rm -rf "$SRC_INSTALL_HOME/windows"
-  rm -rf "$SRC_INSTALL_HOME/linux"
-  rm -rf "$SRC_INSTALL_HOME/.git"
-  echo "source ~/.dotfiles/macos/.export" >>~/.bashrc
-  echo "source ~/.dotfiles/macos/.export" >>~/.zshrc
+  rm -rf "$SRC_INSTALL_HOME/{windows,linux,.git}"
+  echo "source $HOME/.dotfiles/macos/.export" >>"$HOME"/.bashrc
+  echo "source $HOME/.dotfiles/macos/.export" >>"$HOME"/.zshrc
 elif
   [ $? -eq 1 ]
 then
   echo "Current system is Linux"
+  create_soft_link "$SRC_INSTALL_HOME/.config/bash/.bashrc" "$HOME/.bashrc"
+  rm -rf "$SRC_INSTALL_HOME/{windows,linux,.git}"
+  echo "source $HOME/.dotfiles/macos/.export" >>"$HOME"/.bashrc
 else
   echo "Current system is not macOS or Linux"
 fi
