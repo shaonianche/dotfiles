@@ -35,13 +35,9 @@ Set-SymbolicLink -Target ".config/gh/config.yml"
 Set-SymbolicLink -Target ".config/git/config"
 Set-SymbolicLink -Target ".config/git/ignore"
 Set-SymbolicLink -Target ".config/starship.toml"
-Set-SymbolicLink -Target ".dir_colors"
-Set-SymbolicLink -Target ".gemrc"
 Set-SymbolicLink -Target ".config/.gnupg/gpg-agent.conf"
 Set-SymbolicLink -Target ".config/.gnupg/gpg.conf"
-Set-SymbolicLink -Target ".gvimrc"
 Set-SymbolicLink -Target ".inputrc"
-Set-SymbolicLink -Target ".nanorc"
 Set-SymbolicLink -Target ".vimrc"
 Set-SymbolicLink -Target ".wgetrc"
 
@@ -55,8 +51,6 @@ Set-SymbolicLink -Target ".wgetrc"
 
 # OS-specific dotfiles
 if ($env:OS -eq "Windows_NT" -or $IsWindows) { # Windows
-    # MinTTY
-    Set-SymbolicLink -Target ".minttyrc"
     Set-SymbolicLink -Target ".config/git/config.win.conf" `
         -Path ".config/git/config.local"
     # PowerShell
