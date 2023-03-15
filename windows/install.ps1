@@ -27,19 +27,19 @@ function Set-SymbolicLink([String]$Target, [String]$Path) {
 }
 
 # Common dotfiles
-Set-SymbolicLink -Target ".config/bash/.bash_logout"
-Set-SymbolicLink -Target ".config/bash/.bash_profile"
-Set-SymbolicLink -Target ".config/bash/.bashrc"
+# Set-SymbolicLink -Target ".config/bash/.bash_logout"
+# Set-SymbolicLink -Target ".config/bash/.bash_profile"
+# Set-SymbolicLink -Target ".config/bash/.bashrc"
 Set-SymbolicLink -Target ".config/.cargo/config"
-Set-SymbolicLink -Target ".config/gh/config.yml"
 Set-SymbolicLink -Target ".config/git/config"
-Set-SymbolicLink -Target ".config/git/ignore"
+# Set-SymbolicLink -Target ".config/git/ignore"
+
 Set-SymbolicLink -Target ".config/starship.toml"
 Set-SymbolicLink -Target ".config/.gnupg/gpg-agent.conf"
 Set-SymbolicLink -Target ".config/.gnupg/gpg.conf"
-Set-SymbolicLink -Target ".inputrc"
-Set-SymbolicLink -Target ".vimrc"
-Set-SymbolicLink -Target ".wgetrc"
+Set-SymbolicLink -Target "/workspace/dotfiles/.inputrc"
+Set-SymbolicLink -Target "/workspace/dotfiles/.config/vim/.vimrc"
+Set-SymbolicLink -Target "/workspace/dotfiles/.wgetrc"
 
 # Runtime generated dotfiles
 & {
@@ -51,18 +51,19 @@ Set-SymbolicLink -Target ".wgetrc"
 
 # OS-specific dotfiles
 if ($env:OS -eq "Windows_NT" -or $IsWindows) { # Windows
-    Set-SymbolicLink -Target ".config/git/config.win.conf" `
+    Set-SymbolicLink -Target "git/config.win.conf" `
         -Path ".config/git/config.local"
     # PowerShell
-    Set-SymbolicLink -Targe ".config/powershell/profile.ps1" `
+    Set-SymbolicLink -Targe "powershell/profile.ps1" `
         -Path $PROFILE.CurrentUserAllHosts
-    Set-SymbolicLink -Target ".config/pshazz/config.json"
-    Set-SymbolicLink -Target ".config/scoop/config.json"
+    Set-SymbolicLink -Target "pshazz/config.json"
+    Set-SymbolicLink -Target "scoop/config.json"
     # pip
-    Set-SymbolicLink -Target ".config/pip/pip.ini" ` -Path "pip/pip.ini"
+    # Set-SymbolicLink -Target ".config/pip/pip.ini" ` -Path "pip/pip.ini"
+
     # Windows Terminal
     Set-SymbolicLink -Target "scoop/persist/windows-terminal/settings.json" `
         -Path "$env:LOCALAPPDATA/Microsoft/Windows Terminal/settings.json"
     # WSL
-    Set-SymbolicLink -Target ".config/wsl/.wslconfig" -Path ".wslconfig"
+    Set-SymbolicLink -Target "wsl/.wslconfig" -Path ".wslconfig"
 }
