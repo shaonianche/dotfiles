@@ -80,7 +80,6 @@ insteadOf = git://github.com/
 insteadOf = git@github.com:
 insteadOf = github:
 insteadOf = gh:
-proxy = socks5h://192.168.1.189:7890
 
 [url "https://gist.github.com/"]
 insteadOf = git://gist.github.com/
@@ -90,8 +89,3 @@ insteadOf = gist:
 # Local/private config goes in the include
 [include]
 path = config.local
-[credential]
-	helper = 
-	helper = /usr/local/share/gcm-core/git-credential-manager
-[credential "https://dev.azure.com"]
-	useHttpPath = true
