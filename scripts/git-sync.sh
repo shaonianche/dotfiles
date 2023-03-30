@@ -5,5 +5,5 @@ cd "$(
 )" && cd ..
 git add --all
 git commit -m "changes on $(date)"
-git pull --all
+git pull --rebase
 git push
