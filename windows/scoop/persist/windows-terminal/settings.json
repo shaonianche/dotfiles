@@ -1,15 +1,13 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
+    "actions": [
         {
             "command": "paste",
             "keys": "ctrl+v"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -20,8 +18,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -37,10 +34,8 @@
     "initialCols": 150,
     "initialRows": 50,
     "launchMode": "default",
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "antialiasingMode": "cleartype",
             "background": "#101216",
             "backgroundImage": null,
@@ -51,8 +46,7 @@
             "colorScheme": "GitHub Dark",
             "cursorColor": "#C9D1D9",
             "cursorShape": "bar",
-            "font": 
-            {
+            "font": {
                 "face": "JetBrainsMono Nerd Font Mono",
                 "size": 12,
                 "weight": "normal"
@@ -65,8 +59,7 @@
             "startingDirectory": "%USERPROFILE%",
             "useAcrylic": true
         },
-        "list": 
-        [
+        "list": [
             {
                 "backgroundImageOpacity": 1.0,
                 "commandline": "E:\\Scoop\\apps\\powershell\\current\\pwsh.exe",
@@ -147,8 +140,7 @@
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
