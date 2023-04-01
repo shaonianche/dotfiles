@@ -88,4 +88,4 @@ insteadOf = gist:
 
 # Local/private config goes in the include
 [include]
-path = config.local
+path = .gitconfig.local

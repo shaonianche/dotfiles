@@ -11,57 +11,68 @@ rm -rf "$SRC_INSTALL_HOME/{README.md,license}"
 
 create_soft_link() {
   local src_file=$1
-  local link_name=$HOME/$(basename "$src_file")
+  local link_name=$2
 
-  # Check if the symlink already exists and remove it
-  if [ -f "$link_name" ] || [ -d "$link_name" ]; then
-    echo "Removing existing symlink: $link_name"
-    rm "$link_name"
+  if [ -z "$link_name" ]; then
+    link_name=$HOME/$(basename "$src_file")
   fi
 
   # Create the symlink
   echo "Creating symlink: $link_name >> $src_file"
-  ln -s "$src_file" "$link_name"
+  ln -sf "$src_file" "$link_name"
 }
 
 list_dot_files() {
   local dir_path=$1
-  for file in "$dir_path"/.[^.]*; do
-    if [ -f "$file" ]; then
+  for file in "$dir_path"/*; do
+    if [ -f "$file" ] && [[ "$file" == .* ]]; then
       create_soft_link "$file"
     fi
   done
 }
 
-list_config_files() {
-  local dir_path=$1
-  for folder in "$dir_path"/*/; do
-    if [ -d "$folder" ]; then
-      create_soft_link "$folder" "$HOME/.config/$(basename "$folder")"
-    fi
+function delete_files() {
+  local src_dir="$SRC_INSTALL_HOME"
+  local files=("$@")
+  for file in "${files[@]}"; do
+    rm -rf "$src_dir/$file"
   done
 }
 
 list_dot_files "$SRC_INSTALL_HOME"
-list_config_files "$SRC_INSTALL_HOME/.config"
+
+create_soft_link "$SRC_INSTALL_HOME/.config/git/config" "$HOME/.gitconfig"
+create_soft_link "$SRC_INSTALL_HOME/.config/git/.gitignore" "$HOME/.gitignore"
+create_soft_link "$SRC_INSTALL_HOME/.config/git/.gitattributes" "$HOME/.gitattributes"
+create_soft_link "$SRC_INSTALL_HOME/.config/tmux/.tmux.conf" "$HOME/.tmux.conf"
+create_soft_link "$SRC_INSTALL_HOME/.config/bash/.bash_profile" "$HOME/.bash_profile"
+create_soft_link "$SRC_INSTALL_HOME/.config/bash/.bash_logout" "$HOME/.bash_logout"
+
+create_soft_link "$SRC_INSTALL_HOME/.config/.cargo" "$HOME/.config/.cargo"
+create_soft_link "$SRC_INSTALL_HOME/.config/.gnupg" "$HOME/.config/.gnupg"
+create_soft_link "$SRC_INSTALL_HOME/.config/.kitty" "$HOME/.config/kitty"
+
+del_linux=(".git" "README.md" "install.ps1" "macos" "windows" "license")
+del_macos=(".git" "README.md" "install.ps1" "linux" "windows" "license")
 
 OS=$(uname)
-
 case "$OS" in
-  Darwin*)
-    echo "Current system is macOS"
-    create_soft_link "$SRC_INSTALL_HOME/.config/zsh/.zshrc" "$HOME/.zshrc"
-    rm -rf "$SRC_INSTALL_HOME/{windows,linux,.git}"
-    echo "source $HOME/.dotfiles/macos/.export" >>"$HOME"/.bashrc
-    echo "source $HOME/.dotfiles/macos/.export" >>"$HOME"/.zshrc
-    ;;
-  Linux*)
-    echo "Current system is Linux"
-    create_soft_link "$SRC_INSTALL_HOME/.config/bash/.bashrc" "$HOME/.bashrc"
-    rm -rf "$SRC_INSTALL_HOME/{windows,linux,.git}"
-    echo "source $HOME/.dotfiles/macos/.export" >>"$HOME"/.bashrc
-    ;;
-  *)
-    echo "Unsupported system"
-    ;;
-esacs
+Darwin*)
+  echo "Current system is macOS"
+  create_soft_link "$SRC_INSTALL_HOME/.config/zsh/.zshrc" "$HOME/.zshrc"
+  echo "source $HOME/.dotfiles/macos/.export" >>"$HOME"/.bashrc
+  echo "source $HOME/.dotfiles/macos/.export" >>"$HOME"/.zshrc
+  delete_files "${del_macos[@]}"
+  ;;
+Linux*)
+  echo "Current system is Linux"
+  create_soft_link "$SRC_INSTALL_HOME/.config/bash/.bashrc" "$HOME/.bashrc"
+  create_soft_link "$SRC_INSTALL_HOME/linux/git/config.linux.conf" "$HOME/.gitconfig.local"
+  create_soft_link "$SRC_INSTALL_HOME/linux/.export" "$HOME/.export"
+  delete_files "${del_linux[@]}"
+  echo "source $SRC_INSTALL_HOME/linux/.export" >>"$HOME"/.bashrc
+  ;;
+*)
+  echo "Unsupported system"
+  ;;
+esac
