@@ -1,24 +1,27 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions": 
+    [
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
         {
             "command": "paste",
             "keys": "ctrl+v"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "copy",
                 "singleLine": false
             },
             "keys": "ctrl+c"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "command": {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -26,106 +29,58 @@
             "keys": "alt+shift+d"
         }
     ],
-    "alwaysShowNotificationIcon": true,
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{f5836e0e-57bd-4378-9a7c-76d72b7932bd}",
-    "focusFollowMouse": true,
-    "initialCols": 150,
-    "initialRows": 50,
-    "launchMode": "default",
-    "profiles": {
-        "defaults": {
-            "antialiasingMode": "cleartype",
-            "background": "#101216",
-            "backgroundImage": null,
-            "backgroundImageOpacity": 0.80000000000000004,
-            "backgroundImageStretchMode": "uniformToFill",
-            "bellStyle": "window",
-            "closeOnExit": "graceful",
-            "colorScheme": "GitHub Dark",
-            "cursorColor": "#C9D1D9",
-            "cursorShape": "bar",
-            "font": {
-                "face": "JetBrainsMono Nerd Font Mono",
-                "size": 12,
-                "weight": "normal"
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "language": "en-US",
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": 
+        {
+            "adjustIndistinguishableColors": "always",
+            "colorScheme": "One Half Dark",
+            "font": 
+            {
+                "face": "mononoki Nerd Font Mono",
+                "size": 14.0,
+                "weight": "medium"
             },
-            "icon": "https://img.icons8.com/external-flaticons-flat-flat-icons/344/external-terminal-computer-programming-flaticons-flat-flat-icons.png",
-            "intenseTextStyle": "bold",
-            "opacity": 100,
-            "padding": "3",
+            "opacity": 90,
             "scrollbarState": "hidden",
-            "startingDirectory": "%USERPROFILE%",
+            "startingDirectory": "E:\\workspace",
             "useAcrylic": true
         },
-        "list": [
+        "list": 
+        [
             {
-                "backgroundImageOpacity": 1.0,
-                "commandline": "E:\\Scoop\\apps\\powershell\\current\\pwsh.exe",
-                "guid": "{f5836e0e-57bd-4378-9a7c-76d72b7932bd}",
-                "hidden": false,
-                "name": "PowerShell 7",
-                "opacity": 80,
-                "padding": "3",
-                "startingDirectory": "D:\\workspace\\github",
-                "tabTitle": "PowerShell"
-            },
-            {
-                "commandline": "C:\\WINDOWS\\system32\\wsl.exe -d Fedora",
-                "guid": "{aa8efdb5-3cbe-50b2-a332-9203dc1ee217}",
-                "hidden": false,
-                "name": "Fedora37",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "G:\\wsl\\fedora\\rootfs\\root",
-                "tabTitle": "Fedora"
-            },
-            {
-                "guid": "{dc517bd3-1a94-52ad-aee4-153c41eedb0c}",
-                "hidden": false,
-                "name": "Debian11",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "G:\\wsl\\Debian-stable\\rootfs\\root",
-                "tabTitle": "Debian"
-            },
-            {
-                "guid": "{3fb45562-00bd-5466-9ac7-4105c4c2b212}",
-                "hidden": false,
-                "name": "Alpine3",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "G:\\wsl\\Alpine3\\rootfs\\root",
-                "tabTitle": "Alpine"
-            },
-            {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": false,
-                "name": "Ubuntu22",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "G:\\wsl\\Ubuntu\\rootfs\\root",
-                "tabTitle": "Ubuntu"
-            },
-            {
-                "commandline": "E:\\Scoop\\apps\\nu\\current\\nu.exe",
-                "guid": "{aab79973-318f-43b6-a9bc-b4096493753f}",
-                "hidden": false,
-                "icon": "https://www.nushell.sh/icon.png",
-                "intenseTextStyle": "none",
-                "name": "Nushell",
-                "source": "nu",
-                "startingDirectory": "D:\\workspace\\github",
-                "tabTitle": "NuShell"
-            },
-            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
-                "name": "Windows PowerShell",
-                "startingDirectory": "D:\\workspace\\github"
+                "name": "Windows PowerShell"
             },
             {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
-                "name": "Command Prompt",
-                "startingDirectory": "D:\\workspace\\github"
+                "name": "CMD"
+            },
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{c121d958-c215-5e62-b1b3-505d94619dd4}",
+                "hidden": false,
+                "name": "SUSE",
+                "source": "Windows.Terminal.Wsl"
             },
             {
                 "backgroundImageOpacity": 1.0,
@@ -140,7 +95,8 @@
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -186,29 +142,6 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#C19C00"
-        },
-        {
-            "background": "#101216",
-            "black": "#000000",
-            "blue": "#6CA4F8",
-            "brightBlack": "#4D4D4D",
-            "brightBlue": "#6CA4F8",
-            "brightCyan": "#2B7489",
-            "brightGreen": "#56D364",
-            "brightPurple": "#DB61A2",
-            "brightRed": "#F78166",
-            "brightWhite": "#FFFFFF",
-            "brightYellow": "#E3B341",
-            "cursorColor": "#C9D1D9",
-            "cyan": "#2B7489",
-            "foreground": "#8B949E",
-            "green": "#56D364",
-            "name": "GitHub Dark",
-            "purple": "#DB61A2",
-            "red": "#F78166",
-            "selectionBackground": "#3B5070",
-            "white": "#FFFFFF",
-            "yellow": "#E3B341"
         },
         {
             "background": "#282C34",
@@ -349,6 +282,29 @@
             "yellow": "#C4A000"
         },
         {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
+        },
+        {
             "background": "#000000",
             "black": "#000000",
             "blue": "#000080",
@@ -373,7 +329,6 @@
         }
     ],
     "startOnUserLogin": false,
-    "tabWidthMode": "titleLength",
     "theme": "system",
-    "useAcrylicInTabRow": true
+    "themes": []
 }

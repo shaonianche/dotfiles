@@ -8,7 +8,7 @@ gb="for-each-ref --sort=-committerdate refs/heads/ --format=' %(color:green)%(co
 
 [user]
 email = github@duanfei.org
-name = shaoanianche
+	name = Friends A.
 signingkey = D254E56FA2C8CFB5
 
 [commit]
@@ -89,3 +89,10 @@ insteadOf = gist:
 # Local/private config goes in the include
 [include]
 path = .gitconfig.local
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential "helperselector"]
+	selected = manager-core
