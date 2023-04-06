@@ -37,9 +37,7 @@ function New-SymbolicLink {
         ".config/git/.gitignore"
         ".config/git/.gitattributes",
         ".config/vim/.vimrc",
-        ".config/starship/starship.toml",
-        ".config/.gnupg/gpg-agent.conf",
-        ".config/.gnupg/gpg.conf",
+        ".config/starship.toml",
         ".config/.cargo/config"
     )
     foreach ($file in $files) {
@@ -48,11 +46,13 @@ function New-SymbolicLink {
 }
 New-SymbolicLink
 
-Set-SymbolicLink -Target "/windows/scoop/persist/windows-terminal/settings.json" -Path "$env:LOCALAPPDATA/Microsoft/Windows Terminal/settings.json"
-Set-SymbolicLink -Target "/windows/git/config.win.conf"  -Path ".config/git/config.local"
-Set-SymbolicLink -Target "/windows/pshazz/config.json" -Path "$HOME/pshazz/config.json"
-Set-SymbolicLink -Target "/windows/scoop/config.json" -Path "$HOME/scoop/config.json"
-Set-SymbolicLink -Targe "/windows/powershell/profile.ps1"  -Path $PROFILE.CurrentUserAllHosts
+Set-SymbolicLink -Target "windows/scoop/persist/windows-terminal/settings.json" -Path "$env:LOCALAPPDATA/Microsoft/Windows Terminal/settings.json"
+Set-SymbolicLink -Target ".config/.gnupg/gpg.conf" -Path "$HOME/.gnupg/gpg.conf"
+Set-SymbolicLink -Target ".config/.gnupg/gpg-agent.conf" -Path "$HOME/.gnupg/gpg-agent.conf"
+Set-SymbolicLink -Target "windows/git/config.win.conf"  -Path ".config/git/config.local"
+Set-SymbolicLink -Target "windows/pshazz/config.json" -Path "$HOME/pshazz/config.json"
+Set-SymbolicLink -Target "windows/scoop/config.json" -Path "$HOME/scoop/config.json"
+Set-SymbolicLink -Targe "windows/powershell/profile.ps1"  -Path $PROFILE.CurrentUserAllHosts
 
 
 # Runtime generated dotfiles
