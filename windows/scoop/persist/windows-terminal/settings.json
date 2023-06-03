@@ -44,6 +44,7 @@
         "defaults": 
         {
             "adjustIndistinguishableColors": "always",
+            "bellStyle": "window",
             "colorScheme": 
             {
                 "dark": "Tango Dark",
@@ -51,8 +52,8 @@
             },
             "font": 
             {
-                "face": "mononoki Nerd Font Mono",
-                "size": 14.0,
+                "face": "MonoLisa Nerd Font Mono",
+                "size": 13.0,
                 "weight": "medium"
             },
             "opacity": 90,
@@ -75,6 +76,12 @@
                 "name": "CMD"
             },
             {
+                "font": 
+                {
+                    "face": "MonoLisa Nerd Font Mono",
+                    "size": 13.0,
+                    "weight": "normal"
+                },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
