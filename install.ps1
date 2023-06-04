@@ -47,6 +47,7 @@ function New-SymbolicLink {
 New-SymbolicLink
 
 Set-SymbolicLink -Target "windows/scoop/persist/windows-terminal/settings.json" -Path "$env:LOCALAPPDATA/Microsoft/Windows Terminal/settings.json"
+Set-SymbolicLink -Target "windows/scoop/persist/windows-terminal/settings.json" -Path "$env:LOCALAPPDATA/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json"
 Set-SymbolicLink -Target ".config/.gnupg/gpg.conf" -Path "$HOME/.gnupg/gpg.conf"
 Set-SymbolicLink -Target ".config/.gnupg/gpg-agent.conf" -Path "$HOME/.gnupg/gpg-agent.conf"
 Set-SymbolicLink -Target "windows/git/config.win.conf"  -Path ".config/git/config.local"
