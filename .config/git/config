@@ -96,3 +96,5 @@ process = git-lfs filter-process
 required = true
 [credential "helperselector"]
 	selected = manager-ui
+[credential]
+	helper = store
