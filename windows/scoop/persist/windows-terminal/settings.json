@@ -4,10 +4,6 @@
     "actions": 
     [
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
             "command": 
             {
                 "action": "splitPane",
@@ -15,6 +11,10 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command": "paste",
@@ -52,8 +52,8 @@
             "cursorShape": "underscore",
             "font": 
             {
-                "cellHeight": "1.4",
-                "face": "Sarasa Mono CL Nerd Font",
+                "cellHeight": "1.5",
+                "face": "Fira Mono for Powerline",
                 "size": 12.0,
                 "weight": "normal"
             },
@@ -85,7 +85,7 @@
             },
             {
                 "backgroundImageOpacity": 1.0,
-                "commandline": "mingw64.cmd -shell bash",
+                "commandline": "mingw64.cmd -shell fish",
                 "guid": "{698db546-33f4-49e2-bd8f-83a781755f14}",
                 "hidden": false,
                 "name": "MSYS2",
@@ -99,6 +99,18 @@
                 "hidden": false,
                 "name": "PowerShell 7 Preview",
                 "source": "Windows.Terminal.PowershellCore"
+            },
+            {
+                "guid": "{9e8a09c3-5ac2-5899-befc-2945998c22ce}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{363aff47-ef5a-57be-ad5d-acaa93364548}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
