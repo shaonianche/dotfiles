@@ -16,6 +16,14 @@ alias ryabai="launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai""
 alias brewun="brew uninstall --cask --force --zap"
 alias pc="proxychains4"
 
+# https://github.com/nodejs/corepack#corepack-enable--name
+alias yarn="corepack yarn"
+alias yarnpkg="corepack yarnpkg"
+alias pnpm="corepack pnpm"
+alias pnpx="corepack pnpx"
+alias npm="corepack npm"
+alias npx="corepack npx"
+
 # Empty the Trash on all mounted volumes and the main HDD
 
 # Also, clear Apple’s System Logs to improve shell startup speed

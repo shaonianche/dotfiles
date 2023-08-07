@@ -35,7 +35,7 @@ function delete_files() {
   local src_dir="$SRC_INSTALL_HOME"
   local files=("$@")
   for file in "${files[@]}"; do
-    rm -rf "$src_dir/$file"
+    rm -rf "${src_dir/$file/:?}"
   done
 }
 
