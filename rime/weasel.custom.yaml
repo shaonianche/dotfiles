@@ -15,7 +15,6 @@ patch:
     warp.exe: { ascii_mode: true }
     conemu64.exe: { ascii_mode: true }
     conemuc64.exe: { ascii_mode: true }
-    cursor.exe: { ascii_mode: true }
     explorer.exe: { ascii_mode: true }
     mintty.exe: { ascii_mode: true }
     msedge.exe: { ascii_mode: true }
