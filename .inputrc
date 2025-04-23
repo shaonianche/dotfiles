@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148
 # Make Tab autocomplete regardless of filename case
 
 set completion-ignore-case on

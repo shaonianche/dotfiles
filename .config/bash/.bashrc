@@ -3,7 +3,6 @@
 # This bashrc file is created by Chawye Hsu, licensed under the MIT license.
 #------------------------------------------------------------------------------#
 # Support Platforms:
-#    Windows: Git-Bash/MSYS2/MinGW
 #      macOS: Bash
 #      Linux: Bash
 #------------------------------------------------------------------------------#
@@ -33,46 +32,6 @@ done
 complete -W "NSGlobalDomain" defaults
 
 #-------------------------------------#
-#  ssh-agent on Git-Bash/MSYS2/MinGW  #
-#-------------------------------------#
-# ref: https://help.github.com/articles/working-with-ssh-key-passphrases/
-if [ "$OSTYPE" == "msys" ] && [ -x "$(command -v ssh)" ]; then
-    # ensure .ssh directory exists
-    [ ! -d "$HOME/.ssh" ] && mkdir -p "$HOME/.ssh" >|/dev/null
-    # test ssh is Win32-OpenSSH or not
-    if [[ ! "$(ssh -V 2>&1)" == *"Windows"* ]]; then
-        # we use $USERPROFILE instead of $HOME to locate SSH ENV,
-        # so we can share ssh env between Git-Bash and MSYS2,
-        # but be aware of that Win32-OpenSSH does not use SSH ENV
-        agentenv="$HOME/.ssh/agent.env"
-        # load ssh env
-        # shellcheck disable=SC1090
-        [ -f "$agentenv" ] && source "$agentenv" >|/dev/null
-        # agentstatus:
-        #   0=agent running w/ key;
-        #   1=agent w/o key;
-        #   2=agent not running.
-        agentstatus=$(
-            ssh-add -l >|/dev/null 2>&1
-            echo $?
-        )
-        if [ ! "$SSH_AUTH_SOCK" ] || [ "$agentstatus" -eq 2 ]; then
-            # shellcheck disable=SC1090
-            (
-                umask 077
-                ssh-agent >|"$agentenv"
-            ) && source "$agentenv" >|/dev/null
-            ssh-add
-        elif [ "$SSH_AUTH_SOCK" ] && [ "$agentstatus" -eq 1 ]; then
-            ssh-add
-        fi
-        unset agentenv
-    else
-        ssh-agent >|/dev/null
-        ssh-add
-    fi
-fi
-#-------------------------------------#
 # Program-languages specific settings #
 #-------------------------------------#
 
@@ -86,6 +45,8 @@ source "$HOME/.export"
 
 if [ -d ~/.bash_completion.d ]; then
     for file in ~/.bash_completion.d/*; do
+        # shellcheck disable=SC1090
+        # shellcheck disable=SC2086
         . $file
     done
 fi
@@ -102,26 +63,23 @@ fi
 function styled_prompt() {
     # Color table
     local RESET="\[\033[0m\]"
+    # shellcheck disable=SC2034
     local BLACK="\[\033[0;30m\]"
+    # shellcheck disable=SC2034
     local RED="\[\033[0;31m\]"
     local GREEN="\[\033[0;32m\]"
     local YELLOW="\[\033[0;33m\]"
+    # shellcheck disable=SC2034
     local BLUE="\[\033[0;34m\]"
+    # shellcheck disable=SC2034
     local MAGENTA="\[\033[0;35m\]"
     local CYAN="\[\033[0;36m\]"
+    # shellcheck disable=SC2034
     local WHITE="\[\033[0;37m\]"
     # Terminal title
     local TERMTITLE="\[\e]0; \w\a\]"
 
-    # Special system environment detection: WSL, MSYS2/MinGW
-    if [[ "$(uname -r)" == *"icrosoft"* ]]; then
-        DIST="$MAGENTA(WSL)$RESET"
-    elif [ -n "$MSYSTEM" ]; then
-        DIST="$MAGENTA($MSYSTEM)$RESET"
-    else
-        DIST=""
-    fi
-
+    DIST=""
     # git-prompt
     [ "$(type -t __git_ps1)" = 'function' ] && GITPS1="\$(__git_ps1 ' (%s)')"
 
@@ -130,9 +88,10 @@ function styled_prompt() {
     #  https://stackoverflow.com/questions/21517281/
     # __git_ps1 not update issue:
     #  https://askubuntu.com/questions/896445/#comment2153553_1163371
-    PS1="$TERMTITLE$GREEN\h$DIST $YELLOW\W$CYAN$GITPS1$RESET"$'\n\$ '
+    PS1="$TERMTITLE$GREEN\h$DIST $YELLOW\W$CYAN$GITPS1$RESET"$'\n$ '
 }
 styled_prompt
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
+# shellcheck disable=SC1090
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
