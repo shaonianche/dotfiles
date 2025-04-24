@@ -84,15 +84,15 @@ required = true
 selected = manager
 
 [credential "https://github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
+helper =
+helper = !/usr/bin/gh auth git-credential
 
 [credential "https://gist.github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
+helper =
+helper = !/usr/bin/gh auth git-credential
 
 [credential]
-	helper = !gh auth git-credential
+helper = !gh auth git-credential
 
 [alias]
 glg = "log --oneline --decorate --all --graph"
