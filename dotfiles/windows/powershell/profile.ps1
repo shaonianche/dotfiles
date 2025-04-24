@@ -115,6 +115,6 @@ Import-Module -Name Microsoft.WinGet.CommandNotFound -ErrorAction SilentlyContin
 if (Get-Command Set-PsFzfOption -ErrorAction SilentlyContinue) {
         Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 }
-if (Test-Path "$HOME/.venv/ddddripts/Activate.ps1") {
+if (Test-Path "$HOME/.venv/Scripts/Activate.ps1") {
         . $HOME/.venv/Scripts/Activate.ps1
 }
