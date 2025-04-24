@@ -1,21 +1,10 @@
-[alias]
-dft = "difftool"
-glg = "log --oneline --decorate --all --graph"
-changelog = "log origin..HEAD --format='* %s%n%w(,4,4)%+b'"
-workon = "!f(){ git fetch && git checkout -b \"$1\" $(git symbolic-ref refs/remotes/origin/HEAD | sed \"s@^refs/remotes/@@\"); };f"
-lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
-gb="for-each-ref --sort=-committerdate refs/heads/ --format=' %(color:green)%(committerdate:relative)%(color:reset)%09%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:magenta)%(authorname)%(color:reset) • %(contents:subject)'"
-
 [user]
 email = github@duanfei.org
-name = Friends A.
-signingkey = D254E57FA2C8CFB5
+name = shaonianche
+signingkey = ABC99D714A235298
 
 [commit]
 gpgsign = true
-
-[hub]
-protocol = https
 
 [color]
 diff = auto
@@ -33,6 +22,7 @@ autosetuprebase = always
 quotepath = false
 safecrlf = false
 autocrlf = input
+editor = vim
 symlinks = true
 # Use custom `.gitignore` and `.gitattributes`.
 excludesfile = ~/.gitignore
@@ -70,9 +60,7 @@ conflictstyle = diff3
 [diff]
 colorMoved = default
 external = difft
-
-[tag]
-forcesignannotated = true
+tool = difft
 
 # GitHub URL shorthands
 [url "https://github.com/"]
@@ -86,15 +74,18 @@ insteadOf = git://gist.github.com/
 insteadOf = git@gist.github.com:
 insteadOf = gist:
 
-# Local/private config goes in the include
-[include]
-path = .gitconfig.local
 [filter "lfs"]
 clean = git-lfs clean -- %f
 smudge = git-lfs smudge -- %f
 process = git-lfs filter-process
 required = true
+
 [credential "helperselector"]
-selected = manager-ui
-[credential]
-helper = store
+selected = manager
+
+[alias]
+glg = "log --oneline --decorate --all --graph"
+changelog = "log origin..HEAD --format='* %s%n%w(,4,4)%+b'"
+workon = "!f(){ git fetch && git checkout -b \"$1\" $(git symbolic-ref refs/remotes/origin/HEAD | sed \"s@^refs/remotes/@@\"); };f"
+lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
+gb="for-each-ref --sort=-committerdate refs/heads/ --format=' %(color:green)%(committerdate:relative)%(color:reset)%09%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:magenta)%(authorname)%(color:reset) • %(contents:subject)'"
