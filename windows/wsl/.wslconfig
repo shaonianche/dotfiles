@@ -1,5 +1,0 @@
-# Docs: https://docs.microsoft.com/windows/wsl/wsl-config
-[wsl]
-memory=16GB
-processors=8
-swap=8GB
