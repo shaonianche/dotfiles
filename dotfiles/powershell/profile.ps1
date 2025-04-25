@@ -64,7 +64,7 @@ Set-Alias here Open-Here -Option AllScope
 Set-Alias neofetch fastfetch
 Set-Alias vim nvim
 
-function ls { eza -al @args }
+function ls { eza -al --icons --grid @args }
 Set-Alias ll ls -Option AllScope
 Set-Alias wget wget2
 
