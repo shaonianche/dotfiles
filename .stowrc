@@ -1,5 +1,5 @@
 --target=${HOME}
---dir=stow
+--dir=${HOME}/workspaces/dotfiles/stow
 --ignore=.DS_Store
 --ignore=.git
 --ignore=.gitignore
