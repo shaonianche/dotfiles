@@ -1,1 +1,8 @@
-target ./dotfiles
+--target=${HOME}
+--dir=stow
+--ignore=.DS_Store
+--ignore=.git
+--ignore=.gitignore
+--ignore=^/README.*
+--ignore=^/LICENSE.*
+--verbose=2
