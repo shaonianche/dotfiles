@@ -1,0 +1,338 @@
+general:
+  # WM（窗口管理器）启动时运行的命令。这对于运行脚本或启动其他应用程序很有用。
+  # 示例：下面的命令启动 Zebar。
+  startup_commands: ["shell-exec zebar"]
+
+  # WM 关闭前运行的命令。
+  # 示例：下面的命令杀死 Zebar。
+  shutdown_commands: ["shell-exec taskkill /IM zebar.exe /F"]
+
+  # WM 配置重新加载后运行的命令。
+  config_reload_commands: []
+
+  # 是否自动聚焦光标下方的窗口。
+  focus_follows_cursor: false
+
+  # 当聚焦当前工作区时，是否在当前工作区和先前聚焦的工作区之间来回切换。
+  toggle_workspace_on_refocus: false
+
+  cursor_jump:
+    # 是否在指定的触发器上自动移动光标。
+    enabled: true
+
+    # 光标跳转的触发器：
+    # - 'monitor_focus': 在显示器之间切换焦点时跳转。
+    # - 'window_focus': 在窗口之间切换焦点时跳转。
+    trigger: "monitor_focus"
+
+  # 切换工作区时应如何隐藏窗口。
+  # - 'cloak': 推荐。隐藏窗口无动画。
+  # - 'hide': 旧方法（v3.5 及更早版本），有短暂动画，但对某些应用程序存在稳定性问题。
+  hide_method: "cloak"
+
+  # 影响哪些窗口显示在原生 Windows 任务栏中。如果 `hide_method: 'hide'` 则无效。
+  # - 'true': 显示所有窗口（无论在哪个工作区）。
+  # - 'false': 仅显示当前显示的工作区中的窗口。
+  show_all_in_taskbar: false
+
+gaps:
+  # 是否根据显示器的 DPI 缩放间隙。
+  scale_with_dpi: true
+
+  # 相邻窗口之间的间隙。
+  inner_gap: "10px"
+
+  # 窗口与屏幕边缘之间的间隙。
+  outer_gap:
+    top: "50px"
+    right: "10px"
+    bottom: "10px"
+    left: "10px"
+
+window_effects:
+  # 应用于聚焦窗口的视觉效果。
+  focused_window:
+    # 用彩色边框高亮窗口。
+    # ** 由于 API 限制，仅适用于 Windows 11。
+    border:
+      enabled: true
+      color: "#8dbcff"
+
+    # 从窗口框架中移除标题栏。请注意，这可能导致某些应用程序出现渲染问题。
+    hide_title_bar:
+      enabled: false
+
+    # 更改窗口框架的圆角样式。
+    # ** 由于 API 限制，仅适用于 Windows 11。
+    corner_style:
+      enabled: false
+      # 允许的值：'square', 'rounded', 'small_rounded'。
+      style: "square"
+
+    # 更改窗口的透明度。
+    transparency:
+      enabled: false
+      # 可以是 '95%' 或 '0.95' 之类的，用于轻微透明的窗口。
+      # '0' 或 '0%' 是完全透明（因此无法聚焦）。
+      opacity: "90%"
+
+  # 应用于非聚焦窗口的视觉效果。
+  other_windows:
+    border:
+      enabled: true
+      color: "#a1a1a1"
+    hide_title_bar:
+      enabled: false
+    corner_style:
+      enabled: false
+      style: "square"
+    transparency:
+      enabled: false
+      opacity: "0%"
+
+window_behavior:
+  # 新窗口尽可能以这种状态创建。
+  # 允许的值：'tiling'（平铺）, 'floating'（浮动）。
+  initial_state: "tiling"
+
+  # 设置新窗口创建时的默认选项。这也改变了状态更改命令（如 `set-floating`）在不带任何标志使用时的默认值。
+  state_defaults:
+    floating:
+      # 是否默认居中浮动窗口。
+      centered: true
+
+      # 是否将浮动窗口显示为始终置顶。
+      shown_on_top: false
+
+    fullscreen:
+      # 如果可能，最大化窗口。如果窗口没有最大化按钮，则会正常全屏显示。
+      maximized: false
+
+      # 是否将全屏窗口显示为始终置顶。
+      shown_on_top: false
+
+workspaces:
+  - name: "1"
+    display_name: "Work"
+    bind_to_monitor: 1
+  - name: "2"
+  - name: "3"
+  - name: "4"
+  - name: "5"
+  - name: "6"
+  - name: "7"
+  - name: "8"
+  - name: "9"
+
+window_rules:
+  - commands: ["ignore"]
+    match:
+      # 忽略任何 Zebar 窗口。
+      - window_process: { equals: "zebar" }
+      - window_process: { equals: "steamwebhelper" }
+      - window_process: { equals: "Jantama_MahjongSoul" }
+
+      # 忽略浏览器的画中画窗口。
+      - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
+        window_class: { regex: "Chrome_WidgetWin_1|MozillaDialogClass" }
+
+      # 各种第三方应用程序的忽略规则。
+      - window_process: { equals: "PowerToys" }
+        window_class: { regex: 'HwndWrapper\[PowerToys\.PowerAccent.*?\]' }
+
+      - window_process: { equals: "PowerToys" }
+        window_title: { regex: ".*? - Peek" }
+
+      - window_process: { equals: "Lively" }
+        window_class: { regex: "HwndWrapper" }
+
+  - commands: ["set-floating"]
+    match:
+      # 各种第三方应用程序的浮动规则。
+
+      - window_process: { regex: "Weixin" }
+        window_title: { regex: "微信" }
+
+      - window_process: { regex: "Telegram" }
+        window_title: { regex: "Telegram*" }
+
+      - window_process: { regex: "Discord" }
+        window_title: { regex: "Friends - Discord" }
+
+      - window_process: { regex: "rune" }
+        window_title: { regex: "Rune*" }
+
+      - window_process: { regex: "Spotify" }
+        window_title: { regex: "Spotify Premium" }
+
+      - window_process: { regex: "explorer" }
+        window_class: { regex: "CabinetWClass" }
+
+      - window_title: { regex: "子母畫面" }
+        window_class: { regex: "MozillaDialogClass" }
+
+      - window_title: { regex: "命令面板|管理员:PowerToys 设置" }
+        window_class: { regex: "WinUIDesktopWin32WindowClass" }
+
+      - window_title: { regex: "Settings" }
+        window_class: { regex: "ApplicationFrameWindow" }
+
+      - window_title: { regex: "Task Manager" }
+        window_class: { regex: "TaskManagerWindow" }
+
+binding_modes:
+  # 启用后，可以通过箭头键或 HJKL 调整聚焦窗口的大小。
+  - name: "resize"
+    keybindings:
+      - commands: ["resize --width -2%"]
+        bindings: ["h", "left"]
+      - commands: ["resize --width +2%"]
+        bindings: ["l", "right"]
+      - commands: ["resize --height +2%"]
+        bindings: ["k", "up"]
+      - commands: ["resize --height -2%"]
+        bindings: ["j", "down"]
+      # 按 enter/escape 返回默认键位绑定。
+      - commands: ["wm-disable-binding-mode --name resize"]
+        bindings: ["escape", "enter"]
+
+keybindings:
+  # 向给定方向移动焦点。
+  - commands: ["focus --direction left"]
+    bindings: ["alt+h", "alt+left"]
+  - commands: ["focus --direction right"]
+    bindings: ["alt+l", "alt+right"]
+  - commands: ["focus --direction up"]
+    bindings: ["alt+k", "alt+up"]
+  - commands: ["focus --direction down"]
+    bindings: ["alt+j", "alt+down"]
+
+  # 向给定方向移动聚焦窗口。
+  - commands: ["move --direction left"]
+    bindings: ["alt+shift+h", "alt+shift+left"]
+  - commands: ["move --direction right"]
+    bindings: ["alt+shift+l", "alt+shift+right"]
+  - commands: ["move --direction up"]
+    bindings: ["alt+shift+k", "alt+shift+up"]
+  - commands: ["move --direction down"]
+    bindings: ["alt+shift+j", "alt+shift+down"]
+
+  # 按百分比或像素值调整聚焦窗口的大小。
+  - commands: ["resize --width -2%"]
+    bindings: ["alt+u"]
+  - commands: ["resize --width +2%"]
+    bindings: ["alt+p"]
+  - commands: ["resize --height +2%"]
+    bindings: ["alt+o"]
+  - commands: ["resize --height -2%"]
+    bindings: ["alt+i"]
+
+  # 作为上述调整大小键位绑定的替代方案，调整大小模式允许通过箭头键或 HJKL 进行调整。
+  # 该绑定模式在上面定义，名称为 'resize'。
+  - commands: ["wm-enable-binding-mode --name resize"]
+    bindings: ["alt+r"]
+
+  # 禁用窗口管理和所有其他键位绑定，直到再次按下 alt+shift+p。
+  - commands: ["wm-toggle-pause"]
+    bindings: ["alt+shift+p"]
+
+  # 更改平铺方向。这决定了新的平铺窗口将被插入到哪里。
+  - commands: ["toggle-tiling-direction"]
+    bindings: ["alt+v"]
+
+  # 将聚焦窗口更改为浮动状态。
+  - commands: ["toggle-floating --centered"]
+    bindings: ["alt+shift+space"]
+
+  # 将聚焦窗口更改为平铺状态。
+  - commands: ["toggle-tiling"]
+    bindings: ["alt+t"]
+
+  # 将聚焦窗口更改为全屏状态。
+  # - commands: ["toggle-fullscreen"]
+  #   bindings: ["alt+f"]
+
+  # 最小化聚焦窗口。
+  # - commands: ["toggle-minimized"]
+  #   bindings: ["alt+m"]
+
+  # 关闭聚焦窗口。
+  # - commands: ["close"]
+  #   bindings: ["alt+shift+q"]
+
+  # 安全地终止 GlazeWM 进程。
+  - commands: ["wm-exit"]
+    bindings: ["alt+shift+e"]
+
+  # 重新评估配置文件。
+  - commands: ["wm-reload-config"]
+    bindings: ["alt+shift+r"]
+
+  # 重绘所有窗口。
+  - commands: ["wm-redraw"]
+    bindings: ["alt+shift+w"]
+
+  # 启动 CMD 终端。或者，使用 `shell-exec wt` 或
+  # `shell-exec %ProgramFiles%/Git/git-bash.exe` 分别启动 Windows
+  # Terminal 和 Git Bash。
+  # - commands: ["shell-exec cmd"]
+  #   bindings: ["alt+enter"]
+
+  # 聚焦 `workspaces` 配置中定义的下一个/上一个活动工作区。
+  - commands: ["focus --next-active-workspace"]
+    bindings: ["alt+s"]
+  - commands: ["focus --prev-active-workspace"]
+    bindings: ["alt+a"]
+
+  # 聚焦上次具有焦点的工作区。
+  # - commands: ["focus --recent-workspace"]
+  #   bindings: ["alt+d"]
+
+  - commands: ["focus --workspace 1"]
+    bindings: ["alt+1"]
+  - commands: ["focus --workspace 2"]
+    bindings: ["alt+2"]
+  - commands: ["focus --workspace 3"]
+    bindings: ["alt+3"]
+  - commands: ["focus --workspace 4"]
+    bindings: ["alt+4"]
+  - commands: ["focus --workspace 5"]
+    bindings: ["alt+5"]
+  - commands: ["focus --workspace 6"]
+    bindings: ["alt+6"]
+  - commands: ["focus --workspace 7"]
+    bindings: ["alt+7"]
+  - commands: ["focus --workspace 8"]
+    bindings: ["alt+8"]
+  - commands: ["focus --workspace 9"]
+    bindings: ["alt+9"]
+
+  # 将聚焦窗口的父工作区移动到给定方向的显示器。
+  - commands: ["move-workspace --direction left"]
+    bindings: ["alt+shift+a"]
+  - commands: ["move-workspace --direction right"]
+    bindings: ["alt+shift+f"]
+  - commands: ["move-workspace --direction up"]
+    bindings: ["alt+shift+d"]
+  - commands: ["move-workspace --direction down"]
+    bindings: ["alt+shift+s"]
+
+  # 将聚焦窗口移动到 `workspaces` 配置中定义的工作区。
+  - commands: ["move --workspace 1", "focus --workspace 1"]
+    bindings: ["alt+shift+1"]
+  - commands: ["move --workspace 2", "focus --workspace 2"]
+    bindings: ["alt+shift+2"]
+  - commands: ["move --workspace 3", "focus --workspace 3"]
+    bindings: ["alt+shift+3"]
+  - commands: ["move --workspace 4", "focus --workspace 4"]
+    bindings: ["alt+shift+4"]
+  - commands: ["move --workspace 5", "focus --workspace 5"]
+    bindings: ["alt+shift+5"]
+  - commands: ["move --workspace 6", "focus --workspace 6"]
+    bindings: ["alt+shift+6"]
+  - commands: ["move --workspace 7", "focus --workspace 7"]
+    bindings: ["alt+shift+7"]
+  - commands: ["move --workspace 8", "focus --workspace 8"]
+    bindings: ["alt+shift+8"]
+  - commands: ["move --workspace 9", "focus --workspace 9"]
+    bindings: ["alt+shift+9"]

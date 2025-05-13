@@ -1,4 +1,4 @@
-﻿#Requires -Version 5.1
+#Requires -Version 5.1
 
 # 统一 $HOME 变量
 $Script:UNI_HOME = $env:USERPROFILE
