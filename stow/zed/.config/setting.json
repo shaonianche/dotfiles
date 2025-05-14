@@ -55,10 +55,18 @@
   "buffer_font_size": 16,
   "autosave": "on_focus_change",
   "format_on_save": "on",
+  "formatter": "language_server",
   "source.organizeImports": true,
   "source.fixAll.eslint": true,
   "autoscroll_on_clicks": true,
-  "formatter": "language_server",
+  "restore_on_startup": "last_session",
+  "scrollbar": {
+    "show": "never"
+  },
+  "terminal": {
+    "font_family": "JetBrainsMono Nerd Font Mono",
+    "blinking": "off"
+  },
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
