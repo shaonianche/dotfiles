@@ -7,7 +7,7 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "icon_theme": "Material Icon Theme",
+  "icon_theme": "Catppuccin Macchiato",
   "features": {
     "copilot": true
   },
@@ -47,7 +47,7 @@
   "theme": {
     "mode": "system",
     "light": "Github Light",
-    "dark": "Tokyo Night"
+    "dark": "One Dark"
   },
   "bash_keymap": "VsCode",
   "vim_mode": true,
@@ -75,14 +75,13 @@
   },
   "language_overrides": {
     "rust": {
-      "rust-analyzer.checkOnSave.enable": true,
       "rust-analyzer.inlayHints.enable": true,
       "rust-analyzer.inlayHints.typeHints": true,
       "rust-analyzer.inlayHints.parameterHints": true,
       "rust-analyzer.inlayHints.chainingHints": true,
       "rust-analyzer.inlayHints.closureReturnTypeHints": true,
       "rust-analyzer.inlayHints.lifetimeElisionHints": "always",
-      "rust-analyzer.lens.enable": true,
+      "rust-analyzer.lens.enable": true
     },
     "JavaScript": {
       "format_on_save": {
