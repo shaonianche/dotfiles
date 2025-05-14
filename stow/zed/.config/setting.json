@@ -1,0 +1,99 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "icon_theme": "Material Icon Theme",
+  "features": {
+    "copilot": true
+  },
+  "github_copilot": {
+    "chat": true
+  },
+  "assistant": {
+    "enabled": true,
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "language_models": {
+    "google": {
+      "available_models": [
+        {
+          "name": "gemini-2.5-pro-exp-03-25",
+          "display_name": "Gemini 2.5",
+          "max_tokens": 2000000
+        }
+      ]
+    },
+    "openai": {
+      "api_url": "https://api.burn.hair/v1",
+      "available_models": [
+        {
+          "name": "claude-3-5-haiku-20241022",
+          "display_name": "claude",
+          "max_tokens": 2000000
+        }
+      ],
+      "version": "1"
+    }
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Github Light",
+    "dark": "Tokyo Night"
+  },
+  "bash_keymap": "VsCode",
+  "vim_mode": true,
+  "font_family": "Maple Mono NF",
+  "buffer_font_size": 16,
+  "autosave": "on_focus_change",
+  "format_on_save": "on",
+  "source.organizeImports": true,
+  "source.fixAll.eslint": true,
+  "autoscroll_on_clicks": true,
+  "formatter": "language_server",
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "checkOnSave": {
+          "command": "clippy"
+        },
+        "rustfmt": {
+          "extraArgs": [
+            "+nightly"
+          ]
+        }
+      }
+    }
+  },
+  "language_overrides": {
+    "rust": {
+      "rust-analyzer.checkOnSave.enable": true,
+      "rust-analyzer.inlayHints.enable": true,
+      "rust-analyzer.inlayHints.typeHints": true,
+      "rust-analyzer.inlayHints.parameterHints": true,
+      "rust-analyzer.inlayHints.chainingHints": true,
+      "rust-analyzer.inlayHints.closureReturnTypeHints": true,
+      "rust-analyzer.inlayHints.lifetimeElisionHints": "always",
+      "rust-analyzer.lens.enable": true,
+    },
+    "JavaScript": {
+      "format_on_save": {
+        "external": {
+          "command": "prettier",
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}"
+          ]
+        }
+      }
+    }
+  }
+}

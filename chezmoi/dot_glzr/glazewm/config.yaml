@@ -97,6 +97,8 @@ window_rules:
     match:
       - window_process: { regex: "Weixin" }
         window_title: { regex: "微信" }
+        workspaces:
+          - "1"
 
       - window_process: { regex: "Telegram" }
         window_title: { regex: "Telegram*" }
