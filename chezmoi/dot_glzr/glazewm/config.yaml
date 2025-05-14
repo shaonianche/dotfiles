@@ -15,7 +15,7 @@ gaps:
   scale_with_dpi: true
   inner_gap: "10px"
   outer_gap:
-    top: "50px"
+    top: "20px"
     right: "10px"
     bottom: "10px"
     left: "10px"
@@ -64,7 +64,6 @@ window_behavior:
 
 workspaces:
   - name: "1"
-    display_name: "Work"
     bind_to_monitor: 1
   - name: "2"
   - name: "3"

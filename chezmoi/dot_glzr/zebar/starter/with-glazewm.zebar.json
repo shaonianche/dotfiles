@@ -16,11 +16,12 @@
   "presets": [
     {
       "name": "default",
-      "anchor": "top_left",
-      "offsetX": "10px",
-      "offsetY": "5px",
-      "width": "99%",
-      "height": "40px",
+      "anchor": "top_center",
+      "offsetX": "0px",
+      "offsetY": "0px",
+      "layer ": "top",
+      "width": "30%",
+      "height": "16px",
       "monitorSelection": {
         "type": "primary"
       },
