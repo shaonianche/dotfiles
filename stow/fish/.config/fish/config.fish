@@ -9,3 +9,6 @@ if status is-interactive
         source $HOME/.venv/bin/activate.fish
     end
 end
+
+function fish_greeting
+end
