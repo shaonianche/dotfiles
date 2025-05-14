@@ -1,5 +1,0 @@
-.wslconfig linguist-language=ini
-*.conf linguist-language=properties
-*.*rc linguist-language=properties
-* text=auto eol=lf
-
