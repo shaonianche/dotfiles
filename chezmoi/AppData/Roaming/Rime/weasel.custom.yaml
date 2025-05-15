@@ -42,10 +42,10 @@ patch:
     color_scheme_dark: ink
     color_space: srgb
     font_face: Mozilla Text BETA
-    font_point: 12
+    font_point: 10
     horizontal: true
     inline_preedit: true
-    label_font_point: 14
+    label_font_point: 12
     layout:
       {
         border: 1,
@@ -59,17 +59,51 @@ patch:
       }
 
   app_options:
-    chrome.exe: { ascii_mode: true }
-    code.exe: { ascii_mode: true }
-    vscode.exe: { ascii_mode: true }
-    vscode-insiders.exe: { ascii_mode: true }
-    cursor.exe: { ascii_mode: true }
-    warp.exe: { ascii_mode: true }
-    conemu64.exe: { ascii_mode: true }
-    conemuc64.exe: { ascii_mode: true }
-    explorer.exe: { ascii_mode: true }
-    mintty.exe: { ascii_mode: true }
-    msedge.exe: { ascii_mode: true }
-    zed.exe: { ascii_mode: true }
-    cmd.exe: { ascii_mode: true }
-    windowsterminal.exe: { ascii_mode: true }
+    chrome.exe:
+      ascii_mode: true
+    code.exe:
+      scii_mode: true
+      vim_mode: true
+    vscode.exe:
+      ascii_mode: true
+      vim_mode: true
+    nvim.exe:
+      ascii_mode: true
+      vim_mode: true
+    vscode-insiders.exe:
+      ascii_mode: true
+      vim_mode: true
+    cursor.exe:
+      ascii_mode: true
+      vim_mode: true
+    warp.exe:
+      ascii_mode: true
+      vim_mode: true
+    warppreview.exe:
+      ascii_mode: true
+      vim_mode: true
+    conemu64.exe:
+      ascii_mode: true
+    conemuc64.exe:
+      ascii_mode: true
+    explorer.exe:
+      ascii_mode: true
+    mintty.exe:
+      ascii_mode: true
+    msedge.exe:
+      ascii_mode: true
+    zed.exe:
+      ascii_mode: true
+      vim_mode: true
+    cmd.exe:
+      ascii_mode: true
+    pwsh.exe:
+      ascii_mode: true
+    windowsterminal.exe:
+      ascii_mode: true 
+    telegram.exe:
+      inline_preedit: true
+    firefox.exe:
+      inline_preedit: true
+    zen.exe:
+      inline_preedit: true
