@@ -1,26 +1,15 @@
+# windows
+# https://github.com/rime/weasel/wiki/Weasel-定制化#weaselyaml
+# https://github.com/rime/weasel/blob/bf4853dde1a4476489c4d7e85ab9407e5fc7c5f7/output/data/weasel.yaml#L4
 customization:
   distribution_code_name: Weasel
   distribution_version: 0.16.3
   generator: "Weasel::UIStyleSettings"
   modified_time: "Tue Mar 25 12:07:46 2025"
   rime_version: 1.13.1
+
 patch:
   # global_ascii: true
-  app_options:
-    chrome.exe: { ascii_mode: true }
-    code.exe: { ascii_mode: true }
-    vscode.exe: { ascii_mode: true }
-    vscode-insiders.exe: { ascii_mode: true }
-    cursor.exe: { ascii_mode: true }
-    warp.exe: { ascii_mode: true }
-    conemu64.exe: { ascii_mode: true }
-    conemuc64.exe: { ascii_mode: true }
-    explorer.exe: { ascii_mode: true }
-    mintty.exe: { ascii_mode: true }
-    msedge.exe: { ascii_mode: true }
-    zed.exe: { ascii_mode: true }
-    cmd.exe: { ascii_mode: true }
-    windowsterminal.exe: { ascii_mode: true }
 
   preset_color_schemes:
     ink:
@@ -68,4 +57,19 @@ patch:
         round_corner: 5,
         spacing: 5,
       }
-  "style/color_scheme": ink
+
+  app_options:
+    chrome.exe: { ascii_mode: true }
+    code.exe: { ascii_mode: true }
+    vscode.exe: { ascii_mode: true }
+    vscode-insiders.exe: { ascii_mode: true }
+    cursor.exe: { ascii_mode: true }
+    warp.exe: { ascii_mode: true }
+    conemu64.exe: { ascii_mode: true }
+    conemuc64.exe: { ascii_mode: true }
+    explorer.exe: { ascii_mode: true }
+    mintty.exe: { ascii_mode: true }
+    msedge.exe: { ascii_mode: true }
+    zed.exe: { ascii_mode: true }
+    cmd.exe: { ascii_mode: true }
+    windowsterminal.exe: { ascii_mode: true }

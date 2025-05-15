@@ -14,11 +14,11 @@
   "github_copilot": {
     "chat": true
   },
-  "assistant": {
+  "agent": {
     "enabled": true,
     "default_model": {
-      "provider": "zed.dev",
-      "model": "gemini-2.5-flash-preview"
+      "provider": "google",
+      "model": "gemini-2.5-flash-preview-04-17"
     },
     "version": "2"
   },
@@ -37,8 +37,8 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Github Light",
-    "dark": "One Dark"
+    "light": "Vitesse Light",
+    "dark": "Vitesse Dark"
   },
   "bash_keymap": "VsCode",
   "vim_mode": true,
@@ -52,7 +52,11 @@
   "autoscroll_on_clicks": true,
   "restore_on_startup": "last_session",
   "scrollbar": {
-    "show": "never"
+    "show": "never",
+    "axes": {
+      "horizontal": false,
+      "vertical": false
+    }
   },
   "terminal": {
     "font_family": "JetBrainsMono Nerd Font Mono",
@@ -65,7 +69,9 @@
           "command": "clippy"
         },
         "rustfmt": {
-          "extraArgs": ["+nightly"]
+          "extraArgs": [
+            "+nightly"
+          ]
         }
       }
     }
@@ -84,7 +90,10 @@
       "format_on_save": {
         "external": {
           "command": "prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
+          "arguments": [
+            "--stdin-filepath",
+            "{buffer_path}"
+          ]
         }
       }
     }
