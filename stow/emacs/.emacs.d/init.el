@@ -17,7 +17,7 @@
 (column-number-mode 1)
 (global-hl-line-mode 1)
 (setq display-line-numbers-type 'relative)
-(setq scroll-step 1                      
+(setq scroll-step 1
       scroll-conservatively 101
       auto-window-vscroll nil)
 
