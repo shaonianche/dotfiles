@@ -11,7 +11,7 @@ $python\
 $character"""
 
 [directory]
-style = "blue"
+style = "yellow"
 
 [character]
 success_symbol = "[❯](purple)"

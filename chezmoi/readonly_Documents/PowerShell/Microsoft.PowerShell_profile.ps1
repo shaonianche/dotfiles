@@ -19,7 +19,7 @@ function Add-ToPath {
 # 环境变量
 $env:LANG = 'en_US.UTF-8'
 $env:TZ = 'UTC-8'
-$env:EDITOR = 'nano'
+$env:EDITOR = 'vim'
 $env:RUSTUP_DIST_SERVER = 'https://mirrors.ustc.edu.cn/rust-static'
 $env:FORCE_COLOR = 'true'
 $env:GIT_PS1_SHOWDIRTYSTATE = 1
@@ -64,7 +64,7 @@ Set-Alias here Open-Here -Option AllScope
 Set-Alias neofetch fastfetch
 Set-Alias vim nvim
 
-function ls { eza -al --icons --grid @args }
+function ls { eza -al @args }
 Set-Alias ll ls -Option AllScope
 Set-Alias wget wget2
 
@@ -88,7 +88,7 @@ if (Get-Command winget -ErrorAction SilentlyContinue) {
 }
 
 # starship (Windows Terminal only)
-if ($env:WT_SESSION -and (Get-Command starship.exe -ErrorAction SilentlyContinue)) {
+if (Get-Command starship.exe -ErrorAction SilentlyContinue) {
         (& starship.exe 'init' 'powershell') | Out-String | Invoke-Expression
 }
 
