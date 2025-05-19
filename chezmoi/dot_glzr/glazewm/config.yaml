@@ -78,7 +78,6 @@ window_rules:
   - commands: ["ignore"]
     match:
       - window_process: { equals: "zebar" }
-      - window_process: { equals: "steamwebhelper" }
       - window_process: { equals: "Jantama_MahjongSoul" }
 
       - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
@@ -95,10 +94,10 @@ window_rules:
 
   - commands: ["set-floating"]
     match:
+      - window_process: { equals: "steamwebhelper" }
+
       - window_process: { regex: "Weixin" }
         window_title: { regex: "微信" }
-        workspaces:
-          - "1"
 
       - window_process: { regex: "Telegram" }
         window_title: { regex: "Telegram*" }
@@ -199,7 +198,7 @@ keybindings:
   - commands: ["wm-redraw"]
     bindings: ["alt+shift+w"]
 
-  - commands: ["shell-exec warp"]
+  - commands: ["shell-exec C:\\Users\\duanfei\\AppData\\Local\\Programs\\Warp\\warp.exe"]
     bindings: ["alt+enter"]
 
   - commands: ["focus --next-active-workspace"]
