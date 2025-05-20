@@ -3,6 +3,19 @@
 # 统一 $HOME 变量
 $Script:UNI_HOME = $env:USERPROFILE
 
+# 工具函数
+function Add-ToPath {
+        param (
+                [Parameter(Mandatory = $true)][string]$Path,
+                [switch]$AllowNotExist
+        )
+        if ((Test-Path $Path) -or $AllowNotExist) {
+                if (-not ($env:PATH -split ';' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ieq $Path })) {
+                        $env:PATH = "$Path;$env:PATH"
+                }
+        }
+}
+
 # 环境变量
 $env:LANG = 'en_US.UTF-8'
 $env:TZ = 'UTC-8'
@@ -57,19 +70,6 @@ Set-Alias wget wget2
 
 function Get-AllEnv { Get-ChildItem env: }
 Set-Alias export Get-AllEnv -Option AllScope
-
-# 工具函数
-function Add-ToPath {
-        param (
-                [Parameter(Mandatory = $true)][string]$Path,
-                [switch]$AllowNotExist
-        )
-        if ((Test-Path $Path) -or $AllowNotExist) {
-                if (-not ($env:PATH -split ';' | ForEach-Object { $_.Trim() } | Where-Object { $_ -ieq $Path })) {
-                        $env:PATH = "$Path;$env:PATH"
-                }
-        }
-}
 
 # 仅 Windows 下主机名格式化
 $env:COMPUTERNAME = $env:COMPUTERNAME.Substring(0, 1).ToUpper() + $env:COMPUTERNAME.Substring(1).ToLower()
