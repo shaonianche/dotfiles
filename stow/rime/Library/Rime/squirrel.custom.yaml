@@ -42,7 +42,7 @@ patch:
       hilited_back_color: 0xfbfbfb
       hilited_candidate_text_color: 0xbfcfd4
       hilited_candidate_back_color: 0x393a34
-      
+
     vitesse_dark:
       name: Vitesse Light
       text_color: 0xfbfbfb
@@ -52,7 +52,7 @@ patch:
       hilited_back_color: 0x1e1e1e
       hilited_candidate_text_color: 0xfbfbfb
       hilited_candidate_back_color: 0x393a34
-      
+
   # get Bundle Identifier
   # mdls -name kMDItemCFBundleIdentifier -raw /Applications/Visual\ Studio\ Code.app
   app_options:
@@ -70,7 +70,7 @@ patch:
     org.vim.MacVim:
       ascii_mode: true # 初始爲西文模式
       no_inline: true # 不使用行內編輯
-      vim_mode: true # 退出VIM插入模式自動切換輸入法狀態
+      vim_mode: true # 退出 VIM 插入模式自動切換輸入法狀態
     com.apple.dt.Xcode:
       ascii_mode: true
     com.barebones.textwrangler:
