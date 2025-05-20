@@ -9,7 +9,7 @@ customization:
   rime_version: 1.13.1
 
 patch:
-  # global_ascii: true
+  global_ascii: true
 
   preset_color_schemes:
     ink:
