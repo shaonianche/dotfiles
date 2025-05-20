@@ -10,6 +10,9 @@ $line_break\
 $python\
 $character"""
 
+[line_break]
+disabled = false
+
 [directory]
 style = "yellow"
 

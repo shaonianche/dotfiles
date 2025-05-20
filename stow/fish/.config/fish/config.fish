@@ -13,3 +13,5 @@ end
 
 function fish_greeting
 end
+
+functions --copy fish_prompt fish_prompt_orig; function fish_prompt; fish_prompt_orig; echo; end

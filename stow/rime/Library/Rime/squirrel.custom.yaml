@@ -7,8 +7,8 @@ patch:
   show_notifications_when: appropriate
 
   style:
-    color_scheme: ink
-    color_scheme_dark: ink
+    color_scheme: vitesse_light
+    color_scheme_dark: vitesse_dark
 
     font_face: "SourceHanSerifSC"
     font_point: 16
@@ -16,7 +16,6 @@ patch:
     color_space: display_p3
     inline_preedit: true
     translucency: true
-    alpha: 0.8
     candidate_list_layout: linear
     label_font_point: 14
     corner_radius: 10
@@ -34,6 +33,26 @@ patch:
       hilited_candidate_text_color: 0xffffff
       hilited_candidate_back_color: 0x000000
 
+    vitesse_light:
+      name: Vitesse Light
+      text_color: 0x393a34
+      back_color: 0xfbfbfb
+      border_color: 0xfbfbfb
+      hilited_text_color: 0x1c6b48
+      hilited_back_color: 0xfbfbfb
+      hilited_candidate_text_color: 0xbfcfd4
+      hilited_candidate_back_color: 0x393a34
+      
+    vitesse_dark:
+      name: Vitesse Light
+      text_color: 0xfbfbfb
+      back_color: 0x1e1e1e
+      border_color: 0x1e1e1e
+      hilited_text_color: 0x4d9375
+      hilited_back_color: 0x1e1e1e
+      hilited_candidate_text_color: 0xfbfbfb
+      hilited_candidate_back_color: 0x393a34
+      
   # get Bundle Identifier
   # mdls -name kMDItemCFBundleIdentifier -raw /Applications/Visual\ Studio\ Code.app
   app_options:
@@ -42,8 +61,7 @@ patch:
     com.raycast.macos:
       ascii_mode: true
     com.blacktree.Quicksilver:
-      ascii_mode: true
-    com.apple.Terminal:
+
       ascii_mode: true
       no_inline: true
     dev.warp.Warp-Stable:
