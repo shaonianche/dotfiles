@@ -1,6 +1,12 @@
 # Rime default settings
 # encoding: utf-8
 patch:
+  schema_list:
+    # 可以直接删除或注释不需要的方案，对应的 *.schema.yaml 方案文件也可以直接删除
+    # 除了 t9，它依赖于 rime_ice，用九宫格别删 rime_ice.schema.yaml
+    - schema: luna_pinyin_simp
+    # - schema: rime_ice               # 雾凇拼音（全拼）
+
   # 菜单
   menu:
     page_size: 8 # 候选词个数
@@ -9,7 +15,7 @@ patch:
     # ascii_mode、inline、no_inline、vim_mode 等等设定，可参考 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/squirrel.yaml
   # 中西文切换
   #
-  # 【good_old_caps_lock】 CapsLock 切换到大写或切换中英。
+  # 【good_old_caps_lock】CapsLock 切换到大写或切换中英。
   # （macOS 偏好设置的优先级更高，如果勾选【使用大写锁定键切换“ABC”输入法】则始终会切换输入法）
   #
   # 切换中英：
