@@ -15,10 +15,11 @@
     "chat": true
   },
   "agent": {
+    "default_profile": "ask",
     "enabled": true,
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash-preview-04-17"
+      "provider": "copilot_chat",
+      "model": "claude-3.5-sonnet"
     },
     "version": "2"
   },
@@ -67,25 +68,11 @@
       "initialization_options": {
         "checkOnSave": {
           "command": "clippy"
-        },
-        "rustfmt": {
-          "extraArgs": [
-            "+nightly"
-          ]
         }
       }
     }
   },
   "language_overrides": {
-    "rust": {
-      "rust-analyzer.inlayHints.enable": true,
-      "rust-analyzer.inlayHints.typeHints": true,
-      "rust-analyzer.inlayHints.parameterHints": true,
-      "rust-analyzer.inlayHints.chainingHints": true,
-      "rust-analyzer.inlayHints.closureReturnTypeHints": true,
-      "rust-analyzer.inlayHints.lifetimeElisionHints": "always",
-      "rust-analyzer.lens.enable": true
-    },
     "JavaScript": {
       "format_on_save": {
         "external": {
