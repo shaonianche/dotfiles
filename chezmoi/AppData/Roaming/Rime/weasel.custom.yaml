@@ -81,6 +81,9 @@ patch:
     code.exe:
       ascii_mode: true
       vim_mode: true
+    code-insiders.exe:
+      ascii_mode: true
+      vim_mode: true
     vscode.exe:
       ascii_mode: true
       vim_mode: true
