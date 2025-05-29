@@ -1,0 +1,11 @@
+patch:
+  schema:
+    icon: others/zhcn.ico
+    ascii_icon: others/a.ico
+    full_icon: others/zhcn.ico
+    half_icon: others/a.ico
+
+  switches:
+    - name: ascii_mode
+      states: [中，A]
+      reset: 1
