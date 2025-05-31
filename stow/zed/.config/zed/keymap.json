@@ -1,6 +1,6 @@
 [
   {
-    "context": "Editor",
+    "context": "Editor && vim_mode == visual ",
     "bindings": {
       "secondary-l": "assistant::QuoteSelection"
     }
