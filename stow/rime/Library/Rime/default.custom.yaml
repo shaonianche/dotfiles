@@ -1,6 +1,9 @@
 # Rime default settings
 # encoding: utf-8
 patch:
+  switcher:
+    - hotkeys: F4
+
   schema_list:
     # 可以直接删除或注释不需要的方案，对应的 *.schema.yaml 方案文件也可以直接删除
     # 除了 t9，它依赖于 rime_ice，用九宫格别删 rime_ice.schema.yaml
