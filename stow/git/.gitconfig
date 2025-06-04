@@ -104,6 +104,15 @@ workon = "!f(){ git fetch && git checkout -b \"$1\" $(git symbolic-ref refs/remo
 lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
 gb = "for-each-ref --sort=-committerdate refs/heads/ --format=' %(color:green)%(committerdate:relative)%(color:reset)%09%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:magenta)%(authorname)%(color:reset) • %(contents:subject)'"
 
+# Set remotes/origin/HEAD -> defaultBranch (copied from https://stackoverflow.com/a/67672350/14870317)
+remoteSetHead = remote set-head origin --auto
+
+# Get default branch name (copied from https://stackoverflow.com/a/67672350/14870317)
+defaultBranch = !git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4
+
+# Clean merged branches (adapted from https://stackoverflow.com/a/6127884/14870317)
+sweep = !git branch --merged $(git defaultBranch) | grep -E -v " $(git defaultBranch)$" | xargs -r git branch -d && git remote prune origin
+
 # View abbreviated SHA, description, and history graph of the latest 20 commits.
 l = log --pretty=oneline -n 20 --graph --abbrev-commit
 

@@ -58,6 +58,9 @@ Set-Alias getip Get-WanIp -Option AllScope
 function Get-WanIp { Invoke-RestMethod ip.sb }
 Set-Alias getgbip Get-WanIp -Option AllScope
 
+function Start-Serve { python -m http.server 8080 }
+Set-Alias serve Start-Serve -Option AllScope
+
 function Open-Here { explorer $(Get-Location) }
 if (-not (Get-Command open -ErrorAction SilentlyContinue)) {
         Set-Alias open explorer -Option AllScope
