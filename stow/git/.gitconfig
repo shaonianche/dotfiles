@@ -14,15 +14,15 @@ ui = auto
 
 [apply]
 
-	# Detect whitespace errors when applying a patch.
-	whitespace = fix
+# Detect whitespace errors when applying a patch.
+whitespace = fix
 
 [pull]
 rebase = true
 
 [branch]
 autosetuprebase = always
-	sort = -committerdate
+sort = -committerdate
 
 [core]
 quotepath = false
@@ -90,11 +90,9 @@ required = true
 selected = manager
 
 [credential "https://github.com"]
-helper =
 helper = !gh auth git-credential
 
 [credential "https://gist.github.com"]
-helper =
 helper = !gh auth git-credential
 
 [credential]
@@ -104,7 +102,7 @@ helper = !gh auth git-credential
 changelog = "log origin..HEAD --format='* %s%n%w(,4,4)%+b'"
 workon = "!f(){ git fetch && git checkout -b \"$1\" $(git symbolic-ref refs/remotes/origin/HEAD | sed \"s@^refs/remotes/@@\"); };f"
 lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
-gb="for-each-ref --sort=-committerdate refs/heads/ --format=' %(color:green)%(committerdate:relative)%(color:reset)%09%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:magenta)%(authorname)%(color:reset) • %(contents:subject)'"
+gb = "for-each-ref --sort=-committerdate refs/heads/ --format=' %(color:green)%(committerdate:relative)%(color:reset)%09%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:magenta)%(authorname)%(color:reset) • %(contents:subject)'"
 
 # View abbreviated SHA, description, and history graph of the latest 20 commits.
 l = log --pretty=oneline -n 20 --graph --abbrev-commit
