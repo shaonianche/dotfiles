@@ -11,6 +11,8 @@ if status is-interactive
     end
 end
 
+alias cursor="/Applications/Cursor.app/Contents/MacOS/Cursor"
+
 function fish_greeting
 end
 
@@ -28,3 +30,7 @@ if not string match -q -- $CHSRC_HOME $PATH
   set -gx PATH "$CHSRC_HOME" $PATH
 end
 # chsrc end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
