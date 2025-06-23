@@ -114,13 +114,19 @@ if (Get-Command zoxide -ErrorAction SilentlyContinue) {
                 (& $_ 'completion' '-s' 'powershell') | Out-String | Invoke-Expression
         }
 }
-@('rustup', 'deno', 'volta', 'starship') | ForEach-Object {
+
+@('rustup', 'deno', 'volta') | ForEach-Object {
         if (Get-Command $_ -ErrorAction SilentlyContinue) {
                 (& $_ 'completions' 'powershell') | Out-String | Invoke-Expression
         }
 }
 
-# 其他模块和工具初始化
+@('starship') | ForEach-Object {
+        if (Get-Command $_ -ErrorAction SilentlyContinue) {
+                (& $_ 'completions' 'power-shell') | Out-String | Invoke-Expression
+        }
+}
+
 Import-Module -Name Microsoft.WinGet.CommandNotFound -ErrorAction SilentlyContinue
 Import-Module PSReadLine -ErrorAction SilentlyContinue
 Set-PSReadLineOption -PredictionSource History
