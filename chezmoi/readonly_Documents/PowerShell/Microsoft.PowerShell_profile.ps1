@@ -72,7 +72,6 @@ Set-Alias vim nvim
 
 function ls { eza -al @args }
 Set-Alias ll ls -Option AllScope
-Set-Alias wget wget2
 
 function Get-AllEnv { Get-ChildItem env: }
 Set-Alias export Get-AllEnv -Option AllScope
@@ -129,11 +128,14 @@ if (Get-Command zoxide -ErrorAction SilentlyContinue) {
 
 Import-Module -Name Microsoft.WinGet.CommandNotFound -ErrorAction SilentlyContinue
 Import-Module PSReadLine -ErrorAction SilentlyContinue
-Set-PSReadLineOption -PredictionSource History
-Set-PSReadLineOption -PredictionViewStyle InlineView
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+if ((Get-Module -Name PSReadLine).Version -ge [System.Version]'2.1.0') {
+    Set-PSReadLineOption -PredictionSource History
+    Set-PSReadLineOption -PredictionViewStyle InlineView
+}
 if ((Get-Command fzf -ErrorAction SilentlyContinue) -and (Get-Module -Name 'PSFzf' -ListAvailable)) {
     Set-PSReadLineKeyHandler -Key 'Ctrl+spacebar' -ScriptBlock { Invoke-PSFzfCompleter }
     Set-PSReadLineKeyHandler -Key 'Ctrl+t' -ScriptBlock { PSFzfHistoryFiles }

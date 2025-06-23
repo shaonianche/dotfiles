@@ -1,206 +1,203 @@
 {
-    "$help": "https://aka.ms/terminal-documentation",
-    "$schema": "https://aka.ms/terminal-profiles-schema-preview",
-    "actions": 
-    [
-        {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "id": "User.copy.644BA8F2"
-        },
-        {
-            "command": "paste",
-            "id": "User.paste"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "id": "User.splitPane.A6751878"
-        },
-        {
-            "command": "find",
-            "id": "User.find"
-        }
-    ],
-    "alwaysShowNotificationIcon": false,
-    "copyFormatting": "none",
-    "copyOnSelect": false,
-    "defaultProfile": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
-    "keybindings": 
-    [
-        {
-            "id": null,
-            "keys": "ctrl+minus"
-        },
-        {
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
-        },
-        {
-            "id": null,
-            "keys": "ctrl+numpad_plus"
-        },
-        {
-            "id": "User.paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "id": null,
-            "keys": "ctrl+numpad_minus"
-        },
-        {
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
-        },
-        {
-            "id": "Terminal.NextTab",
-            "keys": "alt+1"
-        },
-        {
-            "id": null,
-            "keys": "ctrl+tab"
-        }
-    ],
-    "language": "en-US",
-    "newTabMenu": 
-    [
-        {
-            "type": "remainingProfiles"
-        }
-    ],
-    "profiles": 
+  "$help": "https://aka.ms/terminal-documentation",
+  "$schema": "https://aka.ms/terminal-profiles-schema-preview",
+  "actions": [
     {
-        "defaults": 
-        {
-            "backgroundImageOpacity": 0.2,
-            "backgroundImageStretchMode": "fill",
-            "bellStyle": "window",
-            "colorScheme": 
-            {
-                "dark": "Vitesse Dark",
-                "light": "Vitesse Light"
-            },
-            "cursorShape": "bar",
-            "font": 
-            {
-                "cellHeight": "1.5",
-                "face": "ComicShannsMono Nerd Font",
-                "size": 14,
-                "weight": "normal"
-            },
-            "icon": "\ue756",
-            "opacity": 100,
-            "scrollbarState": "hidden",
-            "snapOnInput": true,
-            "useAcrylic": true
-        },
-        "list": 
-        [
-            {
-                "commandline": "\"C:\\Users\\duanfei\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShellPreview_8wekyb3d8bbwe\\pwsh.exe\"",
-                "guid": "{7260ab17-0c8d-4398-8d11-d563c4e02f29}",
-                "hidden": false,
-                "icon": "\ue756",
-                "name": "PowerShell",
-                "startingDirectory": "C:\\Users\\duanfei\\workspaces"
-            },
-            {
-                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
-                "hidden": false,
-                "name": "Debian",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "~/workspaces"
-            },
-            {
-                "guid": "{9e8d3bf9-8b92-550f-822b-951103889df7}",
-                "hidden": false,
-                "name": "void-x86_64",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "guid": "{9983a328-fd2f-5e83-a71e-11ba26a1f059}",
-                "hidden": false,
-                "name": "eweos",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "guid": "{eea5b4b6-8faa-5b57-896a-92edef3a4f32}",
-                "hidden": false,
-                "name": "archlinux",
-                "source": "Microsoft.WSL"
-            },
-            {
-                "guid": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
-                "hidden": false,
-                "name": "Nushell",
-                "source": "nu",
-                "startingDirectory": "C:\\Users\\duanfei\\workspaces"
-            }
-        ]
+      "command": {
+        "action": "copy",
+        "singleLine": false
+      },
+      "id": "User.copy.644BA8F2"
     },
-    "schemes": 
-    [
-        {
-            "background": "#2E2E2E",
-            "black": "#393A34",
-            "blue": "#6394BF",
-            "brightBlack": "#777777",
-            "brightBlue": "#6394BF",
-            "brightCyan": "#5EAAB5",
-            "brightGreen": "#4D9375",
-            "brightPurple": "#D9739F",
-            "brightRed": "#CB7676",
-            "brightWhite": "#FFFFFF",
-            "brightYellow": "#E6CC77",
-            "cursorColor": "#DBD7CA",
-            "cyan": "#5EAAB5",
-            "foreground": "#DBD7CA",
-            "green": "#4D9375",
-            "name": "Vitesse Dark",
-            "purple": "#D9739F",
-            "red": "#CB7676",
-            "selectionBackground": "#EEEEEE",
-            "white": "#DBD7CA",
-            "yellow": "#E6CC77"
-        },
-        {
-            "background": "#E8E8E8",
-            "black": "#121212",
-            "blue": "#296AA3",
-            "brightBlack": "#AAAAAA",
-            "brightBlue": "#296AA3",
-            "brightCyan": "#2993A3",
-            "brightGreen": "#1E754F",
-            "brightPurple": "#A13865",
-            "brightRed": "#AB5959",
-            "brightWhite": "#DDDDDD",
-            "brightYellow": "#BDA437",
-            "cursorColor": "#393A34",
-            "cyan": "#2993A3",
-            "foreground": "#393A34",
-            "green": "#1E754F",
-            "name": "Vitesse Light",
-            "purple": "#A13865",
-            "red": "#AB5959",
-            "selectionBackground": "#222222",
-            "white": "#DBD7CA",
-            "yellow": "#BDA437"
-        }
-    ],
-    "showTabsFullscreen": false,
-    "showTabsInTitlebar": true,
-    "theme": "system",
-    "themes": [],
-    "warning.confirmCloseAllTabs": false
+    {
+      "command": "paste",
+      "id": "User.paste"
+    },
+    {
+      "command": {
+        "action": "splitPane",
+        "split": "auto",
+        "splitMode": "duplicate"
+      },
+      "id": "User.splitPane.A6751878"
+    },
+    {
+      "command": "find",
+      "id": "User.find"
+    }
+  ],
+  "alwaysShowNotificationIcon": false,
+  "copyFormatting": "none",
+  "copyOnSelect": false,
+  "defaultProfile": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
+  "keybindings": [
+    {
+      "id": null,
+      "keys": "ctrl+minus"
+    },
+    {
+      "id": "User.splitPane.A6751878",
+      "keys": "alt+shift+d"
+    },
+    {
+      "id": null,
+      "keys": "ctrl+numpad_plus"
+    },
+    {
+      "id": "User.paste",
+      "keys": "ctrl+v"
+    },
+    {
+      "id": "User.find",
+      "keys": "ctrl+shift+f"
+    },
+    {
+      "id": null,
+      "keys": "ctrl+numpad_minus"
+    },
+    {
+      "id": "User.copy.644BA8F2",
+      "keys": "ctrl+c"
+    },
+    {
+      "id": "Terminal.NextTab",
+      "keys": "alt+1"
+    },
+    {
+      "id": null,
+      "keys": "ctrl+tab"
+    }
+  ],
+  "language": "en-US",
+  "newTabMenu": [
+    {
+      "type": "remainingProfiles"
+    }
+  ],
+  "profiles": {
+    "defaults": {
+      "backgroundImageOpacity": 0.2,
+      "backgroundImageStretchMode": "fill",
+      "bellStyle": "window",
+      "colorScheme": {
+        "dark": "Vitesse Dark",
+        "light": "Vitesse Light"
+      },
+      "cursorShape": "bar",
+      "font": {
+        "cellHeight": "1.5",
+        "face": "ComicShannsMono Nerd Font",
+        "size": 14,
+        "weight": "normal"
+      },
+      "icon": "\ue756",
+      "opacity": 100,
+      "scrollbarState": "hidden",
+      "snapOnInput": true,
+      "useAcrylic": true
+    },
+    "list": [
+      {
+        "commandline": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe -noe -c \"&{Import-Module \"\"\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\"\"\"; Enter-VsDevShell b72912af}\"",
+        "guid": "{14b20646-3249-4d46-88d8-359862f21f54}",
+        "hidden": false,
+        "icon": "\ue756",
+        "name": "PowerShell DEV",
+        "startingDirectory": "C:\\Users\\duanfei\\workspaces"
+      },
+      {
+        "commandline": "\"C:\\Users\\duanfei\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.PowerShellPreview_8wekyb3d8bbwe\\pwsh.exe\"",
+        "guid": "{7260ab17-0c8d-4398-8d11-d563c4e02f29}",
+        "hidden": false,
+        "icon": "\ue756",
+        "name": "PowerShell",
+        "startingDirectory": "C:\\Users\\duanfei\\workspaces"
+      },
+      {
+        "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+        "hidden": false,
+        "name": "Debian",
+        "source": "Windows.Terminal.Wsl",
+        "startingDirectory": "~/workspaces"
+      },
+      {
+        "guid": "{9e8d3bf9-8b92-550f-822b-951103889df7}",
+        "hidden": false,
+        "name": "void-x86_64",
+        "source": "Windows.Terminal.Wsl"
+      },
+      {
+        "guid": "{9983a328-fd2f-5e83-a71e-11ba26a1f059}",
+        "hidden": false,
+        "name": "eweos",
+        "source": "Windows.Terminal.Wsl"
+      },
+      {
+        "guid": "{eea5b4b6-8faa-5b57-896a-92edef3a4f32}",
+        "hidden": false,
+        "name": "archlinux",
+        "source": "Microsoft.WSL"
+      },
+      {
+        "guid": "{47302f9c-1ac4-566c-aa3e-8cf29889d6ab}",
+        "hidden": false,
+        "name": "Nushell",
+        "source": "nu",
+        "startingDirectory": "C:\\Users\\duanfei\\workspaces"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "background": "#2E2E2E",
+      "black": "#393A34",
+      "blue": "#6394BF",
+      "brightBlack": "#777777",
+      "brightBlue": "#6394BF",
+      "brightCyan": "#5EAAB5",
+      "brightGreen": "#4D9375",
+      "brightPurple": "#D9739F",
+      "brightRed": "#CB7676",
+      "brightWhite": "#FFFFFF",
+      "brightYellow": "#E6CC77",
+      "cursorColor": "#DBD7CA",
+      "cyan": "#5EAAB5",
+      "foreground": "#DBD7CA",
+      "green": "#4D9375",
+      "name": "Vitesse Dark",
+      "purple": "#D9739F",
+      "red": "#CB7676",
+      "selectionBackground": "#EEEEEE",
+      "white": "#DBD7CA",
+      "yellow": "#E6CC77"
+    },
+    {
+      "background": "#E8E8E8",
+      "black": "#121212",
+      "blue": "#296AA3",
+      "brightBlack": "#AAAAAA",
+      "brightBlue": "#296AA3",
+      "brightCyan": "#2993A3",
+      "brightGreen": "#1E754F",
+      "brightPurple": "#A13865",
+      "brightRed": "#AB5959",
+      "brightWhite": "#DDDDDD",
+      "brightYellow": "#BDA437",
+      "cursorColor": "#393A34",
+      "cyan": "#2993A3",
+      "foreground": "#393A34",
+      "green": "#1E754F",
+      "name": "Vitesse Light",
+      "purple": "#A13865",
+      "red": "#AB5959",
+      "selectionBackground": "#222222",
+      "white": "#DBD7CA",
+      "yellow": "#BDA437"
+    }
+  ],
+  "showTabsFullscreen": false,
+  "showTabsInTitlebar": true,
+  "theme": "system",
+  "themes": [],
+  "warning.confirmCloseAllTabs": false
 }
