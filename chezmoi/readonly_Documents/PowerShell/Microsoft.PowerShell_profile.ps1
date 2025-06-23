@@ -1,10 +1,5 @@
 #Requires -Version 5.1
 
-Set-PSReadLineOption -PredictionSource History
-Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
-Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
-Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
-
 # 统一 $HOME 变量
 $Script:UNI_HOME = $env:USERPROFILE
 
@@ -127,8 +122,16 @@ if (Get-Command zoxide -ErrorAction SilentlyContinue) {
 
 # 其他模块和工具初始化
 Import-Module -Name Microsoft.WinGet.CommandNotFound -ErrorAction SilentlyContinue
-if (Get-Command Set-PsFzfOption -ErrorAction SilentlyContinue) {
-        Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+Import-Module PSReadLine -ErrorAction SilentlyContinue
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle InlineView
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+if ((Get-Command fzf -ErrorAction SilentlyContinue) -and (Get-Module -Name 'PSFzf' -ListAvailable)) {
+    Set-PSReadLineKeyHandler -Key 'Ctrl+spacebar' -ScriptBlock { Invoke-PSFzfCompleter }
+    Set-PSReadLineKeyHandler -Key 'Ctrl+t' -ScriptBlock { PSFzfHistoryFiles }
+    Set-PSReadLineKeyHandler -Key 'Ctrl+r' -ScriptBlock { PSFzfReverseHistorySearch }
 }
 if (Test-Path "$HOME/.venv/Scripts/Activate.ps1") {
         . $HOME/.venv/Scripts/Activate.ps1
