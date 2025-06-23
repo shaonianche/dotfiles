@@ -1,5 +1,10 @@
 #Requires -Version 5.1
 
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
 # 统一 $HOME 变量
 $Script:UNI_HOME = $env:USERPROFILE
 
@@ -98,10 +103,14 @@ if (Get-Command starship.exe -ErrorAction SilentlyContinue) {
         (& starship.exe 'init' 'powershell') | Out-String | Invoke-Expression
 }
 
-# zoxide
+# zoxide and fzf integration
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {
-        Invoke-Expression (& { (zoxide init --hook pwd powershell) -join "`n" })
-        Set-Alias cd z -Option AllScope
+    $env:_ZO_FZF_OPTS = '--height 40% --reverse --preview "eza --tree --color=always --icons -L 2 {}"'
+
+    Invoke-Expression (& { (zoxide init --hook pwd powershell) -join "`n" })
+
+    Set-Alias cd z -Option AllScope
+    Set-Alias zi 'zoxide query -i' -Option AllScope
 }
 
 # CLI tools tab-completions
