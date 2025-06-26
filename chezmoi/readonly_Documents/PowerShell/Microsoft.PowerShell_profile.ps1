@@ -99,12 +99,12 @@ if (Get-Command starship.exe -ErrorAction SilentlyContinue) {
 
 # zoxide and fzf integration
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {
-    $env:_ZO_FZF_OPTS = '--height 40% --reverse --preview "eza --tree --color=always --icons -L 2 {}"'
+        $env:_ZO_FZF_OPTS = '--height 40% --reverse --preview "eza --tree --color=always --icons -L 2 {}"'
 
-    Invoke-Expression (& { (zoxide init --hook pwd powershell) -join "`n" })
+        Invoke-Expression (& { (zoxide init --hook pwd powershell) -join "`n" })
 
-    Set-Alias cd z -Option AllScope
-    Set-Alias zi 'zoxide query -i' -Option AllScope
+        Set-Alias cd z -Option AllScope
+        Set-Alias zi 'zoxide query -i' -Option AllScope
 }
 
 # CLI tools tab-completions
@@ -133,13 +133,13 @@ Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 if ((Get-Module -Name PSReadLine).Version -ge [System.Version]'2.1.0') {
-    Set-PSReadLineOption -PredictionSource History
-    Set-PSReadLineOption -PredictionViewStyle InlineView
+        Set-PSReadLineOption -PredictionSource History
+        Set-PSReadLineOption -PredictionViewStyle InlineView
 }
 if ((Get-Command fzf -ErrorAction SilentlyContinue) -and (Get-Module -Name 'PSFzf' -ListAvailable)) {
-    Set-PSReadLineKeyHandler -Key 'Ctrl+spacebar' -ScriptBlock { Invoke-PSFzfCompleter }
-    Set-PSReadLineKeyHandler -Key 'Ctrl+t' -ScriptBlock { PSFzfHistoryFiles }
-    Set-PSReadLineKeyHandler -Key 'Ctrl+r' -ScriptBlock { PSFzfReverseHistorySearch }
+        Set-PSReadLineKeyHandler -Key 'Ctrl+spacebar' -ScriptBlock { Invoke-PSFzfCompleter }
+        Set-PSReadLineKeyHandler -Key 'Ctrl+t' -ScriptBlock { PSFzfHistoryFiles }
+        Set-PSReadLineKeyHandler -Key 'Ctrl+r' -ScriptBlock { PSFzfReverseHistorySearch }
 }
 if (Test-Path "$HOME/.venv/Scripts/Activate.ps1") {
         . $HOME/.venv/Scripts/Activate.ps1

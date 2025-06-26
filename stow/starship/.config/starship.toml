@@ -14,7 +14,7 @@ $character"""
 disabled = false
 
 [directory]
-style = "yellow"
+style = "purple"
 
 [character]
 success_symbol = "[❯](purple)"
