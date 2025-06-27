@@ -1,0 +1,29 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "ctrl+shift+backspace",
+        "command": "chatEditor.action.reject",
+        "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isRequestInProgress"
+    },
+    {
+        "key": "ctrl+backspace",
+        "command": "-chatEditor.action.reject",
+        "when": "chatEdits.hasEditorModifications && editorFocus && !chatEdits.isRequestInProgress"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "github.copilot.chat.attachSelection"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "github.copilot.terminal.attachTerminalSelection"
+    },
+    {
+        "key": "shift+escape",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "github.copilot.chat.explain"
+    }
+]
