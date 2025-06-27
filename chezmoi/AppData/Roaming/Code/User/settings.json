@@ -1,4 +1,4 @@
-{
+{ // cSpell:disable
   // Workbench & Editor Core Settings
   "workbench.activityBar.location": "top",
   "editor.fontFamily": "Maple Mono NF",
@@ -161,18 +161,18 @@
   "ruff.lint.preview": true,
   "python.analysis.typeCheckingMode": "off",
   "eslint.format.enable": true,
-  "remote.extensionPacks": {
-    "ssh": [
-      "ms-python.python",
-      "rust-lang.rust-analyzer",
-      "dbaeumer.vscode-eslint"
-    ],
-    "remote.SSH.remotePlatform": {
-      "mbp19.lan": "macOS"
-    },
-    "workbench.startupEditor": "none",
-    "terminal.integrated.tabs.defaultColor": "terminal.ansiBlack"
+  "remote.SSH.remotePlatform": {
+    "mbp19.lan": "macOS"
   },
+  "remote.SSH.defaultExtensions": [
+    "WakaTime.vscode-wakatime",
+    "ms-python.python",
+    "saoudrizwan.claude-dev",
+    "rust-lang.rust-analyzer",
+    "dbaeumer.vscode-eslint"
+  ],
+  "workbench.startupEditor": "none",
+  "terminal.integrated.tabs.defaultColor": "terminal.ansiBlack",
   // Spell Checker (cSpell) Settings
   "cSpell.userWords": [
     "activitylist",
@@ -554,5 +554,5 @@
     "*.w": "$(capture).*.w, I$(capture).w",
     "*.wat": "$(capture).wasm",
     "*.xaml": "$(capture).xaml.cs"
-  },
+  }
 }
