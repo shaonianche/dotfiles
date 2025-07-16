@@ -125,7 +125,6 @@
     "postcss"
   ],
   "ruff.format.preview": true,
-  "ruff.lineLength": 88,
   // Git Settings
   "git.autofetch": true,
   "git.confirmSync": false,
