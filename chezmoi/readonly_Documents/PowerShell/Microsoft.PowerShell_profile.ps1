@@ -127,7 +127,6 @@ if (Get-Command zoxide -ErrorAction SilentlyContinue) {
 }
 
 Import-Module -Name Microsoft.WinGet.CommandNotFound -ErrorAction SilentlyContinue
-Import-Module PSReadLine -ErrorAction SilentlyContinue
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
