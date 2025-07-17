@@ -78,7 +78,7 @@
     "defaults": {
       "backgroundImageOpacity": 0.2,
       "backgroundImageStretchMode": "fill",
-      "bellStyle": "window",
+      "bellStyle": "none",
       "colorScheme": {
         "dark": "Vitesse Dark",
         "light": "Vitesse Light"
