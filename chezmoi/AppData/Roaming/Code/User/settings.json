@@ -552,5 +552,7 @@
     "*.w": "$(capture).*.w, I$(capture).w",
     "*.wat": "$(capture).wasm",
     "*.xaml": "$(capture).xaml.cs"
-  }
+  },
+  "python.venvPath": "${workspaceFolder}",
+  "fileNestingUpdater.autoUpdateInterval": 44640
 }
