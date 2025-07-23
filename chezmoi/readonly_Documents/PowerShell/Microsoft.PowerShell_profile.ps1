@@ -1,9 +1,7 @@
 #Requires -Version 5.1
 
-# 统一 $HOME 变量
 $Script:UNI_HOME = $env:USERPROFILE
 
-# 工具函数
 function Add-ToPath {
         param (
                 [Parameter(Mandatory = $true)][string]$Path,
@@ -16,7 +14,6 @@ function Add-ToPath {
         }
 }
 
-# 环境变量
 $env:LANG = 'en_US.UTF-8'
 $env:TZ = 'UTC-8'
 $env:EDITOR = 'vim'
@@ -33,7 +30,6 @@ $env:POWERSHELL_TELEMETRY_OPTOUT = 1
 $env:DOTNET_CLI_TELEMETRY_OPTOUT = 1
 $env:VCPKG_DISABLE_METRICS = 1
 
-# 路径设置
 Add-ToPath "$Script:UNI_HOME\.local\bin"
 Add-ToPath "$Script:UNI_HOME\.cargo\bin"
 Add-ToPath "$Script:UNI_HOME\.deno\bin"
@@ -41,11 +37,9 @@ Add-ToPath "$Script:UNI_HOME\.dotnet\tools"
 $env:DOTNET_ROOT = "$env:LocalAppData\Microsoft\dotnet"
 Add-ToPath $env:DOTNET_ROOT -AllowNotExist
 
-# 先移除内置别名，避免冲突
 Remove-Item 'alias:\ls' -ErrorAction SilentlyContinue
 Remove-Item 'alias:\r' -ErrorAction SilentlyContinue
 
-# 常用函数与别名
 function Get-GitDiff { git diff }
 function Get-GitStatus { git status }
 Set-Alias gdf Get-GitDiff -Option AllScope
@@ -76,10 +70,8 @@ Set-Alias ll ls -Option AllScope
 function Get-AllEnv { Get-ChildItem env: }
 Set-Alias export Get-AllEnv -Option AllScope
 
-# 仅 Windows 下主机名格式化
 $env:COMPUTERNAME = $env:COMPUTERNAME.Substring(0, 1).ToUpper() + $env:COMPUTERNAME.Substring(1).ToLower()
 
-# WinGet 补全
 if (Get-Command winget -ErrorAction SilentlyContinue) {
         Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
                 param($wordToComplete, $commandAst, $cursorPosition)
@@ -139,7 +131,4 @@ if ((Get-Command fzf -ErrorAction SilentlyContinue) -and (Get-Module -Name 'PSFz
         Set-PSReadLineKeyHandler -Key 'Ctrl+spacebar' -ScriptBlock { Invoke-PSFzfCompleter }
         Set-PSReadLineKeyHandler -Key 'Ctrl+t' -ScriptBlock { PSFzfHistoryFiles }
         Set-PSReadLineKeyHandler -Key 'Ctrl+r' -ScriptBlock { PSFzfReverseHistorySearch }
-}
-if (Test-Path "$HOME/.venv/Scripts/Activate.ps1") {
-        . $HOME/.venv/Scripts/Activate.ps1
 }
