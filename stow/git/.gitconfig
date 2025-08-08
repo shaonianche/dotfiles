@@ -100,7 +100,7 @@ helper = !gh auth git-credential
 
 [alias]
 changelog = "log origin..HEAD --format='* %s%n%w(,4,4)%+b'"
-workon = "!f(){ git fetch && git checkout -b \"$1\" $(git symbolic-ref refs/remotes/origin/HEAD | sed \"s@^refs/remotes/@@\"); };f"
+workon = "!f(){ git fetch && git checkout -b \"$1\" origin/HEAD; }; f"
 lola = "log --graph --decorate --pretty=oneline --abbrev-commit --all"
 gb = "for-each-ref --sort=-committerdate refs/heads/ --format=' %(color:green)%(committerdate:relative)%(color:reset)%09%(HEAD) %(color:yellow)%(refname:short)%(color:reset) %(color:magenta)%(authorname)%(color:reset) • %(contents:subject)'"
 
@@ -123,7 +123,7 @@ s = status -s
 d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
 # `git di $number` shows the diff between the state `$number` revisions ago and the current state.
-di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+di = "!f() { git diff --patch-with-stat HEAD~${1:-1}; }; f"
 
 # Pull in remote changes for the current repository and all its submodules.
 p = pull --recurse-submodules
@@ -135,7 +135,7 @@ c = clone --recursive
 ca = !git add ':(exclude,attr:builtin_objectmode=160000)' && git commit -av
 
 # Switch to a branch, creating it if necessary.
-go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+go = "!f() { git switch -c \"$1\" 2> /dev/null || git switch \"$1\"; }; f"
 
 # Show verbose output about tags, branches or remotes
 tags = tag -l
@@ -168,10 +168,6 @@ fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen 
 
 # Find commits by commit message
 fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
-
-# Remove branches that have already been merged with main.
-# a.k.a. ‘delete merged’
-dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
 # List contributors with number of commits.
 contributors = shortlog --summary --numbered
