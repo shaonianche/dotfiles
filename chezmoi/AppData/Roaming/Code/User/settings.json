@@ -31,6 +31,7 @@
   "terminal.integrated.fontSize": 16,
   "scm.inputFontSize": 14,
   // Terminal Settings
+  "terminal.integrated.suggest.enabled": false,
   "terminal.integrated.defaultProfile.linux": "fish",
   "terminal.integrated.defaultProfile.osx": "fish",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
