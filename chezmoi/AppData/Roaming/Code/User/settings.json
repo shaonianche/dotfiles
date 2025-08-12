@@ -132,6 +132,8 @@
   "git.enableSmartCommit": true,
   "git.enableCommitSigning": true,
   "git.autoStash": true,
+  "git.blame.editorDecoration.template": "${subject}, ${authorName} (${authorDateAgo})",
+  "git.blame.editorDecorationForeground": "#f8f8ff3f",
   // Security, API & Telemetry Settings
   "security.workspace.trust.untrustedFiles": "open",
   "wakatime.apiKey": "${WAKATIME_API_KEY}",
@@ -587,5 +589,6 @@
   "fileNestingUpdater.autoUpdateInterval": 44640,
   "diffEditor.codeLens": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "remote.SSH.enableRemoteCommand": true
+  "remote.SSH.enableRemoteCommand": true,
+  "git.blame.editorDecoration.enabled": true
 }
