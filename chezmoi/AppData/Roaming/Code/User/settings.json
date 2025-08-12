@@ -16,7 +16,6 @@
   "explorer.confirmDelete": false,
   "diffEditor.codeLens": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
-
   // Unified Font Settings
   "editor.fontFamily": "Maple Mono NF",
   "editor.fontSize": 16,
@@ -31,7 +30,6 @@
   "markdown.preview.fontSize": 14,
   "terminal.integrated.fontSize": 16,
   "scm.inputFontSize": 14,
-
   // Terminal Settings
   "terminal.integrated.defaultProfile.linux": "fish",
   "terminal.integrated.defaultProfile.osx": "fish",
@@ -45,7 +43,6 @@
   "terminal.integrated.cursorStyleInactive": "none",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.tabs.defaultColor": "terminal.ansiBlack",
-
   // Formatting, Linting & Auto-Fix Settings
   "prettier.enable": false,
   "editor.formatOnPaste": true,
@@ -133,7 +130,6 @@
   ],
   "ruff.format.preview": true,
   "eslint.format.enable": true,
-
   // Git Settings
   "git.autofetch": true,
   "git.confirmSync": false,
@@ -142,12 +138,10 @@
   "git.autoStash": true,
   "git.blame.editorDecoration.template": "${subject}, ${authorName} (${authorDateAgo})",
   "git.blame.editorDecoration.enabled": true,
-
   // Security, API & Telemetry Settings
   "security.workspace.trust.untrustedFiles": "open",
   "wakatime.apiKey": "${WAKATIME_API_KEY}",
   "redhat.telemetry.enabled": true,
-
   // GitHub Copilot Settings
   "github.copilot.enable": {
     "*": true,
@@ -155,7 +149,6 @@
     "markdown": false,
     "scminput": false
   },
-
   // Language Specific & Association Settings
   "[plaintext]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -187,7 +180,6 @@
     "dbaeumer.vscode-eslint"
   ],
   "remote.SSH.enableRemoteCommand": true,
-
   // Spell Checker (cSpell) Settings
   "cSpell.userWords": [
     "activitylist",
@@ -227,6 +219,7 @@
     "cesu",
     "Cgreen",
     "charliermarsh",
+    "chezmoi",
     "chsrc",
     "cloudscraper",
     "CLPAPI",
@@ -422,6 +415,7 @@
     "sqlalchemy",
     "srgb",
     "stadiamaps",
+    "stowrc",
     "strava",
     "stravalib",
     "stravaweblib",
@@ -499,7 +493,6 @@
     "*.lock",
     "target"
   ],
-
   // File Explorer & Nesting Settings
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
