@@ -2,20 +2,24 @@
   // cSpell:disable
   // Workbench & Editor Core Settings
   "workbench.activityBar.location": "top",
-  "editor.fontFamily": "Maple Mono NF",
-  "editor.fontSize": 16,
-  "editor.lineHeight": 1.6,
-  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
   "workbench.preferredDarkColorTheme": "Vitesse Dark",
   "workbench.preferredLightColorTheme": "Vitesse Light",
   "workbench.preferredHighContrastColorTheme": "Vitesse Dark Soft",
   "workbench.preferredHighContrastLightColorTheme": "Vitesse Light Soft",
   "workbench.iconTheme": "catppuccin-latte",
   "workbench.productIconTheme": "icons-carbon",
+  "workbench.startupEditor": "none",
+  "editor.lineHeight": 1.6,
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
   "window.autoDetectColorScheme": true,
   "window.systemColorTheme": "auto",
   "explorer.confirmDelete": false,
+  "diffEditor.codeLens": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
   // Unified Font Settings
+  "editor.fontFamily": "Maple Mono NF",
+  "editor.fontSize": 16,
   "editor.inlayHints.fontFamily": "Maple Mono NF",
   "editor.codeLensFontFamily": "Maple Mono NF",
   "terminal.integrated.fontFamily": "Maple Mono NF",
@@ -27,6 +31,7 @@
   "markdown.preview.fontSize": 14,
   "terminal.integrated.fontSize": 16,
   "scm.inputFontSize": 14,
+
   // Terminal Settings
   "terminal.integrated.defaultProfile.linux": "fish",
   "terminal.integrated.defaultProfile.osx": "fish",
@@ -39,12 +44,13 @@
   "terminal.integrated.cursorStyle": "underline",
   "terminal.integrated.cursorStyleInactive": "none",
   "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.tabs.defaultColor": "terminal.ansiBlack",
+
   // Formatting, Linting & Auto-Fix Settings
   "prettier.enable": false,
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
   "editor.formatOnSave": true,
-  "python.analysis.autoImportCompletions": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "never",
     "source.organizeImports": "never"
@@ -126,6 +132,8 @@
     "postcss"
   ],
   "ruff.format.preview": true,
+  "eslint.format.enable": true,
+
   // Git Settings
   "git.autofetch": true,
   "git.confirmSync": false,
@@ -133,11 +141,13 @@
   "git.enableCommitSigning": true,
   "git.autoStash": true,
   "git.blame.editorDecoration.template": "${subject}, ${authorName} (${authorDateAgo})",
-  "git.blame.editorDecorationForeground": "#f8f8ff3f",
+  "git.blame.editorDecoration.enabled": true,
+
   // Security, API & Telemetry Settings
   "security.workspace.trust.untrustedFiles": "open",
   "wakatime.apiKey": "${WAKATIME_API_KEY}",
   "redhat.telemetry.enabled": true,
+
   // GitHub Copilot Settings
   "github.copilot.enable": {
     "*": true,
@@ -145,6 +155,7 @@
     "markdown": false,
     "scminput": false
   },
+
   // Language Specific & Association Settings
   "[plaintext]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -160,9 +171,10 @@
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "python.createEnvironment.trigger": "off",
-  "ruff.lint.preview": true,
+  "python.analysis.autoImportCompletions": true,
   "python.analysis.typeCheckingMode": "off",
-  "eslint.format.enable": true,
+  "ruff.lint.preview": true,
+  "python.venvPath": "${workspaceFolder}",
   "remote.SSH.remotePlatform": {
     "mbp19.lan": "macOS",
     "fedora.lan": "linux",
@@ -174,8 +186,8 @@
     "rust-lang.rust-analyzer",
     "dbaeumer.vscode-eslint"
   ],
-  "workbench.startupEditor": "none",
-  "terminal.integrated.tabs.defaultColor": "terminal.ansiBlack",
+  "remote.SSH.enableRemoteCommand": true,
+
   // Spell Checker (cSpell) Settings
   "cSpell.userWords": [
     "activitylist",
@@ -487,6 +499,7 @@
     "*.lock",
     "target"
   ],
+
   // File Explorer & Nesting Settings
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
@@ -585,10 +598,5 @@
     "*.wat": "$(capture).wasm",
     "*.xaml": "$(capture).xaml.cs"
   },
-  "python.venvPath": "${workspaceFolder}",
-  "fileNestingUpdater.autoUpdateInterval": 44640,
-  "diffEditor.codeLens": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "remote.SSH.enableRemoteCommand": true,
-  "git.blame.editorDecoration.enabled": true
+  "fileNestingUpdater.autoUpdateInterval": 44640
 }
