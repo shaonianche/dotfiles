@@ -2,7 +2,6 @@
 if status is-interactive
     set -gx GPG_TTY (tty)
     set -Ux EDITOR vim
-    set -gx VOLTA_HOME "$HOME/.volta"
     source "$HOME/.cargo/env.fish"
     starship init fish | source
     if test -f ~/.venv/bin/activate.fish
@@ -46,3 +45,5 @@ switch (uname -s)
         end
         # You can add other generic Linux settings here if needed
 end
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
