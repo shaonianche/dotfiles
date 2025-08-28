@@ -8,34 +8,6 @@
 // from the command palette or from `Zed` application menu.
 {
   "icon_theme": "Catppuccin Macchiato",
-  "features": {
-    "copilot": true
-  },
-  "github_copilot": {
-    "chat": true
-  },
-  "agent": {
-    "default_profile": "ask",
-    "enabled": true,
-    "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-pro"
-    },
-    "version": "2"
-  },
-  "language_models": {
-    "openai": {
-      "api_url": "https://api.burn.hair/v1",
-      "available_models": [
-        {
-          "name": "claude-3-5-haiku-20241022",
-          "display_name": "claude",
-          "max_tokens": 2000000
-        }
-      ],
-      "version": "1"
-    }
-  },
   "theme": {
     "mode": "system",
     "light": "Vitesse Light",
