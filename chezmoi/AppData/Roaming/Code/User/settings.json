@@ -150,6 +150,19 @@
     "markdown": false,
     "scminput": false
   },
+  "github.copilot.chat.byok.ollamaEndpoint": "http://192.168.0.142:11434",
+  "github.copilot.chat.customOAIModels": {
+    "kimi-k2-0711-preview": {
+      "name": "kimi-k2-0711-preview",
+      "url": "https://api.moonshot.cn/v1/",
+      "toolCalling": false,
+      "vision": false,
+      "thinking": false,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 4096,
+      "requiresAPIKey": true
+    }
+  },
   // Language Specific & Association Settings
   "[plaintext]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -171,7 +184,6 @@
   "python.venvPath": "${workspaceFolder}",
   "remote.SSH.remotePlatform": {
     "mbp19.lan": "macOS",
-    "fedora.lan": "linux",
     "debian.lan": "linux"
   },
   "remote.SSH.defaultExtensions": [
