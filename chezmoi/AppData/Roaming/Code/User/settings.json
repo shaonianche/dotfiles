@@ -53,6 +53,9 @@
     "source.fixAll.eslint": "never",
     "source.organizeImports": "never"
   },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
   "eslint.rules.customizations": [
     {
       "rule": "style/*",
@@ -159,8 +162,19 @@
       "vision": false,
       "thinking": false,
       "maxInputTokens": 128000,
-      "maxOutputTokens": 4096,
+      "maxOutputTokens": 16000,
       "requiresAPIKey": true
+    }
+  },
+  "github.copilot.chat.azureModels": {
+    "gpt-5-mini": {
+      "name": "gpt-5-mini",
+      "url": "https://codex-model.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview",
+      "toolCalling": true,
+      "vision": true,
+      "thinking": false,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 16000,
     }
   },
   // Language Specific & Association Settings
@@ -627,5 +641,5 @@
     "*.wat": "$(capture).wasm",
     "*.xaml": "$(capture).xaml.cs"
   },
-  "fileNestingUpdater.autoUpdateInterval": 44640
+  "fileNestingUpdater.autoUpdateInterval": 44640,
 }
