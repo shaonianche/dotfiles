@@ -132,3 +132,44 @@ if ((Get-Command fzf -ErrorAction SilentlyContinue) -and (Get-Module -Name 'PSFz
         Set-PSReadLineKeyHandler -Key 'Ctrl+t' -ScriptBlock { PSFzfHistoryFiles }
         Set-PSReadLineKeyHandler -Key 'Ctrl+r' -ScriptBlock { PSFzfReverseHistorySearch }
 }
+
+function Start-TerminalProxy {
+        $proxy = "http://192.168.31.10:7890"
+        $no = "localhost,127.0.0.1,.local"
+
+        $env:HTTP_PROXY = $proxy
+        $env:HTTPS_PROXY = $proxy
+        $env:ALL_PROXY = $proxy
+        $env:NO_PROXY = $no
+        $env:http_proxy = $proxy
+        $env:https_proxy = $proxy
+        $env:all_proxy = $proxy
+        $env:no_proxy = $no
+
+        [Environment]::SetEnvironmentVariable("HTTP_PROXY", $proxy, "User")
+        [Environment]::SetEnvironmentVariable("HTTPS_PROXY", $proxy, "User")
+        [Environment]::SetEnvironmentVariable("ALL_PROXY", $proxy, "User")
+        [Environment]::SetEnvironmentVariable("NO_PROXY", $no, "User")
+        [Environment]::SetEnvironmentVariable("http_proxy", $proxy, "User")
+        [Environment]::SetEnvironmentVariable("https_proxy", $proxy, "User")
+        [Environment]::SetEnvironmentVariable("all_proxy", $proxy, "User")
+        [Environment]::SetEnvironmentVariable("no_proxy", $no, "User")
+
+        Write-Host "User-level terminal proxy ON -> $proxy (NO_PROXY=$no)." -ForegroundColor Green
+}
+
+function Stop-TerminalProxy {
+        Remove-Item Env:HTTP_PROXY, Env:HTTPS_PROXY, Env:ALL_PROXY, Env:NO_PROXY -ErrorAction SilentlyContinue
+        Remove-Item Env:http_proxy, Env:https_proxy, Env:all_proxy, Env:no_proxy -ErrorAction SilentlyContinue
+
+        [Environment]::SetEnvironmentVariable("HTTP_PROXY", $null, "User")
+        [Environment]::SetEnvironmentVariable("HTTPS_PROXY", $null, "User")
+        [Environment]::SetEnvironmentVariable("ALL_PROXY", $null, "User")
+        [Environment]::SetEnvironmentVariable("NO_PROXY", $null, "User")
+        [Environment]::SetEnvironmentVariable("http_proxy", $null, "User")
+        [Environment]::SetEnvironmentVariable("https_proxy", $null, "User")
+        [Environment]::SetEnvironmentVariable("all_proxy", $null, "User")
+        [Environment]::SetEnvironmentVariable("no_proxy", $null, "User")
+
+        Write-Host "User-level terminal proxy OFF." -ForegroundColor Yellow
+}
