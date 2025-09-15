@@ -158,9 +158,19 @@
     "kimi-k2-0711-preview": {
       "name": "kimi-k2-0711-preview",
       "url": "https://api.moonshot.cn/v1/",
-      "toolCalling": false,
+      "toolCalling": true,
       "vision": false,
-      "thinking": false,
+      "thinking": true,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 16000,
+      "requiresAPIKey": true
+    },
+    "deepseek-v3.1": {
+      "name": "deepseek-chat",
+      "url": "https://api.deepseek.com/v1/",
+      "toolCalling": true,
+      "vision": false,
+      "thinking": true,
       "maxInputTokens": 128000,
       "maxOutputTokens": 16000,
       "requiresAPIKey": true
