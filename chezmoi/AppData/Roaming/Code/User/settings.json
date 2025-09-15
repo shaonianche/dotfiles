@@ -148,7 +148,7 @@
   "redhat.telemetry.enabled": true,
   // GitHub Copilot Settings
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "plaintext": false,
     "markdown": false,
     "scminput": false
@@ -169,12 +169,12 @@
   "github.copilot.chat.azureModels": {
     "gpt-5-mini": {
       "name": "gpt-5-mini",
-      "url": "https://codex-model.cognitiveservices.azure.com/openai/responses?api-version=2025-04-01-preview",
+      "url": "https://codex-model.openai.azure.com/openai/v1/chat/completions",
       "toolCalling": true,
       "vision": true,
-      "thinking": false,
+      "thinking": true,
       "maxInputTokens": 128000,
-      "maxOutputTokens": 16000,
+      "maxOutputTokens": 16000
     }
   },
   // Language Specific & Association Settings
@@ -642,4 +642,5 @@
     "*.xaml": "$(capture).xaml.cs"
   },
   "fileNestingUpdater.autoUpdateInterval": 44640,
+  "github.copilot.chat.agent.thinkingTool": true,
 }
