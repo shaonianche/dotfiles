@@ -155,10 +155,10 @@
   },
   "github.copilot.chat.byok.ollamaEndpoint": "http://192.168.0.142:11434",
   "github.copilot.chat.customOAIModels": {
-    "kimi-k2-0711-preview": {
-      "name": "kimi-k2-0711-preview",
+    "kimi-k2-0905-preview": {
+      "name": "kimi-k2-0905-preview",
       "url": "https://api.moonshot.cn/v1/",
-      "toolCalling": true,
+      "toolCalling": false,
       "vision": false,
       "thinking": true,
       "maxInputTokens": 128000,
@@ -168,7 +168,7 @@
     "deepseek-v3.1": {
       "name": "deepseek-chat",
       "url": "https://api.deepseek.com/v1/",
-      "toolCalling": true,
+      "toolCalling": false,
       "vision": false,
       "thinking": true,
       "maxInputTokens": 128000,
