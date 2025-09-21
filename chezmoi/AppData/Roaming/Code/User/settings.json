@@ -165,6 +165,16 @@
       "maxOutputTokens": 16000,
       "requiresAPIKey": true
     },
+    "moonshotai/kimi-k2-0905": {
+      "name": "moonshotai/kimi-k2-0905",
+      "url": "https://api.ppinfra.com/openai",
+      "toolCalling": true,
+      "vision": true,
+      "thinking": true,
+      "maxInputTokens": 128000,
+      "maxOutputTokens": 16000,
+      "requiresAPIKey": true
+    },
     "deepseek-v3.1": {
       "name": "deepseek-chat",
       "url": "https://api.deepseek.com/v1/",
