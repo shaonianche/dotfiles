@@ -52,6 +52,12 @@
       }
     }
   },
+  "agent": {
+    "default_model": {
+      "provider": "openai",
+      "model": "moonshotai/kimi-k2-0905"
+    }
+  },
   "language_models": {
     "openai": {
       "api_url": "https://api.ppinfra.com/openai",
