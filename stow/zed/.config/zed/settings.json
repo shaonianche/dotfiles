@@ -51,5 +51,17 @@
         "source.fixAll.eslint": true
       }
     }
+  },
+  "language_models": {
+    "openai": {
+      "api_url": "https://api.ppinfra.com/openai",
+      "available_models": [
+        {
+          "name": "moonshotai/kimi-k2-0905",
+          "display_name": "moonshotai/kimi-k2-0905",
+          "max_tokens": 2000000
+        }
+      ]
+    }
   }
 }
