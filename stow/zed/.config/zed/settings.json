@@ -32,7 +32,8 @@
   },
   "terminal": {
     "font_family": "JetBrainsMono Nerd Font Mono",
-    "blinking": "on"
+    "blinking": "on",
+    "line_height": "comfortable"
   },
   "lsp": {
     "rust-analyzer": {
