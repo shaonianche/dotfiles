@@ -13,16 +13,14 @@
     "light": "Vitesse Light",
     "dark": "Vitesse Dark"
   },
-  "bash_keymap": "VsCode",
+  "base_keymap": "VSCode",
   "vim_mode": true,
-  "font_family": "Maple Mono NF",
+  "ui_font_family": "Maple Mono NF",
   "buffer_font_size": 16,
   "agent_font_size": 16,
   "autosave": "on_focus_change",
   "format_on_save": "on",
   "formatter": "language_server",
-  "source.organizeImports": true,
-  "source.fixAll.eslint": true,
   "autoscroll_on_clicks": true,
   "restore_on_startup": "last_session",
   "scrollbar": {
@@ -45,7 +43,7 @@
       }
     }
   },
-  "language_overrides": {
+  "languages": {
     "JavaScript": {
       "code_actions_on_format": {
         "source.fixAll.eslint": true
