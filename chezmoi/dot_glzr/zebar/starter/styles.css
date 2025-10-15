@@ -64,16 +64,20 @@ body {
   -webkit-transform: translateZ(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  background: rgba(128, 128, 128, 0.35);  /* 默认状态：灰色 */
+  background: rgba(128, 128, 128, 0.35);
+  /* 默认状态：灰色 */
 
   &.displayed {
-    background: rgba(98, 98, 98, 0.55);  /* 显示状态：深灰色 */
+    background: rgba(98, 98, 98, 0.55);
+    /* 显示状态：深灰色 */
   }
 
   &.focused,
   &:hover {
-    background: rgba(0, 120, 212, 0.9);  /* Windows accent blue */
-    box-shadow: 0 0 4px rgba(0, 120, 212, 0.3);  /* 轻微的蓝色阴影效果 */
+    background: rgba(0, 120, 212, 0.9);
+    /* Windows accent blue */
+    box-shadow: 0 0 4px rgba(0, 120, 212, 0.3);
+    /* 轻微的蓝色阴影效果 */
   }
 }
 
@@ -82,9 +86,17 @@ body {
 }
 
 @keyframes flash {
-  from { opacity: 1.0; }
-  50% { opacity: 0.5; }
-  to { opacity: 1.0; }
+  from {
+    opacity: 1.0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1.0;
+  }
 }
 
 #root {
