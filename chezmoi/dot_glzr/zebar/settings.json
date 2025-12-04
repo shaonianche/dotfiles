@@ -4,7 +4,7 @@
     {
       "pack": "starter",
       "widget": "with-glazewm",
-      "preset": "default",
+      "preset": "default"
     }
   ]
 }
