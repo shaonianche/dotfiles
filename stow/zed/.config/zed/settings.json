@@ -10,8 +10,8 @@
   "icon_theme": "Catppuccin Macchiato",
   "theme": {
     "mode": "system",
-    "light": "Vitesse Light",
-    "dark": "Vitesse Dark"
+    "light": "One Dark",
+    "dark": "One Dark"
   },
   "base_keymap": "VSCode",
   "vim_mode": true,
