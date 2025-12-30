@@ -19,7 +19,7 @@
         "**/**"
       ],
       "caching": {
-        "defaultDuration": 0,
+        "defaultDuration": 604800,
         "rules": []
       },
       "privileges": {
