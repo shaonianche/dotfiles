@@ -1,7 +1,7 @@
 # https://github.com/glzr-io/glazewm/blob/main/resources/assets/sample-config.yaml
 general:
-  startup_commands: ["shell-exec zebar"]
-  shutdown_commands: ["shell-exec taskkill /IM zebar.exe /F"]
+  # startup_commands: ["shell-exec zebar"]
+  # shutdown_commands: ["shell-exec taskkill /IM zebar.exe /F"]
   config_reload_commands: []
   focus_follows_cursor: false
   toggle_workspace_on_refocus: false
@@ -108,6 +108,9 @@ window_rules:
 
       - window_process: {regex: "Bitwarden"}
         window_title: {regex: "Bitwarden*"}
+
+      - window_process: {regex: "Vokabry"}
+        window_title: {regex: "Vokabry*"}
 
       - window_process: { regex: "Discord" }
         window_title: { regex: "Friends - Discord" }
