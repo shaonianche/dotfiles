@@ -31,8 +31,8 @@
           "anchor": "top_center",
           "offsetX": "0px",
           "offsetY": "0px",
-          "width": "30%",
-          "height": "16px",
+          "width": "0px",
+          "height": "0px",
           "monitorSelection": {
             "type": "all"
           },

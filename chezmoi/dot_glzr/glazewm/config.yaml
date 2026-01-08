@@ -15,7 +15,7 @@ gaps:
   scale_with_dpi: true
   inner_gap: "10px"
   outer_gap:
-    top: "20px"
+    top: "10px"
     right: "10px"
     bottom: "10px"
     left: "10px"
@@ -146,9 +146,9 @@ binding_modes:
 
 keybindings:
   - commands: ["focus --direction left"]
-    bindings: ["alt+a", "alt+left"]
+    bindings: ["alt+h"]
   - commands: ["focus --direction right"]
-    bindings: ["alt+s", "alt+right"]
+    bindings: ["alt+l"]
   - commands: ["focus --direction up"]
     bindings: ["alt+k", "alt+up"]
   - commands: ["focus --direction down"]
