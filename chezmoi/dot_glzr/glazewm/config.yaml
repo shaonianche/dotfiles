@@ -136,6 +136,8 @@ window_rules:
       - window_title: { regex: "Task Manager" }
         window_class: { regex: "TaskManagerWindow" }
 
+      - window_class: { equals: "#32770" }
+
 binding_modes:
   - name: "resize"
     keybindings:
