@@ -202,12 +202,6 @@ keybindings:
   - commands: ["wm-redraw"]
     bindings: ["alt+shift+w"]
 
-  - commands:
-      [
-        "shell-exec C:\\Users\\duanfei\\AppData\\Local\\Programs\\Warp\\warp.exe",
-      ]
-    bindings: ["alt+enter"]
-
   - commands: ["focus --next-active-workspace"]
     bindings: ["alt+right"]
   - commands: ["focus --prev-active-workspace"]
