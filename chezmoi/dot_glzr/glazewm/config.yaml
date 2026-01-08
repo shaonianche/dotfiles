@@ -106,6 +106,9 @@ window_rules:
       - window_process: { regex: "Telegram" }
         window_title: { regex: "Telegram*" }
 
+      - window_process: {regex: "Bitwarden"}
+        window_title: {regex: "Bitwarden*"}
+
       - window_process: { regex: "Discord" }
         window_title: { regex: "Friends - Discord" }
 
