@@ -65,6 +65,8 @@ conflictstyle = diff3
 
 [diff]
 colorMoved = default
+
+[difftool "difft"]
 external = difft
 tool = difft
 
@@ -174,3 +176,13 @@ contributors = shortlog --summary --numbered
 
 # Show the user email for the current repository.
 whoami = config user.email
+
+# difftastic
+dlog = -c diff.external=difft log --ext-diff
+dshow = -c diff.external=difft show --ext-diff
+ddiff = -c diff.external=difft diff
+dl = -c diff.external=difft log -p --ext-diff
+# Show the most recent commit with difftastic.
+ds = -c diff.external=difft show --ext-diff
+# `git diff` with difftastic.
+dft = -c diff.external=difft diff

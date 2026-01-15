@@ -1,9 +1,8 @@
 distribution_code_name: Squirrel
 distribution_name: "鼠鬚管"
-distribution_version: 1.0.3
+distribution_version: 1.1.2
 install_time: "Sun Oct 27 10:05:43 2024"
 installation_id: mac_19
-rime_version: 1.13.0
-# sync_dir: "/Users/duanfei/OneDrive/Backup/Rime"
+rime_version: 1.16.0
 sync_dir: "/Users/friendsa/Library/Mobile Documents/com~apple~CloudDoc/Rime"
-update_time: "Thu May 15 12:08:01 2025"
+update_time: "Thu Jan 15 11:48:50 2026"
