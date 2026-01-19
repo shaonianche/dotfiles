@@ -1,0 +1,14 @@
+{
+  "name": "coder dev",
+  "image": "debian:latest",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "overrideCommand": false,
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-vscode-remote.remote-ssh"]
+    }
+  }
+}
+
