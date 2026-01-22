@@ -63,8 +63,12 @@ window_behavior:
       shown_on_top: false
 
 workspaces:
+  - name: "0"
+    bind_to_monitor: 2
+    keep_alive: true
   - name: "1"
     bind_to_monitor: 1
+    keep_alive: true
   - name: "2"
     bind_to_monitor: 1
   - name: "3"
@@ -72,11 +76,7 @@ workspaces:
   - name: "4"
     bind_to_monitor: 1
   - name: "5"
-    bind_to_monitor: 2
-  - name: "6"
-    bind_to_monitor: 3
-  - name: "7"
-    bind_to_monitor: 3
+    bind_to_monitor: 1
 
 window_rules:
   - commands: ["ignore"]
