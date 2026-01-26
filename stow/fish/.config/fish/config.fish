@@ -1,9 +1,9 @@
 # --- Common interactive setup ---
 if status is-interactive
-    set -gx GPG_TTY (tty)
     set -Ux EDITOR vim
     source "$HOME/.cargo/env.fish"
     starship init fish | source
+    atuin    init fish --disable-up-arrow | source
     if test -f ~/.venv/bin/activate.fish
         source ~/.venv/bin/activate.fish
     end
@@ -34,7 +34,7 @@ switch (uname -s)
         alias cursor="/Applications/Cursor.app/Contents/MacOS/Cursor"
 
         # macOS specific PATHs
-        set -gx PNPM_HOME "/Users/friendsa/Library/pnpm"
+        set -gx PNPM_HOME "$HOME/Library/pnpm"
         fish_add_path "$PNPM_HOME"
         fish_add_path "/opt/local/bin" # macports
 
@@ -46,7 +46,7 @@ switch (uname -s)
         # You can add other generic Linux settings here if needed
 end
 set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
+fish_add_path "$VOLTA_HOME/bin"
 
 set -x GPG_TTY (tty)
 gpg-connect-agent reloadagent /bye >/dev/null 2>&1
