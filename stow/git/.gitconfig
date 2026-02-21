@@ -43,9 +43,8 @@ whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 trustctime = false
 
-# Prevent showing files whose names contain non-ASCII symbols as unversioned.
-# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
-precomposeunicode = false
+# Keep macOS filename normalization handling enabled to avoid Unicode form mismatch issues.
+precomposeunicode = true
 
 # Speed up commands involving untracked files such as `git status`.
 # https://git-scm.com/docs/git-update-index#_untracked_cache
@@ -55,10 +54,7 @@ untrackedCache = true
 defaultBranch = main
 
 [interactive]
-diffFilter = delta --color-only
-
-[delta]
-navigate = true # use n and N to move between diff sections
+diffFilter = difft --color=always --display=inline
 
 [merge]
 conflictstyle = diff3
