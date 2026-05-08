@@ -153,7 +153,6 @@ $Script:LazyCompletions = @{
         'pixi'   = @{ Args = @('completion', '-s', 'powershell'); Loaded = $false }
         'rustup' = @{ Args = @('completions', 'power-shell'); Loaded = $false }
         'deno'   = @{ Args = @('completions', 'powershell'); Loaded = $false }
-        'volta'  = @{ Args = @('completions', 'powershell'); Loaded = $false }
 }
 
 function Initialize-LazyCompletion {
@@ -193,6 +192,7 @@ Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 # mise
 $shimPath = "$env:USERPROFILE\AppData\Local\mise\shims"
+(&mise activate pwsh) | Out-String | Invoke-Expression
 $currentPath = [Environment]::GetEnvironmentVariable('Path', 'User')
 $newPath = $currentPath + ";" + $shimPath
 [Environment]::SetEnvironmentVariable('Path', $newPath, 'User')
