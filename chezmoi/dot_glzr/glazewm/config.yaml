@@ -1,7 +1,5 @@
 # https://github.com/glzr-io/glazewm/blob/main/resources/assets/sample-config.yaml
 general:
-  # startup_commands: ["shell-exec zebar"]
-  # shutdown_commands: ["shell-exec taskkill /IM zebar.exe /F"]
   config_reload_commands: []
   focus_follows_cursor: false
   toggle_workspace_on_refocus: false
@@ -63,25 +61,23 @@ window_behavior:
       shown_on_top: false
 
 workspaces:
-  # - name: "0"
-  #   bind_to_monitor: 2
-  #   keep_alive: true
   - name: "1"
-    bind_to_monitor: 1
     keep_alive: true
   - name: "2"
-    bind_to_monitor: 1
   - name: "3"
-    bind_to_monitor: 1
   - name: "4"
-    bind_to_monitor: 1
   - name: "5"
+  - name: "6"
+  - name: "7"
+    bind_to_monitor: 1
+  - name: "8"
+    bind_to_monitor: 1
+  - name: "9"
     bind_to_monitor: 1
 
 window_rules:
   - commands: ["ignore"]
     match:
-      - window_process: { equals: "zebar" }
       - window_process: { equals: "Jantama_MahjongSoul" }
 
       - window_title: { regex: "[Pp]icture.in.[Pp]icture" }
@@ -103,23 +99,16 @@ window_rules:
       - window_process: { regex: "Weixin" }
         window_title: { regex: "微信" }
 
-      - window_process: { regex: "Telegram" }
-        window_title: { regex: "Telegram*" }
+      - window_process: { equals: "Telegram" }
 
-      - window_process: { regex: "Bitwarden" }
-        window_title: { regex: "Bitwarden*" }
+      - window_process: { equals: "Bitwarden" }
 
-      - window_process: { regex: "Telegram" }
-        window_class: { regex: "Qt51517QWindowIcon" }
-
-      - window_process: { regex: "Vokabry" }
-        window_title: { regex: "Vokabry*" }
+      - window_process: { equals: "Vokabry" }
 
       - window_process: { regex: "Discord" }
         window_title: { regex: "Friends - Discord" }
 
-      - window_process: { regex: "rune" }
-        window_title: { regex: "Rune*" }
+      - window_process: { equals: "rune" }
 
       - window_process: { regex: "Spotify" }
         window_title: { regex: "Spotify Premium" }
@@ -161,9 +150,9 @@ keybindings:
   - commands: ["focus --direction right"]
     bindings: ["alt+l"]
   - commands: ["focus --direction up"]
-    bindings: ["alt+k", "alt+up"]
+    bindings: ["alt+k"]
   - commands: ["focus --direction down"]
-    bindings: ["alt+j", "alt+down"]
+    bindings: ["alt+j"]
 
   - commands: ["move --direction left"]
     bindings: ["alt+shift+h", "alt+shift+left"]
