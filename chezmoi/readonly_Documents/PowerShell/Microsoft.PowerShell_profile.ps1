@@ -53,9 +53,7 @@ function Start-Serve { python -m http.server 8080 }
 Set-Alias serve Start-Serve -Option AllScope
 
 function Open-Here { explorer $(Get-Location) }
-if (-not (Get-Command open -ErrorAction SilentlyContinue)) {
-        Set-Alias open explorer -Option AllScope
-}
+Set-Alias open explorer -Option AllScope
 Set-Alias here Open-Here -Option AllScope
 
 Set-Alias neofetch fastfetch
@@ -123,11 +121,11 @@ if (Get-Command winget -ErrorAction SilentlyContinue) {
 }
 
 # Starship prompt (cached)
-$starshipCache = "$Script:CompletionCacheDir\starship-init.ps1"
+$starshipCache = "$Script:CompletionCacheDir\starship-init-full.ps1"
 if (Get-Command starship -ErrorAction SilentlyContinue) {
         $starshipPath = (Get-Command starship).Source
         if (-not (Test-Path $starshipCache) -or (Get-Item $starshipPath).LastWriteTime -gt (Get-Item $starshipCache).LastWriteTime) {
-                & starship init powershell | Out-File -FilePath $starshipCache -Encoding utf8 -Force
+                & starship init powershell --print-full-init | Out-File -FilePath $starshipCache -Encoding utf8 -Force
         }
         . $starshipCache
 }
@@ -185,7 +183,8 @@ $Script:LazyCompletions.Keys | ForEach-Object {
 }
 
 
-Import-Module -Name Microsoft.WinGet.CommandNotFound -ErrorAction SilentlyContinue
+# Microsoft.WinGet.CommandNotFound can terminate PowerShell when its catalog warm-up fails.
+# Keep it disabled; this does not affect winget itself or its argument completer above.
 Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
@@ -193,9 +192,7 @@ Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 # mise
 $shimPath = "$env:USERPROFILE\AppData\Local\mise\shims"
 (&mise activate pwsh) | Out-String | Invoke-Expression
-$currentPath = [Environment]::GetEnvironmentVariable('Path', 'User')
-$newPath = $currentPath + ";" + $shimPath
-[Environment]::SetEnvironmentVariable('Path', $newPath, 'User')
+Add-ToPath $shimPath
 
 if ((Get-Module -Name PSReadLine).Version -ge [System.Version]'2.1.0') {
         Set-PSReadLineOption -PredictionSource History
