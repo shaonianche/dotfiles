@@ -123,6 +123,8 @@ patch:
 
   # get Bundle Identifier
   # mdls -name kMDItemCFBundleIdentifier -raw /Applications/Visual\ Studio\ Code.app
+  #
+  # 中英策略：终端/代码工具默认英文；同会话内切中文后需 Shift 或 Esc(vim_mode) 切回
   app_options:
     com.apple.Spotlight:
       ascii_mode: true
@@ -131,7 +133,24 @@ patch:
     com.blacktree.Quicksilver:
       ascii_mode: true
       no_inline: true
-    # Warp 全渠道：Stable / Preview；开启行内输入（Squirrel 用 inline）
+
+    # --- 终端：默认英文 + Esc 回英文 + 行内 ---
+    com.apple.Terminal:
+      ascii_mode: true
+      vim_mode: true
+    com.googlecode.iterm2:
+      ascii_mode: true
+      vim_mode: true
+    net.kovidgoyal.kitty:
+      ascii_mode: true
+      vim_mode: true
+    com.github.wez.wezterm:
+      ascii_mode: true
+      vim_mode: true
+    org.alacritty:
+      ascii_mode: true
+      vim_mode: true
+    # Warp 全渠道
     dev.warp.Warp-Stable:
       ascii_mode: true
       vim_mode: true
@@ -144,12 +163,15 @@ patch:
       ascii_mode: true
       vim_mode: true
       inline: true
+
+    # --- 代码编辑器 / IDE ---
     org.vim.MacVim:
-      ascii_mode: true # 初始爲西文模式
-      no_inline: true # 不使用行內編輯
-      vim_mode: true # 退出 VIM 插入模式自動切換輸入法狀態
+      ascii_mode: true
+      no_inline: true
+      vim_mode: true
     com.apple.dt.Xcode:
       ascii_mode: true
+      vim_mode: true
     com.barebones.textwrangler:
       ascii_mode: true
     com.macromates.TextMate.preview:
@@ -157,14 +179,33 @@ patch:
     com.microsoft.VSCode:
       ascii_mode: true
       vim_mode: true
+    com.todesktop.230313mzl4w4u92:
+      # Cursor（若 Bundle ID 不同，用 mdls 核对后改）
+      ascii_mode: true
+      vim_mode: true
     dev.zed.Zed:
       ascii_mode: true
       vim_mode: true
     org.gnu.Aquamacs:
       ascii_mode: true
+      vim_mode: true
     org.gnu.Emacs:
       ascii_mode: true
       no_inline: true
+      vim_mode: true
+    com.jetbrains.intellij:
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.pycharm:
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.WebStorm:
+      ascii_mode: true
+      vim_mode: true
+    com.jetbrains.CLion:
+      ascii_mode: true
+      vim_mode: true
+
     ru.keepcoder.Telegram:
       # 規避 https://github.com/rime/squirrel/issues/475
       inline: true

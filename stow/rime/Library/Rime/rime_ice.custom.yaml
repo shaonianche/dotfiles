@@ -1,6 +1,9 @@
 # 雾凇拼音补丁
 # 注意：switches 是数组，整段赋值会替换原方案全部开关，
 # 因此这里保留完整列表后再改需要的项。
+#
+# ascii_mode reset: 1 → 新会话 / 方案加载时默认英文（不写入 save_options，避免跨次记忆）
+# 终端与编辑器的「进入即英文」另见 weasel / squirrel 的 app_options
 patch:
   schema:
     icon: others/zhcn.ico
@@ -11,7 +14,7 @@ patch:
   switches:
     - name: ascii_mode
       states: [ 中, Ａ ]
-      reset: 1 # 默认英文
+      reset: 1 # 0=中文 1=英文；新会话默认英文
     - name: ascii_punct
       states: [ ¥, $ ]
     - name: traditionalization

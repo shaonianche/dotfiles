@@ -2,9 +2,10 @@
 # https://github.com/rime/weasel/wiki/Weasel-定制化#weaselyaml
 # https://github.com/rime/weasel/blob/bf4853dde1a4476489c4d7e85ab9407e5fc7c5f7/output/data/weasel.yaml#L4
 #
-# 中英策略：按应用记忆（global_ascii: false）
-# - 终端 / 编辑器：默认英文；编辑器启用 vim_mode（Esc 切英文）
-# - 浏览器 / 资源管理器 / 聊天：不强制，各自记住上次状态
+# 中英策略（global_ascii: false + 方案 ascii_mode reset:1）
+# - 终端 / 代码工具：app_options 强制初始英文；vim_mode 下 Esc 回英文
+# - 同窗口内切到中文后，Rime 会保持到你手动切回（Shift / Esc），无法“每次获焦强制英文”
+# - 浏览器 / 聊天：不写 app_options，互不抢状态
 #
 # 配色说明：默认 color_format 为 abgr/bgr（0xBBGGRR），注释中的 #RRGGBB 为设计意图
 
@@ -157,22 +158,32 @@ patch:
       shadow_offset_y: 2
 
   app_options:
-    # --- 终端：默认英文 ---
+    # --- 终端 / 控制台：默认英文 + Esc 回英文（AI 打完中文后可按 Esc）---
     cmd.exe:
       ascii_mode: true
+      vim_mode: true
+    powershell.exe:
+      ascii_mode: true
+      vim_mode: true
     pwsh.exe:
       ascii_mode: true
+      vim_mode: true
     windowsterminal.exe:
       ascii_mode: true
+      vim_mode: true
     conhost.exe:
       ascii_mode: true
+      vim_mode: true
     conemu64.exe:
       ascii_mode: true
+      vim_mode: true
     conemuc64.exe:
       ascii_mode: true
+      vim_mode: true
     mintty.exe:
       ascii_mode: true
-    # Warp 全渠道：稳定版 / Preview；显式开启行内预编辑
+      vim_mode: true
+    # Warp 全渠道
     warp.exe:
       ascii_mode: true
       vim_mode: true
@@ -181,8 +192,24 @@ patch:
       ascii_mode: true
       vim_mode: true
       inline_preedit: true
+    # 其它常见终端
+    tabby.exe:
+      ascii_mode: true
+      vim_mode: true
+    hyper.exe:
+      ascii_mode: true
+      vim_mode: true
+    alacritty.exe:
+      ascii_mode: true
+      vim_mode: true
+    wezterm-gui.exe:
+      ascii_mode: true
+      vim_mode: true
+    kitty.exe:
+      ascii_mode: true
+      vim_mode: true
 
-    # --- 编辑器：默认英文 + Esc 切英文 ---
+    # --- 代码编辑器 / IDE：默认英文 + Esc 回英文 ---
     code.exe:
       ascii_mode: true
       vim_mode: true
@@ -202,5 +229,29 @@ patch:
       ascii_mode: true
       vim_mode: true
     nvim.exe:
+      ascii_mode: true
+      vim_mode: true
+    nvim-qt.exe:
+      ascii_mode: true
+      vim_mode: true
+    gvim.exe:
+      ascii_mode: true
+      vim_mode: true
+    devenv.exe:
+      ascii_mode: true
+      vim_mode: true
+    idea64.exe:
+      ascii_mode: true
+      vim_mode: true
+    pycharm64.exe:
+      ascii_mode: true
+      vim_mode: true
+    webstorm64.exe:
+      ascii_mode: true
+      vim_mode: true
+    clion64.exe:
+      ascii_mode: true
+      vim_mode: true
+    rider64.exe:
       ascii_mode: true
       vim_mode: true
