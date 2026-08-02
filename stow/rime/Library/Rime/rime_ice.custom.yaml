@@ -1,3 +1,6 @@
+# 雾凇拼音补丁
+# 注意：switches 是数组，整段赋值会替换原方案全部开关，
+# 因此这里保留完整列表后再改需要的项。
 patch:
   schema:
     icon: others/zhcn.ico
@@ -7,5 +10,18 @@ patch:
 
   switches:
     - name: ascii_mode
-      states: [中，A]
+      states: [ 中, Ａ ]
+      reset: 1 # 默认英文
+    - name: ascii_punct
+      states: [ ¥, $ ]
+    - name: traditionalization
+      states: [ 简, 繁 ]
+      reset: 0 # 默认简体（0=简，1=繁）
+    - name: emoji
+      states: [ 💀, 😄 ]
       reset: 1
+    - name: full_shape
+      states: [ 半角, 全角 ]
+    - name: search_single_char
+      states: [正常, 单字]
+      abbrev: [词, 单]

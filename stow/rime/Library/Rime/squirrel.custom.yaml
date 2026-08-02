@@ -1,5 +1,8 @@
 # macos
 # https://github.com/rime/squirrel/blob/master/data/squirrel.yaml
+#
+# 配色与 Windows weasel.custom.yaml 对齐
+# 默认 color_format 为 abgr/bgr（0xBBGGRR），注释中的 #RRGGBB 为设计意图
 
 patch:
   keyboard_layout: last
@@ -7,51 +10,116 @@ patch:
   show_notifications_when: appropriate
 
   style:
-    color_scheme: vitesse_light
-    color_scheme_dark: vitesse_dark
+    color_scheme: violet_light
+    color_scheme_dark: violet_dark
 
     font_face: "SourceHanSerifSC"
     font_point: 16
+    label_font_point: 13
+    comment_font_point: 12
     horizontal: true
     color_space: display_p3
     inline_preedit: true
     translucency: true
     candidate_list_layout: linear
-    label_font_point: 14
     corner_radius: 10
-    spacing: 5
+    hilited_corner_radius: 6
+    border_height: 1
+    border_width: 1
+    spacing: 6
+    line_spacing: 6
+    base_offset: 0
 
   preset_color_schemes:
-    ink:
-      name: 墨池／Ink
-      author: 佛振 <chen.sst@gmail.com>
-      text_color: 0x000000
-      back_color: 0xffffff
-      border_color: 0x000000
-      hilited_text_color: 0x000000
-      hilited_back_color: 0xdddddd
+    # ── Violet / 紫罗兰（默认）────────────────────────────────
+    violet_light:
+      name: Violet Light
+      author: "dotfile"
+      # #3b3348 正文
+      text_color: 0x48333b
+      candidate_text_color: 0x48333b
+      # #fbf8fc 窗体底
+      back_color: 0xfcf8fb
+      candidate_back_color: 0xfcf8fb
+      # #e6ddf0 边框
+      border_color: 0xf0dde6
+      # #9b8fb0 序号
+      label_color: 0xb08f9b
+      # #a898b8 注释
+      comment_text_color: 0xb898a8
+      # #7c5cbf 编码高亮
+      hilited_text_color: 0xbf5c7c
+      # #f3edf8 编码区底
+      hilited_back_color: 0xf8edf3
       hilited_candidate_text_color: 0xffffff
-      hilited_candidate_back_color: 0x000000
+      # #5b4b8a 选中底
+      hilited_candidate_back_color: 0x8a4b5b
+      # #ddd6fe 选中序号
+      hilited_label_color: 0xfed6dd
+      # #e9e0ff 选中注释
+      hilited_comment_text_color: 0xffe0e9
 
+    violet_dark:
+      name: Violet Dark
+      author: "dotfile"
+      # #e8e0f0 正文
+      text_color: 0xf0e0e8
+      candidate_text_color: 0xf0e0e8
+      # #1a1625 窗体底
+      back_color: 0x25161a
+      candidate_back_color: 0x25161a
+      # #2d2640 边框
+      border_color: 0x40262d
+      # #8b7fa0 序号
+      label_color: 0xa07f8b
+      # #8b7fa0 注释
+      comment_text_color: 0xa07f8b
+      # #c4b5fd 编码高亮
+      hilited_text_color: 0xfdb5c4
+      # #252033 编码区底
+      hilited_back_color: 0x332025
+      hilited_candidate_text_color: 0xffffff
+      # #5b4b8a 选中底
+      hilited_candidate_back_color: 0x8a4b5b
+      # #c4b5fd 选中序号
+      hilited_label_color: 0xfdb5c4
+      # #d4c4e8 选中注释
+      hilited_comment_text_color: 0xe8c4d4
+
+    # ── Vitesse（备用）────────────────────────────────────────
     vitesse_light:
       name: Vitesse Light
-      text_color: 0x393a34
+      author: "based on Anthony Fu Vitesse"
+      text_color: 0x343a39
+      candidate_text_color: 0x343a39
       back_color: 0xfbfbfb
-      border_color: 0xfbfbfb
-      hilited_text_color: 0x1c6b48
-      hilited_back_color: 0xfbfbfb
-      hilited_candidate_text_color: 0xbfcfd4
-      hilited_candidate_back_color: 0x393a34
+      candidate_back_color: 0xfbfbfb
+      border_color: 0xe0e5e5
+      label_color: 0x98a0a0
+      comment_text_color: 0xa0ada0
+      hilited_text_color: 0x486b1c
+      hilited_back_color: 0xebf0f0
+      hilited_candidate_text_color: 0xffffff
+      hilited_candidate_back_color: 0x343a39
+      hilited_label_color: 0x75934d
+      hilited_comment_text_color: 0xc0cfc8
 
     vitesse_dark:
-      name: Vitesse Light
-      text_color: 0xfbfbfb
+      name: Vitesse Dark
+      author: "based on Anthony Fu Vitesse"
+      text_color: 0xcad7db
+      candidate_text_color: 0xcad7db
       back_color: 0x1e1e1e
-      border_color: 0x1e1e1e
-      hilited_text_color: 0x4d9375
-      hilited_back_color: 0x1e1e1e
-      hilited_candidate_text_color: 0xfbfbfb
-      hilited_candidate_back_color: 0x393a34
+      candidate_back_color: 0x1e1e1e
+      border_color: 0x2f2f2f
+      label_color: 0x758575
+      comment_text_color: 0x758575
+      hilited_text_color: 0x75934d
+      hilited_back_color: 0x2a2a2a
+      hilited_candidate_text_color: 0xffffff
+      hilited_candidate_back_color: 0x343a39
+      hilited_label_color: 0x75934d
+      hilited_comment_text_color: 0xa0ada0
 
   # get Bundle Identifier
   # mdls -name kMDItemCFBundleIdentifier -raw /Applications/Visual\ Studio\ Code.app
