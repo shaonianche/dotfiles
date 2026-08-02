@@ -172,12 +172,15 @@ patch:
       ascii_mode: true
     mintty.exe:
       ascii_mode: true
+    # Warp 全渠道：稳定版 / Preview；显式开启行内预编辑
     warp.exe:
       ascii_mode: true
       vim_mode: true
+      inline_preedit: true
     warppreview.exe:
       ascii_mode: true
       vim_mode: true
+      inline_preedit: true
 
     # --- 编辑器：默认英文 + Esc 切英文 ---
     code.exe:

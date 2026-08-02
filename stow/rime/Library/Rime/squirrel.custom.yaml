@@ -131,9 +131,19 @@ patch:
     com.blacktree.Quicksilver:
       ascii_mode: true
       no_inline: true
+    # Warp 全渠道：Stable / Preview；开启行内输入（Squirrel 用 inline）
     dev.warp.Warp-Stable:
       ascii_mode: true
-      no_inline: true
+      vim_mode: true
+      inline: true
+    dev.warp.Warp-Preview:
+      ascii_mode: true
+      vim_mode: true
+      inline: true
+    dev.warp.Warp:
+      ascii_mode: true
+      vim_mode: true
+      inline: true
     org.vim.MacVim:
       ascii_mode: true # 初始爲西文模式
       no_inline: true # 不使用行內編輯
