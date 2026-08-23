@@ -2,9 +2,9 @@
   "lastChangelogVersion": "0.84.2",
   "quietStartup": true,
   "theme": "vitesse-light/vitesse-dark",
-  "defaultProvider": "kimi-coding",
-  "defaultModel": "k3-256k",
-  "defaultThinkingLevel": "max",
+  "defaultProvider": "xai",
+  "defaultModel": "grok-4.6",
+  "defaultThinkingLevel": "xhigh",
   "enabledModels": [
     "kimi-coding/k3-256k",
     "kimi-coding/k3",

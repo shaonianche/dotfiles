@@ -1,52 +1,104 @@
-# --- Common interactive setup ---
-if status is-interactive
-    set -Ux EDITOR vim
-    source "$HOME/.cargo/env.fish"
-    starship init fish | source
-    atuin    init fish --disable-up-arrow | source
-    if test -f ~/.venv/bin/activate.fish
-        source ~/.venv/bin/activate.fish
+# =============================================================================
+# fish configuration — managed by GNU Stow
+# Primary target: Debian. Machine-local settings (tokens, private endpoints)
+# belong in ~/.config/fish/conf.d/*.fish and are NOT tracked in this repo.
+# =============================================================================
+
+# --- Environment ---
+set -gx EDITOR vim
+
+# --- PATH ---
+# Idempotent prepends: `contains` guard avoids duplicates in nested shells
+# (fish_add_path would write universal variables and can duplicate entries
+# already present in the inherited PATH, e.g. from ~/.profile or WSL interop).
+function __fish_prepend_path
+    for dir in $argv
+        if test -d "$dir"; and not contains -- "$dir" $PATH
+            set -p PATH "$dir"
+        end
     end
 end
 
+__fish_prepend_path "$HOME/.local/bin"
+
+# --- Rust ---
+if test -f "$HOME/.cargo/env.fish"
+    source "$HOME/.cargo/env.fish"
+end
+
+# --- bun ---
+if test -x "$HOME/.bun/bin/bun"
+    set -gx BUN_INSTALL "$HOME/.bun"
+    __fish_prepend_path "$BUN_INSTALL/bin"
+end
+
+# --- OS-specific setup ---
+switch (uname -s)
+    case Darwin # macOS
+        alias cursor="/Applications/Cursor.app/Contents/MacOS/Cursor"
+
+        set -gx PNPM_HOME "$HOME/Library/pnpm"
+        __fish_prepend_path "$PNPM_HOME" "/opt/local/bin" # MacPorts
+
+    case Linux
+        # Java: pin JDK 17 when available (Debian installs under /usr/lib/jvm)
+        if test -d /usr/lib/jvm/java-17-openjdk-amd64
+            set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+        end
+
+        # WSL detection for future use
+        if string match -q -- "*[Mm]icrosoft*" (uname -r)
+            # WSL specific settings
+        end
+end
+
+# --- mise (polyglot version manager) ---
+# Works in non-interactive shells too, so shims are always available.
+if command -q mise
+    mise activate fish | source
+end
+
+# --- Interactive session setup ---
+if status is-interactive
+    # GPG: pinentry needs the real terminal; only set when attached to one
+    if isatty stdin
+        set -gx GPG_TTY (tty)
+    end
+    if command -q gpg-connect-agent
+        gpg-connect-agent reloadagent /bye >/dev/null 2>&1
+    end
+
+    # Prompt, history, directory jumping
+    if command -q starship
+        starship init fish | source
+    end
+    if command -q atuin
+        atuin init fish --disable-up-arrow | source
+    end
+    if command -q zoxide
+        zoxide init fish | source
+    end
+
+    # Shared Python virtualenv
+    if test -f "$HOME/.venv/bin/activate.fish"
+        source "$HOME/.venv/bin/activate.fish"
+    end
+
+    # --- Aliases ---
+    alias emacs "emacs -nw"
+
+    # Debian ships these tools under different names
+    if command -q batcat; and not command -q bat
+        alias bat batcat
+    end
+    if command -q fdfind; and not command -q fd
+        alias fd fdfind
+    end
+end
+
+# --- Disable greeting ---
 function fish_greeting
 end
 
-# --- Common PATH and environment setup ---
-# Use fish_add_path to avoid duplicate entries and keep the config clean.
-
-# chsrc
-fish_add_path "$HOME/.local/bin"
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-fish_add_path "$BUN_INSTALL/bin"
-
-# opencode
-fish_add_path "$HOME/.opencode/bin"
-fish_add_path "$HOME/.volta/bin"
-
-# --- OS-specific setup ---
-# Detect OS for specific configurations
-switch (uname -s)
-    case Darwin # This is macOS
-        # macOS specific aliases
-        alias cursor="/Applications/Cursor.app/Contents/MacOS/Cursor"
-
-        # macOS specific PATHs
-        set -gx PNPM_HOME "$HOME/Library/pnpm"
-        fish_add_path "$PNPM_HOME"
-        fish_add_path "/opt/local/bin" # macports
-
-    case Linux
-        # Check if it's WSL by inspecting the kernel release info
-        if string match -q -- "*[Mm]icrosoft*" (uname -r)
-            # WSL specific aliases
-        end
-        # You can add other generic Linux settings here if needed
-end
-set -gx VOLTA_HOME "$HOME/.volta"
-fish_add_path "$VOLTA_HOME/bin"
-
-set -x GPG_TTY (tty)
-gpg-connect-agent reloadagent /bye >/dev/null 2>&1
+# Helper no longer needed after startup; keep the namespace clean
+functions -e __fish_prepend_path
