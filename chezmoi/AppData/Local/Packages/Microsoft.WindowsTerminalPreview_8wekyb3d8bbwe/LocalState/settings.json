@@ -154,42 +154,6 @@
                 "hidden": false,
                 "name": "archlinux",
                 "source": "Microsoft.WSL"
-            },
-            {
-                "guid": "{d45641dd-5360-56d1-9098-965eb8693aed}",
-                "hidden": false,
-                "name": "SSH - mbp19.tail",
-                "source": "Windows.Terminal.SSH"
-            },
-            {
-                "guid": "{cc3124f7-6314-5496-a18b-383b4fd2ae5f}",
-                "hidden": false,
-                "name": "SSH - debian.tail",
-                "source": "Windows.Terminal.SSH"
-            },
-            {
-                "guid": "{24e40cb7-584a-5212-a6ac-64dd82dba684}",
-                "hidden": false,
-                "name": "SSH - debian.cf",
-                "source": "Windows.Terminal.SSH"
-            },
-            {
-                "guid": "{a18eea35-5d00-5368-9ebf-34ff335c08ea}",
-                "hidden": false,
-                "name": "SSH - mbp19.cf",
-                "source": "Windows.Terminal.SSH"
-            },
-            {
-                "guid": "{eeb72367-7115-56b8-8ecf-6af1e64b07e2}",
-                "hidden": false,
-                "name": "SSH - centos240",
-                "source": "Windows.Terminal.SSH"
-            },
-            {
-                "guid": "{67e7082b-f122-5215-b1db-7e1546bbc2d8}",
-                "hidden": false,
-                "name": "SSH - centos21",
-                "source": "Windows.Terminal.SSH"
             }
         ]
     },

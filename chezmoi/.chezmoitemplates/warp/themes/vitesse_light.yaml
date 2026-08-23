@@ -1,0 +1,26 @@
+# Vitesse Light for Warp
+# Colors from https://github.com/antfu/vscode-theme-vitesse
+name: Vitesse Light
+accent: '#1e754f'
+background: '#ffffff'
+foreground: '#393a34'
+details: lighter
+terminal_colors:
+  normal:
+    black: '#121212'
+    red: '#ab5959'
+    green: '#1e754f'
+    yellow: '#bda437'
+    blue: '#296aa3'
+    magenta: '#a13865'
+    cyan: '#2993a3'
+    white: '#dbd7ca'
+  bright:
+    black: '#aaaaaa'
+    red: '#ab5959'
+    green: '#1e754f'
+    yellow: '#bda437'
+    blue: '#296aa3'
+    magenta: '#a13865'
+    cyan: '#2993a3'
+    white: '#dddddd'

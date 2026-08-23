@@ -1,0 +1,26 @@
+# Vitesse Dark for Warp
+# Colors from https://github.com/antfu/vscode-theme-vitesse
+name: Vitesse Dark
+accent: '#4d9375'
+background: '#121212'
+foreground: '#dbd7ca'
+details: darker
+terminal_colors:
+  normal:
+    black: '#393a34'
+    red: '#cb7676'
+    green: '#4d9375'
+    yellow: '#e6cc77'
+    blue: '#6394bf'
+    magenta: '#d9739f'
+    cyan: '#5eaab5'
+    white: '#dbd7ca'
+  bright:
+    black: '#777777'
+    red: '#cb7676'
+    green: '#4d9375'
+    yellow: '#e6cc77'
+    blue: '#6394bf'
+    magenta: '#d9739f'
+    cyan: '#5eaab5'
+    white: '#ffffff'

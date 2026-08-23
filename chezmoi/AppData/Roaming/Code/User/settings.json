@@ -206,11 +206,7 @@
   "python.analysis.typeCheckingMode": "off",
   "ruff.lint.preview": true,
   "python.venvPath": "${workspaceFolder}",
-  "remote.SSH.remotePlatform": {
-    "mbp19.lan": "macOS",
-    "debian.lan": "linux",
-    "coder-vscode.coder.xuanwo.io--shaonianche--dev.main": "linux"
-  },
+  "remote.SSH.remotePlatform": {},
   "remote.SSH.defaultExtensions": [
     "WakaTime.vscode-wakatime",
     "ms-python.python",

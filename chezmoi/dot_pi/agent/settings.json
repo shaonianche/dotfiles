@@ -1,0 +1,22 @@
+{
+  "lastChangelogVersion": "0.84.2",
+  "quietStartup": true,
+  "theme": "vitesse-light/vitesse-dark",
+  "defaultProvider": "kimi-coding",
+  "defaultModel": "k3-256k",
+  "defaultThinkingLevel": "max",
+  "enabledModels": [
+    "kimi-coding/k3-256k",
+    "kimi-coding/k3",
+    "qwen-token-plan-cn/qwen3.8-max",
+    "zai-coding-cn/glm-5.3",
+    "openrouter/deepseek/deepseek-v4-flash",
+    "openrouter/deepseek/deepseek-v4-pro",
+    "xai/grok-4.6"
+  ],
+  "packages": [
+    "npm:@latentminds/pi-quotas"
+  ],
+  "tuiMode": "fullscreen",
+  "editorPaddingX": 1
+}
