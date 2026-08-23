@@ -70,13 +70,13 @@
     "syntaxOperator": "red",
     "syntaxPunctuation": "#999999",
 
-    "thinkingOff": "borderMuted",
-    "thinkingMinimal": "dimGray",
-    "thinkingLow": "cyan",
-    "thinkingMedium": "blue",
-    "thinkingHigh": "magenta",
-    "thinkingXhigh": "red",
-    "thinkingMax": "yellow",
+    "thinkingOff": "border",
+    "thinkingMinimal": "#b8b8b8",
+    "thinkingLow": "dimGray",
+    "thinkingMedium": "gray",
+    "thinkingHigh": "#808080",
+    "thinkingXhigh": "#606060",
+    "thinkingMax": "#404040",
 
     "bashMode": "green"
   },
