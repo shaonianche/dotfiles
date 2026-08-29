@@ -120,9 +120,9 @@ if (Get-Command winget -ErrorAction SilentlyContinue) {
         }
 }
 
-# Starship prompt (cached)
+# Starship prompt (cached; skipped in Warp which renders its own prompt)
 $starshipCache = "$Script:CompletionCacheDir\starship-init-full.ps1"
-if (Get-Command starship -ErrorAction SilentlyContinue) {
+if ((Get-Command starship -ErrorAction SilentlyContinue) -and $env:TERM_PROGRAM -ne 'WarpTerminal') {
         $starshipPath = (Get-Command starship).Source
         if (-not (Test-Path $starshipCache) -or (Get-Item $starshipPath).LastWriteTime -gt (Get-Item $starshipCache).LastWriteTime) {
                 & starship init powershell --print-full-init | Out-File -FilePath $starshipCache -Encoding utf8 -Force

@@ -2,17 +2,16 @@
   "lastChangelogVersion": "0.84.2",
   "quietStartup": true,
   "theme": "vitesse-light/vitesse-dark",
-  "defaultProvider": "xai",
-  "defaultModel": "grok-4.6",
-  "defaultThinkingLevel": "xhigh",
+  "defaultProvider": "zai-coding-cn",
+  "defaultModel": "glm-5.3",
+  "defaultThinkingLevel": "high",
   "enabledModels": [
     "kimi-coding/k3-256k",
     "kimi-coding/k3",
     "qwen-token-plan-cn/qwen3.8-max",
     "zai-coding-cn/glm-5.3",
     "openrouter/deepseek/deepseek-v4-flash",
-    "openrouter/deepseek/deepseek-v4-pro",
-    "xai/grok-4.6"
+    "openrouter/deepseek/deepseek-v4-pro"
   ],
   "packages": [
     "npm:@latentminds/pi-quotas"
