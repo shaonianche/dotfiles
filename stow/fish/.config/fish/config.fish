@@ -6,6 +6,12 @@
 
 # --- Environment ---
 set -gx EDITOR vim
+# English program messages where the locale exists (GPG pinentry otherwise
+# follows the system language, e.g. Chinese on macOS; Linux prints warnings
+# when LC_MESSAGES names a locale that is not generated)
+if locale -a 2>/dev/null | string match -qi 'en_US.*'
+    set -gx LC_MESSAGES en_US.UTF-8
+end
 
 # --- PATH ---
 # Idempotent prepends: `contains` guard avoids duplicates in nested shells
@@ -41,9 +47,11 @@ switch (uname -s)
         __fish_prepend_path "$PNPM_HOME" "/opt/local/bin" # MacPorts
 
     case Linux
-        # Java: pin JDK 17 when available (Debian installs under /usr/lib/jvm)
-        if test -d /usr/lib/jvm/java-17-openjdk-amd64
-            set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+        # Java: pin JDK 17 when available (Debian installs under /usr/lib/jvm;
+        # glob covers amd64/arm64)
+        for jvm in /usr/lib/jvm/java-17-openjdk-*
+            set -gx JAVA_HOME $jvm
+            break
         end
 
         # WSL detection for future use
