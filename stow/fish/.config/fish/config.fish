@@ -41,10 +41,8 @@ end
 # --- OS-specific setup ---
 switch (uname -s)
     case Darwin # macOS
-        alias cursor="/Applications/Cursor.app/Contents/MacOS/Cursor"
-
         set -gx PNPM_HOME "$HOME/Library/pnpm"
-        __fish_prepend_path "$PNPM_HOME" "/opt/local/bin" # MacPorts
+        __fish_prepend_path "$PNPM_HOME"
 
     case Linux
         # Java: pin JDK 17 when available (Debian installs under /usr/lib/jvm;
@@ -80,9 +78,6 @@ if status is-interactive
     if command -q starship
         starship init fish | source
     end
-    if command -q atuin
-        atuin init fish --disable-up-arrow | source
-    end
     if command -q zoxide
         zoxide init fish | source
     end
@@ -92,13 +87,7 @@ if status is-interactive
         source "$HOME/.venv/bin/activate.fish"
     end
 
-    # --- Aliases ---
-    alias emacs "emacs -nw"
-
-    # Debian ships these tools under different names
-    if command -q batcat; and not command -q bat
-        alias bat batcat
-    end
+    # Debian ships this tool under a different name
     if command -q fdfind; and not command -q fd
         alias fd fdfind
     end
