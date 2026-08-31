@@ -1,0 +1,71 @@
+# Migrated from glazewm config.yaml (dotfile/chezmoi/dot_glzr/glazewm/config.yaml)
+# 注意: 修改本文件后需重启 whkd 才生效 (alt + shift + r)
+.shell powershell
+
+# Reload (komorebi.json + whkdrc)
+alt + shift + r         : komorebic replace-configuration; taskkill /f /im whkd.exe; Start-Process whkd -WindowStyle hidden
+
+# Focus windows
+alt + h                 : komorebic focus left
+alt + l                 : komorebic focus right
+alt + k                 : komorebic focus up
+alt + j                 : komorebic focus down
+
+# Move windows
+alt + shift + h         : komorebic move left
+alt + shift + l         : komorebic move right
+alt + shift + k         : komorebic move up
+alt + shift + j         : komorebic move down
+alt + shift + left      : komorebic move left
+alt + shift + right     : komorebic move right
+alt + shift + up        : komorebic move up
+alt + shift + down      : komorebic move down
+
+# Resize (原配置按百分比, komorebi 按像素; 步长 = komorebi.json 中的 resize_delta)
+alt + u                 : komorebic resize-axis horizontal decrease
+alt + p                 : komorebic resize-axis horizontal increase
+alt + o                 : komorebic resize-axis vertical increase
+alt + i                 : komorebic resize-axis vertical decrease
+
+# Window manager options
+alt + shift + p         : komorebic toggle-pause
+alt + t                 : komorebic toggle-tiling
+alt + v                 : komorebic flip-layout horizontal-and-vertical
+alt + shift + space     : komorebic toggle-float
+alt + f                 : komorebic toggle-maximize
+alt + shift + f         : komorebic toggle-monocle
+alt + shift + q         : komorebic close
+alt + shift + e         : komorebic stop; komorebic kill
+alt + shift + w         : komorebic retile
+
+# Cycle workspaces on the focused monitor
+alt + right             : komorebic cycle-workspace next
+alt + left              : komorebic cycle-workspace previous
+
+# Move focused workspace to another monitor
+alt + shift + a         : komorebic move-workspace-to-monitor 0
+alt + shift + f         : komorebic move-workspace-to-monitor 1
+
+# Move window to workspace (and follow it)
+# 工作区 1-6 在显示器 0 (komorebi 索引从 0 开始)
+alt + shift + 1         : komorebic move-to-monitor-workspace 0 0
+alt + shift + 2         : komorebic move-to-monitor-workspace 0 1
+alt + shift + 3         : komorebic move-to-monitor-workspace 0 2
+alt + shift + 4         : komorebic move-to-monitor-workspace 0 3
+alt + shift + 5         : komorebic move-to-monitor-workspace 0 4
+alt + shift + 6         : komorebic move-to-monitor-workspace 0 5
+# 工作区 7-9 绑定在显示器 1
+alt + shift + 7         : komorebic move-to-monitor-workspace 1 0
+alt + shift + 8         : komorebic move-to-monitor-workspace 1 1
+alt + shift + 9         : komorebic move-to-monitor-workspace 1 2
+
+# 原配置没有直接聚焦工作区的快捷键, 如有需要可取消注释
+# alt + 1                 : komorebic focus-workspace 0
+# alt + 2                 : komorebic focus-workspace 1
+# alt + 3                 : komorebic focus-workspace 2
+# alt + 4                 : komorebic focus-workspace 3
+# alt + 5                 : komorebic focus-workspace 4
+# alt + 6                 : komorebic focus-workspace 5
+# alt + 7                 : komorebic focus-monitor-workspace 1 0
+# alt + 8                 : komorebic focus-monitor-workspace 1 1
+# alt + 9                 : komorebic focus-monitor-workspace 1 2

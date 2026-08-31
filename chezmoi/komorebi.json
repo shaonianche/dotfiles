@@ -1,0 +1,100 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LGUG2Z/komorebi/v0.1.41/schema.json",
+  "app_specific_configuration_path": "$Env:USERPROFILE/applications.json",
+  "window_hiding_behaviour": "Cloak",
+  "mouse_follows_focus": true,
+  "cross_monitor_move_behaviour": "Insert",
+  "default_workspace_padding": 10,
+  "default_container_padding": 10,
+  "resize_delta": 50,
+  "border": true,
+  "border_width": 1,
+  "border_offset": -1,
+  "border_style": "System",
+  "border_colours": {
+    "single": "#8dbcff",
+    "stack": "#8dbcff",
+    "monocle": "#8dbcff",
+    "floating": "#8dbcff",
+    "unfocused": "#a1a1a1",
+    "unfocused_locked": "#a1a1a1"
+  },
+  "monitors": [
+    {
+      "workspaces": [
+        { "name": "1", "layout": "BSP" },
+        { "name": "2", "layout": "BSP" },
+        { "name": "3", "layout": "BSP" },
+        { "name": "4", "layout": "BSP" },
+        { "name": "5", "layout": "BSP" },
+        { "name": "6", "layout": "BSP" }
+      ]
+    },
+    {
+      "workspaces": [
+        { "name": "7", "layout": "BSP" },
+        { "name": "8", "layout": "BSP" },
+        { "name": "9", "layout": "BSP" }
+      ]
+    }
+  ],
+  "ignore_rules": [
+    { "kind": "Exe", "id": "Jantama_MahjongSoul", "matching_strategy": "Equals" },
+    [
+      { "kind": "Title", "id": "[Pp]icture.in.[Pp]icture", "matching_strategy": "Regex" },
+      { "kind": "Class", "id": "Chrome_WidgetWin_1|MozillaDialogClass", "matching_strategy": "Regex" }
+    ],
+    [
+      { "kind": "Exe", "id": "PowerToys", "matching_strategy": "Equals" },
+      { "kind": "Class", "id": "HwndWrapper\\[PowerToys\\.PowerAccent.*?\\]", "matching_strategy": "Regex" }
+    ],
+    [
+      { "kind": "Exe", "id": "PowerToys", "matching_strategy": "Equals" },
+      { "kind": "Title", "id": ".*? - Peek", "matching_strategy": "Regex" }
+    ],
+    [
+      { "kind": "Exe", "id": "Lively", "matching_strategy": "Equals" },
+      { "kind": "Class", "id": "HwndWrapper", "matching_strategy": "Regex" }
+    ]
+  ],
+  "floating_applications": [
+    { "kind": "Exe", "id": "steamwebhelper", "matching_strategy": "Equals" },
+    [
+      { "kind": "Exe", "id": "Weixin", "matching_strategy": "Regex" },
+      { "kind": "Title", "id": "微信", "matching_strategy": "Regex" }
+    ],
+    { "kind": "Exe", "id": "Telegram", "matching_strategy": "Equals" },
+    { "kind": "Exe", "id": "Bitwarden", "matching_strategy": "Equals" },
+    { "kind": "Exe", "id": "Vokabry", "matching_strategy": "Equals" },
+    [
+      { "kind": "Exe", "id": "Discord", "matching_strategy": "Regex" },
+      { "kind": "Title", "id": "Friends - Discord", "matching_strategy": "Regex" }
+    ],
+    { "kind": "Exe", "id": "rune", "matching_strategy": "Equals" },
+    [
+      { "kind": "Exe", "id": "Spotify", "matching_strategy": "Regex" },
+      { "kind": "Title", "id": "Spotify Premium", "matching_strategy": "Regex" }
+    ],
+    [
+      { "kind": "Exe", "id": "explorer", "matching_strategy": "Regex" },
+      { "kind": "Class", "id": "CabinetWClass", "matching_strategy": "Regex" }
+    ],
+    [
+      { "kind": "Title", "id": "子母畫面", "matching_strategy": "Regex" },
+      { "kind": "Class", "id": "MozillaDialogClass", "matching_strategy": "Regex" }
+    ],
+    [
+      { "kind": "Title", "id": "命令面板|管理员:PowerToys 设置", "matching_strategy": "Regex" },
+      { "kind": "Class", "id": "WinUIDesktopWin32WindowClass", "matching_strategy": "Regex" }
+    ],
+    [
+      { "kind": "Title", "id": "Settings", "matching_strategy": "Regex" },
+      { "kind": "Class", "id": "ApplicationFrameWindow", "matching_strategy": "Regex" }
+    ],
+    [
+      { "kind": "Title", "id": "Task Manager", "matching_strategy": "Regex" },
+      { "kind": "Class", "id": "TaskManagerWindow", "matching_strategy": "Regex" }
+    ],
+    { "kind": "Class", "id": "#32770", "matching_strategy": "Equals" }
+  ]
+}

@@ -4,7 +4,7 @@
 
 This repository stores personal dotfiles for multiple platforms.
 
-- **Windows:** chezmoi. The active source is `chezmoi/`, selected by `.chezmoiroot`. Use it for PowerShell profiles, Git templates, GlazeWM, Zebar, editor settings, and Windows-only paths such as `AppData/`, `readonly_Documents/`, and `dot_glzr/`.
+- **Windows:** chezmoi. The active source is `chezmoi/`, selected by `.chezmoiroot`. Use it for PowerShell profiles, Git templates, Komorebi, editor settings, and Windows-only paths such as `AppData/` and `readonly_Documents/`.
 - **macOS & Linux (including Debian/WSL):** GNU Stow. The `stow/` tree contains packages; each direct child is a package name, for example `stow/fish/`, `stow/git/`, `stow/starship/`, or `stow/rime/Library/Rime/...`. Apply `stowrc` first so later packages pick up the repo `.stowrc`.
 
 Root files such as `README.md`, `license`, `.gitignore`, and this guide are repository metadata.
@@ -35,7 +35,7 @@ If `~/.config/fish/config.fish` already exists as a regular file, move it aside 
 
 ## Coding Style & Naming Conventions
 
-Follow each tool's native format: JSON for editor and terminal settings, YAML for Rime and GlazeWM, TOML for Starship and chezmoi config, Fish for `config.fish`, and PowerShell for profile scripts. Keep indentation consistent with the edited file, usually two spaces for JSON/YAML/TOML. Chezmoi-managed files use chezmoi names such as `dot_gitconfig.tmpl`, `readonly_Documents/...`, and `AppData/Roaming/...`; preserve these naming patterns so target paths render correctly.
+Follow each tool's native format: JSON for editor and terminal settings, YAML for Rime, TOML for Starship and chezmoi config, Fish for `config.fish`, and PowerShell for profile scripts. Keep indentation consistent with the edited file, usually two spaces for JSON/YAML/TOML. Chezmoi-managed files use chezmoi names such as `dot_gitconfig.tmpl`, `readonly_Documents/...`, and `AppData/Roaming/...`; preserve these naming patterns so target paths render correctly.
 
 ## Testing Guidelines
 
@@ -43,7 +43,7 @@ No automated test suite is configured. For template edits, run `chezmoi --source
 
 ## Commit & Pull Request Guidelines
 
-Recent commits are short and imperative, often scoped when useful, such as `glazewm: update`, `fish: config atuin`, or `feat: update PSReadLine configuration`. Keep commits focused on one tool or platform area. Pull requests should describe the changed dotfiles, list the preview command used, mention affected platforms, and include screenshots only for visible UI changes such as terminal, editor, GlazeWM, or Zebar updates.
+Recent commits are short and imperative, often scoped when useful, such as `glazewm: update`, `fish: config atuin`, or `feat: update PSReadLine configuration`. Keep commits focused on one tool or platform area. Pull requests should describe the changed dotfiles, list the preview command used, mention affected platforms, and include screenshots only for visible UI changes such as terminal, editor, or Komorebi updates.
 
 ## Security & Configuration Tips
 
