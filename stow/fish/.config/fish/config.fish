@@ -99,3 +99,7 @@ end
 
 # Helper no longer needed after startup; keep the namespace clean
 functions -e __fish_prepend_path
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/friendsa/.local/bin" $PATH
