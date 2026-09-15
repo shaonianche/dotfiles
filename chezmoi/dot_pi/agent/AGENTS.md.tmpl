@@ -1,0 +1,33 @@
+{{- /*
+  Windows pi instructions.
+  Shared rules live in stow/pi/.pi/agent/AGENTS.md; this template appends the
+  Windows-only facts (cmd.exe traps, NUL device names, unloaded $PROFILE).
+*/ -}}
+{{ include "../stow/pi/.pi/agent/AGENTS.md" }}
+
+## Windows shell notes
+
+`powershell` is enabled here, alongside `bash` (Git Bash / MSYS).
+
+### A stray `nul` file is created by `>nul` in the bash tool
+
+`2>nul` / `>nul` make MSYS create a **real 0-byte file named `nul`** in the
+current directory. It is then painful to delete: `del nul` and
+`Remove-Item nul` resolve to the NUL *device*, not to the file, and PowerShell
+reports success while the file stays. Only these work:
+
+- Git Bash: `rm -- ./nul`
+- cmd / PowerShell, with the extended-length prefix:
+  `Remove-Item -LiteralPath '\\?\C:\path\to\nul'`
+
+### `$PROFILE` is not loaded
+
+The tool runs with `-NoProfile`, so aliases and functions defined in your
+PowerShell profile (for example `gdf`, `gst`, `serve`, `open`, `here`,
+`neofetch`, `vim`) do not exist inside it. Use real command names, and prefer
+cmdlets over aliases so output stays predictable:
+
+- `Get-ChildItem` instead of `ls`
+- `Remove-Item -Recurse -Force` instead of `rm -rf`
+- `Remove-Item -LiteralPath` for paths with special characters
+- the `\\?\` extended prefix for reserved device names (`nul`, `con`, `aux`, `prn`)
