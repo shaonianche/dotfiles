@@ -91,6 +91,12 @@ if status is-interactive
     if command -q fdfind; and not command -q fd
         alias fd fdfind
     end
+
+    # Warp subshell Warpify hook. DCS sequence that signals a ready interactive
+    # fish subshell, letting Warp auto-Warpify nested sessions without the
+    # confirmation banner. Keep it at the end of this block so Warp does not run
+    # its setup script before the rest of this file has been sourced.
+    printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish"}}\x9c'
 end
 
 # --- Disable greeting ---
