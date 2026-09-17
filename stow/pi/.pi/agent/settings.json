@@ -4,7 +4,7 @@
   "theme": "vitesse-light/vitesse-dark",
   "defaultProvider": "kimi-coding",
   "defaultModel": "k3-256k",
-  "defaultThinkingLevel": "high",
+  "defaultThinkingLevel": "medium",
   "enabledModels": [
     "kimi-coding/k3-256k",
     "kimi-coding/k3",
@@ -25,7 +25,7 @@
   "editorPaddingX": 1,
   "compaction": {
     "enabled": true,
-    "reserveTokens": 16384,
-    "keepRecentTokens": 40000
+    "reserveTokens": 49152,
+    "keepRecentTokens": 12000
   }
 }
