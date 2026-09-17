@@ -1,4 +1,11 @@
 {
+  "defaultTools": [
+    "read",
+    "bash",
+    "powershell",
+    "edit",
+    "write"
+  ],
   "lastChangelogVersion": "0.85.1",
   "quietStartup": true,
   "theme": "vitesse-light/vitesse-dark",
@@ -13,7 +20,8 @@
     "cloudflare-ai-gateway/deepseek-v4-pro",
     "cloudflare-ai-gateway/glm-5.3",
     "cloudflare-ai-gateway/glm-5.3-flash",
-    "antigravity/gemini-3.8-flash"
+    "antigravity/gemini-3.8-flash",
+    "deepseek/deepseek-flash"
   ],
   "packages": [
     "git:github.com/shaonianche/pi-quotas@zai-code",
