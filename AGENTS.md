@@ -9,6 +9,18 @@ This repository stores personal dotfiles for multiple platforms.
 
 Root files such as `README.md`, `license`, `.gitignore`, and this guide are repository metadata.
 
+### Shared Cross-Platform Configuration
+
+For configuration shared between Windows and macOS/Linux, keep the file under `stow/` as the single source of truth. Have the corresponding chezmoi `.tmpl` file include that Stow file rather than maintaining a duplicate copy or linking Stow back to `chezmoi/`. Edit the Stow source when updating shared configuration; keep platform-specific settings separate.
+
+For example, `chezmoi/dot_pi/agent/models.json.tmpl` reads `stow/pi/.pi/agent/models.json`:
+
+```gotemplate
+{{ include "../stow/pi/.pi/agent/models.json" -}}
+```
+
+The include path is relative to the chezmoi source directory (`chezmoi/`), not the template's directory. The trailing `-` avoids adding an extra newline after the included content.
+
 ### Fish (Linux / Debian / WSL)
 
 Tracked files live in `stow/fish/`:
