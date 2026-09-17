@@ -78,6 +78,21 @@ input_mode = "pinned_to_bottom"
 show_indicators_button = false
 workspace_decoration_visibility = "always_show"
 
+# Settings > Appearance > Tabs > "Directory tab colors". A tab whose cwd sits
+# under a listed directory picks that color up automatically (deepest match wins);
+# Warp also fills this map in from the "Add directory color" picker. Colors come
+# from the Vitesse terminal palette: blue #6394bf = PowerShell, magenta #d9739f =
+# WSL Debian.
+#
+# WSL panes report a UNC cwd and Warp matches it in verbatim form, so this key
+# needs the \\?\UNC\ prefix; plain '\\WSL$\Debian' does not match.
+[appearance.tabs.directory_tab_colors]
+"C:\\Users\\duanfei" = { color = "blue" }
+'\\?\UNC\WSL$\Debian' = { color = "magenta" }
+# Fallback spellings, in case a future Warp changes the form it matches against:
+# '\\WSL$\Debian' = { color = "magenta" }
+# '\\wsl.localhost\Debian' = { color = "magenta" }
+
 [appearance.panes]
 should_dim_inactive_panes = true
 

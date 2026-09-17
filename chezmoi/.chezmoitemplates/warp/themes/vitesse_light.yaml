@@ -1,5 +1,8 @@
 # Vitesse Light for Warp
 # Colors from https://github.com/antfu/vscode-theme-vitesse
+# Deviation from upstream: `magenta` is Vitesse's purple (#6f42c1, hue 261) so
+# that the WSL Debian tab coloured through directory_tab_colors reads as purple
+# rather than the upstream rose (#a13865). Applies to ANSI magenta everywhere.
 name: Vitesse Light
 accent: '#1e754f'
 background: '#ffffff'
@@ -12,7 +15,7 @@ terminal_colors:
     green: '#1e754f'
     yellow: '#bda437'
     blue: '#296aa3'
-    magenta: '#a13865'
+    magenta: '#6f42c1'
     cyan: '#2993a3'
     white: '#dbd7ca'
   bright:
@@ -21,6 +24,6 @@ terminal_colors:
     green: '#1e754f'
     yellow: '#bda437'
     blue: '#296aa3'
-    magenta: '#a13865'
+    magenta: '#6f42c1'
     cyan: '#2993a3'
     white: '#dddddd'
