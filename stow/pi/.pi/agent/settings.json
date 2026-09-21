@@ -17,11 +17,11 @@
     "kimi-coding/k3",
     "qwen-token-plan-cn/qwen3.8-max",
     "cloudflare-ai-gateway/deepseek-flash",
-    "cloudflare-ai-gateway/deepseek-v4-pro",
-    "cloudflare-ai-gateway/glm-5.3",
-    "cloudflare-ai-gateway/glm-5.3-flash",
+    "cloudflare-ai-gateway/dynamic/zhipu-flash",
+    "cloudflare-ai-gateway/dynamic/zhipu",
     "antigravity/gemini-3.8-flash",
-    "deepseek/deepseek-flash"
+    "deepseek/deepseek-flash",
+    "cloudflare-ai-gateway/dynamic/deepseek"
   ],
   "packages": [
     "git:github.com/shaonianche/pi-quotas@zai-code",

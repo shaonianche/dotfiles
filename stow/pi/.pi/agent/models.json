@@ -30,10 +30,10 @@
           }
         },
         {
-          "id": "deepseek-v4.1-flash",
-          "name": "DeepSeek Flash (BYOK)",
+          "id": "dynamic/deepseek",
+          "name": "DeepSeek Route (dashscope → deepseek)",
           "api": "openai-completions",
-          "baseUrl": "https://gateway.ai.cloudflare.com/v1/{CLOUDFLARE_ACCOUNT_ID}/{CLOUDFLARE_GATEWAY_ID}/custom-dashscope01",
+          "baseUrl": "https://gateway.ai.cloudflare.com/v1/{CLOUDFLARE_ACCOUNT_ID}/{CLOUDFLARE_GATEWAY_ID}/compat",
           "reasoning": true,
           "input": [
             "text"
@@ -57,10 +57,10 @@
           }
         },
         {
-          "id": "glm-5.3",
-          "name": "GLM 5.3 (CF BYOK)",
+          "id": "dynamic/zhipu",
+          "name": "GLM Route (glm01 → glm5)",
           "api": "openai-completions",
-          "baseUrl": "https://gateway.ai.cloudflare.com/v1/{CLOUDFLARE_ACCOUNT_ID}/{CLOUDFLARE_GATEWAY_ID}/custom-glm01",
+          "baseUrl": "https://gateway.ai.cloudflare.com/v1/{CLOUDFLARE_ACCOUNT_ID}/{CLOUDFLARE_GATEWAY_ID}/compat",
           "reasoning": true,
           "input": [
             "text"
@@ -83,10 +83,10 @@
           }
         },
         {
-          "id": "glm-5.3-flash",
-          "name": "GLM 5.3 Flash (CF BYOK)",
+          "id": "dynamic/zhipu-flash",
+          "name": "GLM Route Flash (glm01 → glm5)",
           "api": "openai-completions",
-          "baseUrl": "https://gateway.ai.cloudflare.com/v1/{CLOUDFLARE_ACCOUNT_ID}/{CLOUDFLARE_GATEWAY_ID}/custom-glm01/api/coding/paas/v4",
+          "baseUrl": "https://gateway.ai.cloudflare.com/v1/{CLOUDFLARE_ACCOUNT_ID}/{CLOUDFLARE_GATEWAY_ID}/compat",
           "reasoning": true,
           "input": [
             "text",
@@ -142,17 +142,17 @@
             "cf-aig-byok-alias": "default"
           }
         },
-        "deepseek-v4.1-flash": {
+        "dynamic/deepseek": {
           "headers": {
             "cf-aig-byok-alias": "default"
           }
         },
-        "glm-5.3": {
+        "dynamic/zhipu": {
           "headers": {
             "cf-aig-byok-alias": "default"
           }
         },
-        "glm-5.3-flash": {
+        "dynamic/zhipu-flash": {
           "headers": {
             "cf-aig-byok-alias": "default"
           }
