@@ -7,6 +7,23 @@ This repository stores personal dotfiles for multiple platforms.
 - **Windows:** chezmoi. The active source is `chezmoi/`, selected by `.chezmoiroot`. Use it for PowerShell profiles, Git templates, Komorebi, editor settings, and Windows-only paths such as `AppData/` and `readonly_Documents/`.
 - **macOS & Linux (including Debian/WSL):** GNU Stow. The `stow/` tree contains packages; each direct child is a package name, for example `stow/fish/`, `stow/git/`, `stow/starship/`, or `stow/rime/Library/Rime/...`. Apply `stowrc` first so later packages pick up the repo `.stowrc`.
 
+The full package inventory under `stow/`:
+
+- `curl/` → `.curlrc`
+- `emacs/` → `.emacs.d/init.el`
+- `fish/` → `.config/fish/config.fish`, `.config/fish/functions/fish_prompt.fish`, `.hushlogin`
+- `git/` → `.gitattributes`, `.gitconfig`, `.gitignore`
+- `gnupg/` → `.gnupg/gpg.conf`, `.gnupg/gpg-agent.conf`
+- `input/` → `.inputrc`
+- `pi/` → `.pi/agent/` (the pi config, shared cross-platform — see below)
+- `rime/` → `Library/Rime/` (Rime input-method custom YAML)
+- `starship/` → `.config/starship.toml`
+- `stowrc/` → the repo's own `.stowrc` (bootstrap package)
+- `tmux/` → `.tmux.conf`
+- `vim/` → `.vimrc`
+- `wget/` → `.wgetrc`
+- `zed/` → `.config/zed/settings.json`, `.config/zed/keymap.json`
+
 Root files such as `README.md`, `license`, `.gitignore`, and this guide are repository metadata.
 
 ### Shared Cross-Platform Configuration

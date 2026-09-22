@@ -3,5 +3,5 @@
 --ignore=.DS_Store
 --ignore=.git
 --ignore=^/README.*
---ignore=^/LICENSE.*
+--ignore=^/[Ll][Ii][Cc][Ee][Nn][Ss][Ee].*
 --verbose=2
