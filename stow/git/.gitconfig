@@ -1,7 +1,7 @@
 [user]
 email = 16186646+shaonianche@users.noreply.github.com
 name = shaonianche
-signingkey = ABC99D714A235298
+signingkey = 946D88E28535F685
 
 [commit]
 gpgsign = true
