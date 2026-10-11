@@ -2,11 +2,10 @@
   "defaultTools": [
     "read",
     "bash",
-    "powershell",
     "edit",
     "write"
   ],
-  "lastChangelogVersion": "0.85.1",
+  "lastChangelogVersion": "1.1.0",
   "quietStartup": true,
   "theme": "vitesse-light/vitesse-dark",
   "defaultProvider": "kimi-coding",
@@ -16,12 +15,12 @@
     "kimi-coding/k3-256k",
     "kimi-coding/k3",
     "qwen-token-plan-cn/qwen3.8-max",
-    "cloudflare-ai-gateway/deepseek-flash",
     "cloudflare-ai-gateway/dynamic/zhipu-flash",
     "cloudflare-ai-gateway/dynamic/zhipu",
     "antigravity/gemini-3.8-flash",
     "deepseek/deepseek-flash",
-    "cloudflare-ai-gateway/dynamic/deepseek"
+    "cloudflare-ai-gateway/dynamic/deepseek",
+    "cloudflare-ai-gateway/DeepSeek-V4.1-Flash"
   ],
   "packages": [
     "git:github.com/shaonianche/pi-quotas@zai-code",

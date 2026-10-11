@@ -1,10 +1,12 @@
 {{- /*
   Windows pi settings.
   Single source of truth for every non-platform-specific key stays in
-  stow/pi/.pi/agent/settings.json; this template only injects the Windows-only
-  `defaultTools` list (adds the `powershell` tool) and leaves the rest of the
-  file byte-for-byte identical, so key order never churns.
+  stow/pi/.pi/agent/settings.json; this template only swaps the cross-platform
+  `defaultTools` list (read/bash/edit/write) for the Windows one, which adds the
+  `powershell` tool. Everything else stays byte-for-byte identical, so key order
+  never churns.
 */ -}}
 {{- $base := include "../stow/pi/.pi/agent/settings.json" -}}
-{{- $key := printf "\"defaultTools\": [\"read\", \"bash\", \"powershell\", \"edit\", \"write\"]," -}}
-{{- regexReplaceAll "^\\{" $base (printf "{\n  %s" $key) }}
+{{- $from := "  \"defaultTools\": [\n    \"read\",\n    \"bash\",\n    \"edit\",\n    \"write\"\n  ]," -}}
+{{- $to := "  \"defaultTools\": [\n    \"read\",\n    \"bash\",\n    \"powershell\",\n    \"edit\",\n    \"write\"\n  ]," -}}
+{{- $base | replace $from $to -}}

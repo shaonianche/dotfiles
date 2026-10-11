@@ -3,10 +3,10 @@
     "cloudflare-ai-gateway": {
       "models": [
         {
-          "id": "deepseek-flash",
-          "name": "DeepSeek Flash (BYOK)",
+          "id": "DeepSeek-V4.1-Flash",
+          "name": "DeepSeek Flash (Azure native via CF AIGW)",
           "api": "openai-completions",
-          "baseUrl": "https://gateway.ai.cloudflare.com/v1/{CLOUDFLARE_ACCOUNT_ID}/{CLOUDFLARE_GATEWAY_ID}/deepseek",
+          "baseUrl": "https://gateway.ai.cloudflare.com/v1/{CLOUDFLARE_ACCOUNT_ID}/{CLOUDFLARE_GATEWAY_ID}/azure-openai/openai-api-v3/openai/v1",
           "reasoning": true,
           "input": [
             "text"
@@ -22,11 +22,20 @@
           "compat": {
             "supportsStore": false,
             "supportsDeveloperRole": false,
-            "supportsReasoningEffort": false,
+            "supportsReasoningEffort": true,
             "supportsStrictMode": false,
             "maxTokensField": "max_tokens",
-            "thinkingFormat": "deepseek",
+            "thinkingFormat": "openai",
             "requiresReasoningContentOnAssistantMessages": true
+          },
+          "thinkingLevelMap": {
+            "off": null,
+            "minimal": "minimal",
+            "low": "low",
+            "medium": "medium",
+            "high": "high",
+            "xhigh": "high",
+            "max": "high"
           }
         },
         {
@@ -137,7 +146,7 @@
         }
       ],
       "modelOverrides": {
-        "deepseek-flash": {
+        "DeepSeek-V4.1-Flash": {
           "headers": {
             "cf-aig-byok-alias": "default"
           }
