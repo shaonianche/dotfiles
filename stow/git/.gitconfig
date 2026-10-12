@@ -96,9 +96,10 @@ helper = !gh auth git-credential
 [credential]
 # Empty value resets helpers inherited from the system gitconfig
 # (Xcode's osxkeychain), which errors -25308 over SSH when the login
-# keychain is locked. gh serves tokens from ~/.config/gh/hosts.yml.
+# keychain is locked. The OS-specific global helper (manager on
+# Windows) is appended by chezmoi from dot_gitconfig.tmpl.
+# GitHub/gist keep using the domain-scoped gh helper above.
 helper =
-helper = !gh auth git-credential
 
 [alias]
 changelog = "log origin..HEAD --format='* %s%n%w(,4,4)%+b'"
@@ -186,3 +187,8 @@ dl = -c diff.external=difft log -p --ext-diff
 ds = -c diff.external=difft show --ext-diff
 # `git diff` with difftastic.
 dft = -c diff.external=difft diff
+
+# GitLab repos: separate identity + SSH signing (see ~/.gitconfig-gitlab).
+# The * after gitlab.com matches both https://gitlab.com/... and git@gitlab.com:...
+[includeIf "hasconfig:remote.*.url:**/gitlab.com*/**"]
+path = ~/.gitconfig-gitlab

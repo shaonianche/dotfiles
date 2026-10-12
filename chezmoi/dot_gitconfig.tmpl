@@ -1,1 +1,13 @@
 {{ include "../stow/git/.gitconfig" }}
+{{- if eq .chezmoi.os "windows" }}
+
+[credential]
+# Git Credential Manager (bundled with Git for Windows) handles HTTPS
+# auth for GitLab/Gitea. GitHub/gist keep the domain-scoped gh helper.
+helper = manager
+
+[gpg "ssh"]
+# Sign with Windows OpenSSH so requests reach the 1Password agent on
+# \\.\pipe\openssh-ssh-agent. Git Bash's MSYS ssh-keygen can't see it.
+program = C:/Windows/System32/OpenSSH/ssh-keygen.exe
+{{- end }}
