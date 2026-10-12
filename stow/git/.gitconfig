@@ -191,12 +191,17 @@ ds = -c diff.external=difft show --ext-diff
 dft = -c diff.external=difft diff
 
 # GitLab repos: separate identity + SSH signing (see ~/.gitconfig-gitlab).
-# The * after gitlab.com matches both https://gitlab.com/... and git@gitlab.com:...
+# Two patterns are needed: pathname matching can't cross `/`, so the HTTPS
+# form (**/gitlab.com*/**) never matches SSH remotes (git@gitlab.com:...).
 [includeIf "hasconfig:remote.*.url:**/gitlab.com*/**"]
+path = ~/.gitconfig-gitlab
+[includeIf "hasconfig:remote.*.url:*gitlab.com:*/**"]
 path = ~/.gitconfig-gitlab
 
 # Gitea repos (tonghuiai.cn): separate identity + SSH signing (see ~/.gitconfig-gitea).
 [includeIf "hasconfig:remote.*.url:**/tonghuiai.cn*/**"]
+path = ~/.gitconfig-gitea
+[includeIf "hasconfig:remote.*.url:*tonghuiai.cn:*/**"]
 path = ~/.gitconfig-gitea
 
 # Machine-local settings (credential helpers, host-only tweaks).
