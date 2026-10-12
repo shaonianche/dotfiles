@@ -8,9 +8,9 @@
 [user]
 # GitLab noreply email (keeps the real address private).
 email = 7479409-shaonianche@users.noreply.gitlab.com
-# 1Password SSH key "id_ed25519" (public part only; private key stays
-# in 1Password, signing requests trigger a 1Password authorization).
-signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAkZT9SPTsFQuGWZ882rj41zxCbahbRbsNaXJu+VxCrc
+# Dedicated signing key in 1Password, registered on GitLab as a
+# signing key. (Public part inline via key:: so no path issues.)
+signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE7bgeNGA5Ihly8RZUj0Ew+6qTiSkwocTOBNngA/AumM
 
 [gpg]
 format = ssh
