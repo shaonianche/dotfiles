@@ -1,0 +1,6 @@
+# On machines that use the ~/.agents/AGENTS.md single-source-of-truth layout,
+# ~/.pi/agent/AGENTS.md is a machine-managed symlink (pi/claude/codex/gemini
+# all share it). Stow must not fight it — skip this file here.
+# On a fresh Linux box without ~/.agents, stow still applies it as a fallback,
+# and chezmoi includes it for the Windows pi config.
+^/\.pi/agent/AGENTS\.md$
