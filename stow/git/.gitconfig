@@ -192,3 +192,7 @@ dft = -c diff.external=difft diff
 # The * after gitlab.com matches both https://gitlab.com/... and git@gitlab.com:...
 [includeIf "hasconfig:remote.*.url:**/gitlab.com*/**"]
 path = ~/.gitconfig-gitlab
+
+# Gitea repos (tonghuiai.cn): separate identity + SSH signing (see ~/.gitconfig-gitea).
+[includeIf "hasconfig:remote.*.url:**/tonghuiai.cn*/**"]
+path = ~/.gitconfig-gitea

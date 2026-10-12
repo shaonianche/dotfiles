@@ -1,0 +1,18 @@
+# Loaded automatically for repos whose remote URL matches **/tonghuiai.cn*/**
+# (see the includeIf block in ~/.gitconfig).
+#
+# Gitea (tonghuiai.cn) uses its own dedicated signing key in 1Password,
+# separate from the GitLab one.
+
+[user]
+# Gitea privacy (noreply) email for this instance.
+email = shaonianche@noreply.tonghuiai.cn
+# Dedicated Gitea signing key (public part inline via key::).
+signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINFuQZ8ROH6jIzID29hf7WpPAev6fWljT6N9jd5nRvpa
+
+[gpg]
+format = ssh
+
+[gpg "ssh"]
+# Lets `git log --show-signature` verify SSH signatures locally.
+allowedSignersFile = ~/.ssh/allowed_signers
