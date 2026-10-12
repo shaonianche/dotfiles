@@ -6,7 +6,7 @@
 
 [user]
 # Gitea privacy (noreply) email for this instance.
-email = shaonianche@noreply.tonghuiai.cn
+email = 12+duanfei@noreply.tonghuiai.cn
 # Dedicated Gitea signing key (public part inline via key::).
 signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINFuQZ8ROH6jIzID29hf7WpPAev6fWljT6N9jd5nRvpa
 
