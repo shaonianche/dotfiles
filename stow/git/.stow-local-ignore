@@ -1,0 +1,3 @@
+# Keep this file so Stow does NOT fall back to its built-in default ignore
+# list (which always skips .gitignore). Nothing in this package is ignored.
+# See: stow manual, "Types And Syntax Of Ignore Lists".
