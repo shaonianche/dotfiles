@@ -198,3 +198,8 @@ path = ~/.gitconfig-gitlab
 # Gitea repos (tonghuiai.cn): separate identity + SSH signing (see ~/.gitconfig-gitea).
 [includeIf "hasconfig:remote.*.url:**/tonghuiai.cn*/**"]
 path = ~/.gitconfig-gitea
+
+# Machine-local settings (credential helpers, host-only tweaks).
+# Untracked on purpose; silently ignored on machines without this file.
+[include]
+path = ~/.gitconfig.local

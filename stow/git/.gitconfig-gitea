@@ -5,6 +5,7 @@
 # separate from the GitLab one.
 
 [user]
+name = duanfei
 # Gitea privacy (noreply) email for this instance.
 email = 12+duanfei@noreply.tonghuiai.cn
 # Dedicated Gitea signing key (public part inline via key::).
