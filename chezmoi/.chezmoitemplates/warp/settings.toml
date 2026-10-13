@@ -52,6 +52,7 @@ open_windows_at_custom_size = false
 zoom_level = 100
 override_opacity = 70
 override_blur_texture = true
+backdrop = "acrylic"
 
 [appearance.blocks]
 show_jump_to_bottom_of_block_button = true
@@ -174,6 +175,38 @@ write_to_pty = "always_ask"
 
 [agents.third_party]
 should_render_cli_agent_toolbar = false
+
+[agents.custom_endpoints]
+
+[agents.custom_endpoints.legacy-222381e57f9f570761ff751d]
+base_url = "https://openrouter.ai/api/v1/chat/completions"
+models = [
+  {
+    alias = "deepseek-v4-flash",
+    config_key = "5dfbef58-1d65-4a57-ac5e-2e2ee446df39",
+    name = "deepseek/deepseek-v4-flash",
+  },
+]
+name = "openrouter"
+schema = "openai_chat_completions"
+
+[agents.custom_endpoints.legacy-40b016f6776f5328a2494499]
+base_url = "https://developer.amd.com.cn/radeon/api/v1"
+models = [
+  {
+    alias = "DeepSeek-V4-Flash",
+    config_key = "3a4dee90-0b0f-4636-a80e-76a1634943e9",
+    name = "DeepSeek-V4-Flash",
+  },
+]
+name = "amd"
+schema = "openai_chat_completions"
+
+[agents.custom_endpoints.legacy-ce5f051d669a4244c33a5a6f]
+base_url = "https://api.kimi.com/coding/v1"
+models = [{ alias = "k3-256k", config_key = "0da88651-a345-445b-a515-590f87e10f09", name = "k3-256k" }]
+name = "kimi"
+schema = "openai_chat_completions"
 
 [warpify]
 
