@@ -9,8 +9,8 @@
   "lastChangelogVersion": "1.2.0",
   "quietStartup": true,
   "theme": "vitesse-light/vitesse-dark",
-  "defaultProvider": "kimi-coding",
-  "defaultModel": "k3-256k",
+  "defaultProvider": "cloudflare-ai-gateway",
+  "defaultModel": "dynamic/zhipu",
   "defaultThinkingLevel": "medium",
   "enabledModels": [
     "kimi-coding/k3-256k",
