@@ -119,6 +119,32 @@
           }
         },
         {
+          "id": "dynamic/kimi",
+          "name": "Kimi Route (kimi-k2 thinking)",
+          "api": "openai-completions",
+          "baseUrl": "https://gateway.ai.cloudflare.com/v1/{CLOUDFLARE_ACCOUNT_ID}/{CLOUDFLARE_GATEWAY_ID}/compat",
+          "reasoning": true,
+          "input": [
+            "text"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 262144,
+          "maxTokens": 131072,
+          "compat": {
+            "supportsStore": false,
+            "supportsDeveloperRole": false,
+            "supportsReasoningEffort": false,
+            "supportsStrictMode": false,
+            "maxTokensField": "max_tokens",
+            "requiresReasoningContentOnAssistantMessages": true
+          }
+        },
+        {
           "id": "stealth/union-alpha",
           "name": "Union Alpha (CF BYOK)",
           "api": "openai-completions",
@@ -162,6 +188,11 @@
           }
         },
         "dynamic/zhipu-flash": {
+          "headers": {
+            "cf-aig-byok-alias": "default"
+          }
+        },
+        "dynamic/kimi": {
           "headers": {
             "cf-aig-byok-alias": "default"
           }

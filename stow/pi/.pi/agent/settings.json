@@ -2,10 +2,11 @@
   "defaultTools": [
     "read",
     "bash",
+    "powershell",
     "edit",
     "write"
   ],
-  "lastChangelogVersion": "1.1.0",
+  "lastChangelogVersion": "1.2.0",
   "quietStartup": true,
   "theme": "vitesse-light/vitesse-dark",
   "defaultProvider": "kimi-coding",
@@ -16,6 +17,7 @@
     "kimi-coding/k3",
     "qwen-token-plan-cn/qwen3.8-max",
     "cloudflare-ai-gateway/dynamic/zhipu-flash",
+    "cloudflare-ai-gateway/dynamic/kimi",
     "cloudflare-ai-gateway/dynamic/zhipu",
     "antigravity/gemini-3.8-flash",
     "deepseek/deepseek-flash",
