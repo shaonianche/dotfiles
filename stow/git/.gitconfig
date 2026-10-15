@@ -208,3 +208,6 @@ path = ~/.gitconfig-gitea
 # Untracked on purpose; silently ignored on machines without this file.
 [include]
 path = ~/.gitconfig.local
+[credential "https://tonghuiai.cn/git"]
+	helper = 
+	helper = !tea login helper
