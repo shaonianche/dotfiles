@@ -1,2 +1,6 @@
 .claude
 .DS_Store
+
+# Machine-local overrides — never tracked
+.bashrc.local
+*.local
