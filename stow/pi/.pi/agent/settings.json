@@ -32,6 +32,7 @@
   ],
   "tuiMode": "fullscreen",
   "editorPaddingX": 1,
+  "shellPath": "/opt/local/bin/bash",
   "compaction": {
     "enabled": true,
     "reserveTokens": 49152,

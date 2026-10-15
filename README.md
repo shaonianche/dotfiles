@@ -12,6 +12,12 @@ chezmoi: https://www.chezmoi.io/quick-start/
 chezmoi init
 ```
 ### macOS & Linux
+
+Default shell is bash 5.3 (`/opt/local/bin/bash`, built from GNU source).
+
 ```bash
 cd stow && stow -v -t ~ stowrc
+cd stow && stow -v -t ~ bash
 ```
+
+Package order matters: `stowrc` first (bootstrap), then the rest. See `AGENTS.md` for the full package list.
