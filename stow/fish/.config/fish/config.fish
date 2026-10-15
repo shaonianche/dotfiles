@@ -96,7 +96,11 @@ if status is-interactive
     # fish subshell, letting Warp auto-Warpify nested sessions without the
     # confirmation banner. Keep it at the end of this block so Warp does not run
     # its setup script before the rest of this file has been sourced.
-    printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish"}}\x9c'
+    # Guarded on TERM_PROGRAM: on headless servers the raw DCS bytes would print
+    # as garbage in the console and pollute captured stdout.
+    if test "$TERM_PROGRAM" = "WarpTerminal"
+        printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "fish"}}\x9c'
+    end
 end
 
 # --- Disable greeting ---

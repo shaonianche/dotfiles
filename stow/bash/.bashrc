@@ -116,7 +116,11 @@ if [[ $- == *i* ]]; then
   # bash subshell, letting Warp auto-Warpify nested sessions without the
   # confirmation banner. Keep it at the end of this block so Warp does not run
   # its setup script before the rest of this file has been sourced.
-  printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "bash"}}\x9c'
+  # Guarded on TERM_PROGRAM: on headless servers the raw DCS bytes would print
+  # as garbage in the console and pollute captured stdout.
+  if [ "$TERM_PROGRAM" = "WarpTerminal" ]; then
+    printf '\eP$f{"hook": "SourcedRcFileForWarp", "value": { "shell": "bash"}}\x9c'
+  fi
 fi
 
 # --- Machine-local overrides (untracked) ---
