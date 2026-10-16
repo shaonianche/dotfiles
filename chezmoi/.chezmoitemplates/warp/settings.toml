@@ -45,7 +45,8 @@ match_notebook_to_monospace_font_size = false
 line_height_ratio = 1.600000023841858
 notebook_font_size = 14.0
 font_size = 17.0
-font_name = "ComicShannsMono Nerd Font Mono"
+font_name = "Berkeley Mono Trial"
+font_weight = "normal"
 
 [appearance.window]
 open_windows_at_custom_size = false
