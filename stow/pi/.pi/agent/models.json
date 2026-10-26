@@ -145,6 +145,33 @@
           }
         },
         {
+          "id": "dynamic/default",
+          "name": "Default Route (dynamic/default)",
+          "api": "openai-completions",
+          "baseUrl": "https://gateway.ai.cloudflare.com/v1/{CLOUDFLARE_ACCOUNT_ID}/{CLOUDFLARE_GATEWAY_ID}/compat",
+          "reasoning": true,
+          "input": [
+            "text",
+            "image"
+          ],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 1000000,
+          "maxTokens": 65536,
+          "compat": {
+            "supportsStore": false,
+            "supportsDeveloperRole": false,
+            "supportsReasoningEffort": false,
+            "supportsStrictMode": false,
+            "maxTokensField": "max_tokens",
+            "requiresReasoningContentOnAssistantMessages": true
+          }
+        },
+        {
           "id": "stealth/union-alpha",
           "name": "Union Alpha (CF BYOK)",
           "api": "openai-completions",
@@ -193,6 +220,11 @@
           }
         },
         "dynamic/kimi": {
+          "headers": {
+            "cf-aig-byok-alias": "default"
+          }
+        },
+        "dynamic/default": {
           "headers": {
             "cf-aig-byok-alias": "default"
           }
