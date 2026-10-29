@@ -211,3 +211,6 @@ path = ~/.gitconfig.local
 [credential "https://tonghuiai.cn/git"]
 	helper = 
 	helper = !tea login helper
+[credential "https://ampcode.com/"]
+	helper = 
+	helper = !amp git-credential-helper

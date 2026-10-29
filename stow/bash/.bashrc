@@ -131,3 +131,7 @@ fi
 
 # Helper no longer needed after startup; keep the shell namespace clean.
 unset -f __prepend_path
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/friendsa/.local/bin:$PATH"

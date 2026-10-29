@@ -113,3 +113,7 @@ functions -e __fish_prepend_path
 
 # Added by Antigravity CLI installer
 set -gx PATH "/home/friendsa/.local/bin" $PATH
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/Users/friendsa/.local/bin" $PATH

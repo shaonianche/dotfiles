@@ -21,3 +21,7 @@ fi
 if [ -f "$HOME/.profile" ]; then
   . "$HOME/.profile"
 fi
+
+
+# Added by Antigravity CLI installer
+export PATH="/Users/friendsa/.local/bin:$PATH"
