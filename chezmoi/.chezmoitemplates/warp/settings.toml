@@ -215,7 +215,7 @@ schema = "openai_chat_completions"
 subshell_commands_denylist = []
 
 [warpify.ssh]
-enable_legacy_ssh_wrapper = true
+enable_legacy_ssh_wrapper = false
 enable_ssh_warpification = false
 
 [workflows]
