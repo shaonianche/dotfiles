@@ -1,19 +1,23 @@
 # Loaded automatically for repos whose remote URL matches **/tonghuiai.cn*/**
 # (see the includeIf block in ~/.gitconfig).
 #
-# Gitea (tonghuiai.cn) uses its own dedicated signing key in 1Password,
-# separate from the GitLab one.
+# Gitea verifies against its own registered key, so the device default key
+# must not sign here. Commits stay unsigned unless this device can reach the
+# Gitea signing key.
 
 [user]
 name = duanfei
 # Gitea privacy (noreply) email for this instance.
 email = 12+duanfei@noreply.tonghuiai.cn
-# Dedicated Gitea signing key (public part inline via key::).
-signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINFuQZ8ROH6jIzID29hf7WpPAev6fWljT6N9jd5nRvpa
 
-[gpg]
-format = ssh
+[commit]
+gpgsign = false
 
-[gpg "ssh"]
-# Lets `git log --show-signature` verify SSH signatures locally.
-allowedSignersFile = ~/.ssh/allowed_signers
+# The Gitea signing key lives in 1Password. A device whose ssh-agent
+# (SSH_AUTH_SOCK) serves it creates this file:
+#   [user]
+#   signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINFuQZ8ROH6jIzID29hf7WpPAev6fWljT6N9jd5nRvpa
+#   [commit]
+#   gpgsign = true
+[include]
+path = ~/.gitconfig-gitea.local

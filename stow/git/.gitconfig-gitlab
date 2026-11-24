@@ -1,20 +1,22 @@
 # Loaded automatically for repos whose remote URL matches **/gitlab.com*/**
 # (see the includeIf block in ~/.gitconfig).
 #
-# GitHub keeps GPG signing globally; GitLab repos switch to SSH signing
-# with the 1Password-held ed25519 key (inline via key:: so no path
-# expansion issues and no machine-specific paths).
+# GitLab verifies against its own registered key, so the device default key
+# must not sign here. Commits stay unsigned unless this device can reach the
+# GitLab signing key.
 
 [user]
 # GitLab noreply email (keeps the real address private).
 email = 7479409-shaonianche@users.noreply.gitlab.com
-# Dedicated signing key in 1Password, registered on GitLab as a
-# signing key. (Public part inline via key:: so no path issues.)
-signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE7bgeNGA5Ihly8RZUj0Ew+6qTiSkwocTOBNngA/AumM
 
-[gpg]
-format = ssh
+[commit]
+gpgsign = false
 
-[gpg "ssh"]
-# Lets `git log --show-signature` verify SSH signatures locally.
-allowedSignersFile = ~/.ssh/allowed_signers
+# The GitLab signing key lives in 1Password. A device whose ssh-agent
+# (SSH_AUTH_SOCK) serves it creates this file:
+#   [user]
+#   signingkey = key::ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE7bgeNGA5Ihly8RZUj0Ew+6qTiSkwocTOBNngA/AumM
+#   [commit]
+#   gpgsign = true
+[include]
+path = ~/.gitconfig-gitlab.local

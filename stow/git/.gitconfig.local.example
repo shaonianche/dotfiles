@@ -1,0 +1,18 @@
+# Template for ~/.gitconfig.local: device-only settings, never tracked.
+#
+# The shared ~/.gitconfig holds what is the same on every device. This file
+# holds what differs: which signing key exists here, whether commits sign,
+# and credential helpers for tools installed on this host.
+#
+#   cp ~/workspaces/dotfiles/stow/git/.gitconfig.local.example ~/.gitconfig.local
+
+[user]
+# This device's default signing key. It must exist here and be registered as
+# a signing key on the default (shaonianche) GitHub account.
+signingkey = ~/.ssh/id_ed25519.pub
+
+[commit]
+# Sign by default. Repos of other accounts turn this off again unless the
+# device has ~/.gitconfig-<account>.local (see ~/.gitconfig-gitlab,
+# ~/.gitconfig-gitea, ~/.gitconfig-friendsaa0618).
+gpgsign = true

@@ -1,10 +1,16 @@
 [user]
 email = 16186646+shaonianche@users.noreply.github.com
 name = shaonianche
-signingkey = 946D88E28535F685
 
-[commit]
-gpgsign = true
+[gpg]
+# SSH signing everywhere. Which key signs and whether commits sign at all
+# belongs to the device, not to this shared file: ~/.gitconfig.local sets
+# user.signingkey and commit.gpgsign, and a repository may override either.
+format = ssh
+
+[gpg "ssh"]
+# Lets `git log --show-signature` verify SSH signatures locally.
+allowedSignersFile = ~/.ssh/allowed_signers
 
 [color]
 diff = auto
@@ -190,7 +196,18 @@ ds = -c diff.external=difft show --ext-diff
 # `git diff` with difftastic.
 dft = -c diff.external=difft diff
 
-# GitLab repos: separate identity + SSH signing (see ~/.gitconfig-gitlab).
+# Device-local settings (credential helpers, signing key, host-only tweaks).
+# Untracked on purpose; silently ignored on machines without this file.
+# Start from stow/git/.gitconfig.local.example.
+[include]
+path = ~/.gitconfig.local
+
+# Account-specific includes come last so they win over the device defaults.
+# Each sets the account's name/email and turns signing off, because the
+# device default key belongs to another account; a device that holds the
+# account's key turns it back on in ~/.gitconfig-<account>.local.
+#
+# GitLab repos: separate identity (see ~/.gitconfig-gitlab).
 # Two patterns are needed: pathname matching can't cross `/`, so the HTTPS
 # form (**/gitlab.com*/**) never matches SSH remotes (git@gitlab.com:...).
 [includeIf "hasconfig:remote.*.url:**/gitlab.com*/**"]
@@ -198,16 +215,18 @@ path = ~/.gitconfig-gitlab
 [includeIf "hasconfig:remote.*.url:*gitlab.com:*/**"]
 path = ~/.gitconfig-gitlab
 
-# Gitea repos (tonghuiai.cn): separate identity + SSH signing (see ~/.gitconfig-gitea).
+# Gitea repos (tonghuiai.cn): separate identity (see ~/.gitconfig-gitea).
 [includeIf "hasconfig:remote.*.url:**/tonghuiai.cn*/**"]
 path = ~/.gitconfig-gitea
 [includeIf "hasconfig:remote.*.url:*tonghuiai.cn:*/**"]
 path = ~/.gitconfig-gitea
 
-# Machine-local settings (credential helpers, host-only tweaks).
-# Untracked on purpose; silently ignored on machines without this file.
-[include]
-path = ~/.gitconfig.local
+# Second GitHub account (friendsaa0618): separate identity
+# (see ~/.gitconfig-friendsaa0618). Same two-pattern rule as GitLab.
+[includeIf "hasconfig:remote.*.url:**/friendsaa0618/**"]
+path = ~/.gitconfig-friendsaa0618
+[includeIf "hasconfig:remote.*.url:*github.com:friendsaa0618/**"]
+path = ~/.gitconfig-friendsaa0618
 [credential "https://tonghuiai.cn/git"]
 	helper = 
 	helper = !tea login helper

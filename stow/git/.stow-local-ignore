@@ -1,3 +1,6 @@
 # Keep this file so Stow does NOT fall back to its built-in default ignore
-# list (which always skips .gitignore). Nothing in this package is ignored.
+# list (which always skips .gitignore).
 # See: stow manual, "Types And Syntax Of Ignore Lists".
+
+# Template to copy by hand, not a file to link into $HOME.
+\.gitconfig\.local\.example

@@ -1,0 +1,22 @@
+# Loaded automatically for repos whose remote URL points at the
+# friendsaa0618 GitHub account (see the includeIf block in ~/.gitconfig).
+#
+# GitHub marks a commit Verified only when the signing key belongs to the
+# author's account, so the device default key (another account's) must not
+# sign here. Commits stay unsigned unless this device holds the account's key.
+
+[user]
+name = friendsa
+# GitHub noreply email keeps the real address private.
+email = 163143488+friendsaa0618@users.noreply.github.com
+
+[commit]
+gpgsign = false
+
+# A device that holds this account's signing key creates this file:
+#   [user]
+#   signingkey = ~/.ssh/id_ed25519_friendsaa0618.pub
+#   [commit]
+#   gpgsign = true
+[include]
+path = ~/.gitconfig-friendsaa0618.local
