@@ -227,9 +227,6 @@ path = ~/.gitconfig-gitea
 path = ~/.gitconfig-friendsaa0618
 [includeIf "hasconfig:remote.*.url:*github.com:friendsaa0618/**"]
 path = ~/.gitconfig-friendsaa0618
-[credential "https://tonghuiai.cn/git"]
-	helper = 
-	helper = !tea login helper
-[credential "https://ampcode.com/"]
-	helper = 
-	helper = !amp git-credential-helper
+# Gitea and amp credentials belong to the device: only some machines have
+# tea or amp installed, and mbp19 stores the Gitea token in 1Password.
+# ~/.gitconfig.local registers them (see .gitconfig.local.example).
